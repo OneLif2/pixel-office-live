@@ -123,7 +123,11 @@ export function usePublicOfficeState(): PublicOfficeState {
 
     const fetchSnapshot = async () => {
       try {
-        const res = await fetch(SNAPSHOT_URL, { cache: 'no-store' })
+        // per-minute query param busts the raw.githubusercontent CDN cache
+        // (max-age=300) so status changes land within ~1 min of the push
+        const bust = Math.floor(Date.now() / 60_000)
+        const sep = SNAPSHOT_URL.includes('?') ? '&' : '?'
+        const res = await fetch(`${SNAPSHOT_URL}${sep}t=${bust}`, { cache: 'no-store' })
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         const raw = await res.json()
         const state = parsePublicState(raw)
