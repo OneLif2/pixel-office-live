@@ -160,7 +160,9 @@ export default function PublicOfficePage() {
           height * dpr,
           office.tileMap,
           office.furniture,
-          office.getCharacters(),
+          // public page shows real agents (and pets/subagents) only — no
+          // system NPCs like the On-Call SRE
+          office.getCharacters().filter((c) => !c.isSystemRole),
           deviceZoom,
           0,
           Math.round((TOP_EXTRA_PX / 2) * dpr),
@@ -201,11 +203,31 @@ export default function PublicOfficePage() {
 
   const ageMs = state ? Date.now() - state.ts : 0
 
+  const STATE_LABELS: Record<string, string> = { w: 'working', i: 'idle', a: 'waiting', o: 'offline' }
+  const agentChips = state
+    ? Object.entries(state.agents).map(([id, a]) => {
+        const s = stale && (a.s === 'w' || a.s === 'a') ? 'i' : a.s
+        return { id, name: a.n, emoji: a.e, state: STATE_LABELS[s] ?? 'offline', sub: stale ? 0 : a.sub }
+      })
+    : []
+
   return (
     <main className="office-root" ref={containerRef}>
       <canvas ref={canvasRef} className="office-canvas" />
       <div className="office-hud">
-        <span className="office-title">🦞 OpenClaw Pixel Office</span>
+        <div className="office-hud-left">
+          <span className="office-title">🦞 OpenClaw Pixel Office</span>
+          <div className="agent-chips">
+            {agentChips.map((a) => (
+              <span key={a.id} className={`agent-chip agent-chip-${a.state}`}>
+                <span className="agent-chip-emoji">{a.emoji}</span>
+                <span className="agent-chip-name">{a.name}</span>
+                <span className="agent-chip-state">{a.state}</span>
+                {a.sub > 0 && <span className="agent-chip-sub">+{a.sub}</span>}
+              </span>
+            ))}
+          </div>
+        </div>
         <div className="office-badges">
           {versionMismatch && <span className="badge badge-stale">update available — please refresh later</span>}
           {state && stale && !usingMock && (
