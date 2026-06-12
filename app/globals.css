@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  overflow: hidden;
+}
+
+.office-root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.office-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+.office-hud {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.office-hud > * {
+  pointer-events: auto;
+}
+
+.office-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.office-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(230, 237, 243, 0.25);
+  background: rgba(13, 17, 23, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.badge-stale {
+  color: #f0b429;
+  border-color: rgba(240, 180, 41, 0.5);
+}
+
+.badge-mock {
+  color: #8b949e;
+}
+
+.weather-bar {
+  display: flex;
+  gap: 4px;
+}
+
+.weather-btn {
+  font-size: 13px;
+  line-height: 1;
+  padding: 5px 7px;
+  border-radius: 8px;
+  border: 1px solid rgba(230, 237, 243, 0.2);
+  background: rgba(13, 17, 23, 0.72);
+  color: #e6edf3;
+  cursor: pointer;
+}
+
+.weather-btn.active {
+  border-color: #58a6ff;
+  background: rgba(56, 139, 253, 0.25);
+}
+
+.office-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #8b949e;
+}
