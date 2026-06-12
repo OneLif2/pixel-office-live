@@ -78,7 +78,12 @@ export default function PublicOfficePage() {
         if (res.ok) layout = migrateLayoutColors(await res.json())
       } catch {}
       if (cancelled) return
-      officeRef.current = new OfficeState(layout, 'en')
+      const office = new OfficeState(layout, 'en')
+      // The dashboard drives the On-Call SRE from /api/gateway-health; the
+      // public page has no APIs, so mark healthy once to enable her patrol
+      // (status 'unknown' freezes her in place).
+      office.updateGatewaySreState({ status: 'healthy', checkedAt: Date.now() })
+      officeRef.current = office
       setReady(true)
     }
     void init()
