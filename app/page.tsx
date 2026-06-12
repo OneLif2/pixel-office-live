@@ -160,9 +160,7 @@ export default function PublicOfficePage() {
           height * dpr,
           office.tileMap,
           office.furniture,
-          // public page shows real agents (and pets/subagents) only — no
-          // system NPCs like the On-Call SRE
-          office.getCharacters().filter((c) => !c.isSystemRole),
+          office.getCharacters(),
           deviceZoom,
           0,
           Math.round((TOP_EXTRA_PX / 2) * dpr),

@@ -31,8 +31,17 @@ const SNAPSHOT_URL =
   process.env.NEXT_PUBLIC_SNAPSHOT_URL ||
   'https://raw.githubusercontent.com/OneLif2/pixel-office-live/data/state.json'
 
+// raw.githubusercontent caches ~5 min and ignores query-string cache busting,
+// so the GitHub contents API (no CDN cache, CORS *) is polled as a slower
+// freshness source: every 3rd cycle ≈ 20 req/h/viewer, well under the
+// unauthenticated 60/h limit.
+const SNAPSHOT_API_URL =
+  process.env.NEXT_PUBLIC_SNAPSHOT_API_URL ||
+  'https://api.github.com/repos/OneLif2/pixel-office-live/contents/state.json?ref=data'
+
 const MOCK_URL = `${ASSET_BASE}/mock-state.json`
 const FETCH_INTERVAL_MS = 60_000
+const API_EVERY_N_CYCLES = 3
 
 const STATE_MAP: Record<PublicAgent['s'], AgentActivity['state']> = {
   w: 'working',
@@ -104,6 +113,8 @@ export function usePublicOfficeState(): PublicOfficeState {
     versionMismatch: false,
   })
   const hasRealData = useRef(false)
+  const newestTs = useRef(0)
+  const cycle = useRef(0)
 
   useEffect(() => {
     let cancelled = false
@@ -111,6 +122,9 @@ export function usePublicOfficeState(): PublicOfficeState {
 
     const apply = (state: PublicState, usingMock: boolean) => {
       if (cancelled) return
+      // raw CDN can lag behind the API source — never regress to an older snapshot
+      if (!usingMock && state.ts < newestTs.current) return
+      if (!usingMock) newestTs.current = state.ts
       hasRealData.current = hasRealData.current || !usingMock
       setResult({
         state,
@@ -121,42 +135,55 @@ export function usePublicOfficeState(): PublicOfficeState {
       })
     }
 
-    const fetchSnapshot = async () => {
+    const fetchFrom = async (url: string, init?: RequestInit): Promise<PublicState | null> => {
+      const res = await fetch(url, { ...init, cache: 'no-store' })
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const raw = await res.json()
+      const state = parsePublicState(raw)
+      if (!state && !cancelled && raw && typeof raw === 'object' && (raw as PublicState).v !== SCHEMA_VERSION) {
+        setResult((prev) => ({ ...prev, versionMismatch: true }))
+      }
+      return state
+    }
+
+    const fetchSnapshot = async (forceApi = false) => {
+      let gotAny = false
       try {
-        // per-minute query param busts the raw.githubusercontent CDN cache
-        // (max-age=300) so status changes land within ~1 min of the push
-        const bust = Math.floor(Date.now() / 60_000)
-        const sep = SNAPSHOT_URL.includes('?') ? '&' : '?'
-        const res = await fetch(`${SNAPSHOT_URL}${sep}t=${bust}`, { cache: 'no-store' })
-        if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        const raw = await res.json()
-        const state = parsePublicState(raw)
-        if (!state) {
-          if (!cancelled && raw && typeof raw === 'object' && (raw as PublicState).v !== SCHEMA_VERSION) {
-            setResult((prev) => ({ ...prev, versionMismatch: true }))
+        const state = await fetchFrom(SNAPSHOT_URL)
+        if (state) {
+          apply(state, false)
+          gotAny = true
+        }
+      } catch {}
+
+      // slower API poll for freshness (raw CDN caches ~5 min)
+      if (forceApi || cycle.current % API_EVERY_N_CYCLES === 0) {
+        try {
+          const state = await fetchFrom(SNAPSHOT_API_URL, {
+            headers: { Accept: 'application/vnd.github.raw+json' },
+          })
+          if (state) {
+            apply(state, false)
+            gotAny = true
           }
-          return
-        }
-        apply(state, false)
-      } catch {
-        // keep last state; if we never got real data, fall back to mock (dev/offline)
-        if (!hasRealData.current) {
-          try {
-            const res = await fetch(MOCK_URL, { cache: 'no-store' })
-            if (res.ok) {
-              const state = parsePublicState(await res.json())
-              if (state) apply({ ...state, ts: Date.now() }, true)
-            }
-          } catch {}
-        }
+        } catch {}
+      }
+      cycle.current++
+
+      // keep last state; if we never got real data, fall back to mock (dev/offline)
+      if (!gotAny && !hasRealData.current) {
+        try {
+          const state = parsePublicState(await (await fetch(MOCK_URL, { cache: 'no-store' })).json())
+          if (state) apply({ ...state, ts: Date.now() }, true)
+        } catch {}
       }
     }
 
     const onVisibility = () => {
-      if (!document.hidden) void fetchSnapshot()
+      if (!document.hidden) void fetchSnapshot(true)
     }
 
-    void fetchSnapshot()
+    void fetchSnapshot(true)
     timer = setInterval(() => {
       if (!document.hidden) void fetchSnapshot()
     }, FETCH_INTERVAL_MS)
