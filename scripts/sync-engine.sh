@@ -20,11 +20,18 @@ cp -r "$SRC/public/assets/pixel-office" public/assets/pixel-office
 # fails the build instead of silently 404ing.
 rm -f lib/pixel-office/notificationSound.ts
 
-# Patch hardcoded absolute asset URLs to honour the GitHub Pages basePath.
+# Patch hardcoded absolute asset URLs to honour the GitHub Pages basePath —
+# both single-quoted strings and backtick template literals.
 PNG_LOADER=lib/pixel-office/sprites/pngLoader.ts
 sed -i "s|'/assets/|ASSET_BASE + '/assets/|g" "$PNG_LOADER"
+sed -i 's|`/assets/|`${ASSET_BASE}/assets/|g' "$PNG_LOADER"
 sed -i "1i import { ASSET_BASE } from '../../asset-base'" "$PNG_LOADER"
 
 grep -q "ASSET_BASE + '/assets/" "$PNG_LOADER" || { echo "pngLoader basePath patch failed" >&2; exit 1; }
+# no asset URL may remain unprefixed (a miss = silent sprite fallback on Pages)
+if grep -rnE '(^|[^}+] ?)[\x27\x60]/assets/' lib/pixel-office; then
+  echo "FAIL: unprefixed /assets/ URL remains in vendored engine" >&2
+  exit 1
+fi
 
 echo "engine synced from $SRC"

@@ -54,7 +54,9 @@ export function toAgentActivities(state: PublicState, stale: boolean): AgentActi
     const s = stale && (a.s === 'w' || a.s === 'a') ? 'i' : a.s
     const subCount = stale ? 0 : Math.max(0, Math.min(8, a.sub | 0))
     return {
-      agentId,
+      // use the display name as the engine id so labels render as "Dido"
+      // rather than "Dido (dido)" (agentBridge appends ids that differ)
+      agentId: a.n || agentId,
       name: a.n,
       emoji: a.e,
       state: STATE_MAP[s] ?? 'idle',
@@ -70,7 +72,7 @@ export function toAgentActivities(state: PublicState, stale: boolean): AgentActi
 export function toSeatAssignments(state: PublicState): Record<string, string> {
   const seats: Record<string, string> = {}
   for (const [agentId, a] of Object.entries(state.agents)) {
-    if (typeof a.seat === 'string' && a.seat) seats[agentId] = a.seat
+    if (typeof a.seat === 'string' && a.seat) seats[a.n || agentId] = a.seat
   }
   return seats
 }

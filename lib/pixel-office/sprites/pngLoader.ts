@@ -246,14 +246,14 @@ export async function loadCharacterPNGs(): Promise<boolean> {
     const CHARACTER_SHEET_HEIGHT = 96
 
     for (let i = 0; i < baseCharacterCount; i++) {
-      const img = await loadImage(`/assets/pixel-office/characters/char_${i}.png`)
+      const img = await loadImage(`${ASSET_BASE}/assets/pixel-office/characters/char_${i}.png`)
       const sheet = stripOpaqueSheetBackground(normalizedSpriteData(img, CHARACTER_SHEET_WIDTH, CHARACTER_SHEET_HEIGHT))
       characters.push(parseCharacterSheet(sheet))
     }
 
     for (let i = baseCharacterCount; i < maxCharacterCount; i++) {
       try {
-        const img = await loadImage(`/assets/pixel-office/characters/char_${i}.png`)
+        const img = await loadImage(`${ASSET_BASE}/assets/pixel-office/characters/char_${i}.png`)
         const sheet = stripOpaqueSheetBackground(normalizedSpriteData(img, CHARACTER_SHEET_WIDTH, CHARACTER_SHEET_HEIGHT))
         characters.push(parseCharacterSheet(sheet))
       } catch {
@@ -295,7 +295,7 @@ export async function loadCatSkinPNGs(): Promise<boolean> {
     const skins: CatSkinFrames[] = []
     for (let i = 0; i < MAX_CAT_SKINS; i++) {
       try {
-        const img = await loadImage(`/assets/pixel-office/pets/cat_${i}.png`)
+        const img = await loadImage(`${ASSET_BASE}/assets/pixel-office/pets/cat_${i}.png`)
         const sheet = normalizedSpriteData(img, CAT_SHEET_WIDTH, CAT_SHEET_HEIGHT)
         skins.push({
           down: [catSheetFrame(sheet, 0, 0), catSheetFrame(sheet, 0, 1)],
