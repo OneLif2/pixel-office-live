@@ -757,6 +757,48 @@ export class OfficeState {
     return { palette, hueShift }
   }
 
+  /**
+   * Pick a skin for a temp worker (subagent) that does NOT reuse its parent
+   * agent's skin — e.g. a worker that ani spawns must not look like ani.
+   * Spreads workers across the least-used non-parent palettes, falling back to
+   * a hue-shifted variant when only the parent's palette is available.
+   */
+  private pickSubagentPalette(parentPalette: number): { palette: number; hueShift: number } {
+    const paletteCount = getAvailableCharacterVariantCount()
+    const parentIdx = ((parentPalette % paletteCount) + paletteCount) % paletteCount
+    if (paletteCount <= 1) {
+      // Only one skin exists: differentiate the worker by hue instead.
+      return {
+        palette: parentPalette,
+        hueShift: HUE_SHIFT_MIN_DEG + Math.floor(Math.random() * HUE_SHIFT_RANGE_DEG),
+      }
+    }
+    // Count current usage (including other workers) so siblings spread out.
+    const counts = new Array(paletteCount).fill(0) as number[]
+    for (const ch of this.characters.values()) {
+      if (ch.isCat || ch.isDog || ch.isLobster) continue
+      counts[ch.palette % paletteCount]++
+    }
+    let minCount = Infinity
+    for (let i = 0; i < paletteCount; i++) {
+      if (i === parentIdx) continue
+      if (counts[i] < minCount) minCount = counts[i]
+    }
+    const available: number[] = []
+    for (let i = 0; i < paletteCount; i++) {
+      if (i === parentIdx) continue
+      if (counts[i] === minCount) available.push(i)
+    }
+    const palette = available[Math.floor(Math.random() * available.length)]
+    // Add a hue shift when reusing a base palette in a later round so repeated
+    // workers stay visually distinct.
+    const hueShift =
+      minCount > 0 || palette >= CHARACTER_PALETTES.length
+        ? HUE_SHIFT_MIN_DEG + Math.floor(Math.random() * HUE_SHIFT_RANGE_DEG)
+        : 0
+    return { palette, hueShift }
+  }
+
   addAgent(id: number, preferredPalette?: number, preferredHueShift?: number, preferredSeatId?: string, skipSpawnEffect?: boolean, spawnAtDoor?: boolean): void {
     if (this.characters.has(id)) return
 
@@ -1745,15 +1787,16 @@ export class OfficeState {
     return true
   }
 
-  /** Create a sub-agent character with the parent's palette. Returns the sub-agent ID. */
+  /** Create a sub-agent character with a distinct (non-parent) skin. Returns the sub-agent ID. */
   addSubagent(parentAgentId: number, parentToolId: string): number {
     const key = `${parentAgentId}:${parentToolId}`
     if (this.subagentIdMap.has(key)) return this.subagentIdMap.get(key)!
 
     const id = this.nextSubagentId--
     const parentCh = this.characters.get(parentAgentId)
-    const palette = parentCh ? parentCh.palette : 0
-    const hueShift = parentCh ? parentCh.hueShift : 0
+    // A temp worker must not reuse its parent's skin (e.g. a worker ani spawns
+    // should not look like ani); give it a distinct, non-parent palette.
+    const { palette, hueShift } = this.pickSubagentPalette(parentCh ? parentCh.palette : 0)
 
     // Find the free seat closest to the parent agent
     const parentCol = parentCh ? parentCh.tileCol : 0

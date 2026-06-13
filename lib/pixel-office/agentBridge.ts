@@ -34,6 +34,56 @@ function preferredVariantForAgent(agentId: string): number | undefined {
   return AGENT_CHARACTER_VARIANTS[agentId.trim().toLowerCase()]
 }
 
+/**
+ * Which agent currently holds each reserved character skin (palette).
+ *
+ * OpenClaw sometimes spins up a temporary look-alike agent (e.g. a second
+ * "ani") that resolves to the same reserved variant as the real one. Pinning
+ * both would give them an identical skin. We pin a reserved variant to a single
+ * owner; any other agent that maps to the same variant is treated as having no
+ * preferred variant, so it falls back to a distinct, diverse skin instead of
+ * duplicating the original.
+ */
+const variantOwner = new Map<number, string>()
+
+/**
+ * Decide, for the current sync, which agent owns each reserved variant. The
+ * existing owner keeps it while still live; otherwise the lexicographically
+ * smallest agentId wins so the choice is stable across syncs (e.g. the canonical
+ * "Ani" beats a temp "ani"). Owners that went offline release their variant.
+ */
+function refreshVariantOwners(activities: AgentActivity[]): void {
+  const liveAgentIds = new Set(
+    activities.filter((a) => a.state !== 'offline').map((a) => a.agentId),
+  )
+  for (const [variant, owner] of variantOwner) {
+    if (!liveAgentIds.has(owner)) variantOwner.delete(variant)
+  }
+
+  const claimantsByVariant = new Map<number, string[]>()
+  for (const a of activities) {
+    if (a.state === 'offline') continue
+    const variant = preferredVariantForAgent(a.agentId)
+    if (variant === undefined) continue
+    const list = claimantsByVariant.get(variant) ?? []
+    list.push(a.agentId)
+    claimantsByVariant.set(variant, list)
+  }
+  for (const [variant, claimants] of claimantsByVariant) {
+    const current = variantOwner.get(variant)
+    if (current !== undefined && claimants.includes(current)) continue
+    claimants.sort()
+    variantOwner.set(variant, claimants[0])
+  }
+}
+
+/** The reserved palette to pin for this agent, or undefined to use a diverse one. */
+function pinnedVariantForAgent(agentId: string): number | undefined {
+  const variant = preferredVariantForAgent(agentId)
+  if (variant === undefined) return undefined
+  return variantOwner.get(variant) === agentId ? variant : undefined
+}
+
 export function syncAgentsToOffice(
   activities: AgentActivity[],
   office: OfficeState,
@@ -42,6 +92,7 @@ export function syncAgentsToOffice(
   seatAssignments?: Record<string, string>,
 ): void {
   const currentAgentIds = new Set(activities.map(a => a.agentId))
+  refreshVariantOwners(activities)
 
   // Remove agents that are no longer present
   for (const [agentId, charId] of agentIdMap) {
@@ -79,7 +130,7 @@ export function syncAgentsToOffice(
       const wasOffline = prevAgentStates.get(activity.agentId) === 'offline'
       office.addAgent(
         charId,
-        preferredVariantForAgent(activity.agentId),
+        pinnedVariantForAgent(activity.agentId),
         undefined,
         seatAssignments?.[activity.agentId],
         undefined,
@@ -90,7 +141,7 @@ export function syncAgentsToOffice(
     // Set label, avoiding duplicated values like "main (main)"
     const ch = office.characters.get(charId)
     if (ch) {
-      const preferredVariant = preferredVariantForAgent(activity.agentId)
+      const preferredVariant = pinnedVariantForAgent(activity.agentId)
       if (preferredVariant !== undefined) {
         ch.palette = preferredVariant
         ch.hueShift = 0
