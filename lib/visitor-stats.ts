@@ -1,25 +1,41 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-const FIREBASE_DATABASE_URL = (process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL || '').replace(/\/+$/, '')
-const VISITOR_PATH = process.env.NEXT_PUBLIC_FIREBASE_VISITOR_PATH || 'pixel-office/live/visitors'
+/**
+ * Total-views counter backed by counterapi.dev v1.
+ *
+ * v1 is the anonymous tier: no account, API key, or backend of our own — the
+ * visitor's browser calls it directly over CORS (`access-control-allow-origin: *`).
+ * The whole feature is client-side; the Jetson exporter is never involved.
+ *
+ * There is no live/concurrent viewer count: that needs a stateful presence
+ * backend, which counterapi.dev cannot provide. We only show cumulative views.
+ *
+ * v1 is counterapi.dev's legacy anonymous endpoint. If it is ever retired, set
+ * NEXT_PUBLIC_COUNTER_BASE_URL (and namespace/name) to a replacement that
+ * returns `{ "count": <number> }`.
+ */
+const COUNTER_BASE = (
+  process.env.NEXT_PUBLIC_COUNTER_BASE_URL || 'https://api.counterapi.dev/v1'
+).replace(/\/+$/, '')
+const COUNTER_NAMESPACE = process.env.NEXT_PUBLIC_COUNTER_NAMESPACE || 'onelif2-pixel-office-live'
+const COUNTER_NAME = process.env.NEXT_PUBLIC_COUNTER_NAME || 'views'
+
+// Counting is limited to the real public page so local/Jetson previews never
+// inflate the number (checked against window.location at runtime).
 const VISITOR_ALLOWED_ORIGIN = (
   process.env.NEXT_PUBLIC_VISITOR_ALLOWED_ORIGIN || 'https://onelif2.github.io'
 ).replace(/\/+$/, '')
 const VISITOR_ALLOWED_PATH = normalizePath(
   process.env.NEXT_PUBLIC_VISITOR_ALLOWED_PATH || '/pixel-office-live',
 )
-const HEARTBEAT_MS = 15_000
-const REFRESH_MS = 15_000
-const ACTIVE_WINDOW_MS = 45_000
-const CLEANUP_AFTER_MS = 5 * 60_000
+
+// One increment per browser tab session; repeat loads only read the total.
 const VIEW_COUNTED_KEY = 'pixel-office-live-view-counted-v1'
-const VIEWER_ID_KEY = 'pixel-office-live-viewer-id-v1'
 
 export interface VisitorStats {
   configured: boolean
-  liveViewers: number | null
   totalViews: number | null
   loading: boolean
   error: boolean
@@ -38,176 +54,54 @@ function isVisitorCounterPage(): boolean {
   )
 }
 
-function encodeFirebasePath(statePath: string): string {
-  return statePath
-    .split('/')
-    .filter(Boolean)
-    .map((part) => encodeURIComponent(part))
-    .join('/')
-}
-
-function firebaseUrl(path: string): string {
-  return `${FIREBASE_DATABASE_URL}/${encodeFirebasePath(path)}.json`
-}
-
-function randomId(): string {
-  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
-    return crypto.randomUUID()
-  }
-  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`
-}
-
-function readNumber(value: unknown): number | null {
+function readCount(raw: unknown): number | null {
+  const value = (raw as { count?: unknown } | null)?.count
   if (typeof value === 'number' && Number.isFinite(value)) return Math.max(0, Math.floor(value))
-  if (typeof value === 'string' && value.trim()) {
-    const parsed = Number(value)
-    if (Number.isFinite(parsed)) return Math.max(0, Math.floor(parsed))
-  }
   return null
 }
 
-async function fetchJson<T>(url: string, init?: RequestInit): Promise<T | null> {
-  const res = await fetch(url, { ...init, cache: 'no-store' })
+async function fetchCount(action: 'up' | 'get'): Promise<number | null> {
+  const base = `${COUNTER_BASE}/${encodeURIComponent(COUNTER_NAMESPACE)}/${encodeURIComponent(COUNTER_NAME)}`
+  const url = action === 'up' ? `${base}/up` : `${base}/`
+  const res = await fetch(url, { cache: 'no-store' })
   if (!res.ok) throw new Error(`HTTP ${res.status}`)
-  return (await res.json()) as T | null
-}
-
-async function putJson(url: string, value: unknown, init?: { keepalive?: boolean }): Promise<void> {
-  const res = await fetch(url, {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(value),
-    keepalive: init?.keepalive,
-  })
-  if (!res.ok) throw new Error(`HTTP ${res.status}`)
-}
-
-async function incrementTotalViews(totalUrl: string): Promise<number | null> {
-  for (let attempt = 0; attempt < 3; attempt++) {
-    const getRes = await fetch(totalUrl, {
-      cache: 'no-store',
-      headers: { 'X-Firebase-ETag': 'true' },
-    })
-    if (!getRes.ok) throw new Error(`HTTP ${getRes.status}`)
-
-    const current = readNumber(await getRes.json()) ?? 0
-    const etag = getRes.headers.get('ETag')
-    const next = current + 1
-    const headers: Record<string, string> = { 'Content-Type': 'application/json' }
-    if (etag) headers['if-match'] = etag
-
-    const putRes = await fetch(totalUrl, {
-      method: 'PUT',
-      headers,
-      body: JSON.stringify(next),
-      cache: 'no-store',
-    })
-    if (putRes.status === 412) continue
-    if (!putRes.ok) throw new Error(`HTTP ${putRes.status}`)
-    return next
-  }
-  return null
+  return readCount(await res.json())
 }
 
 export function useVisitorStats(): VisitorStats {
-  const firebaseConfigured = Boolean(FIREBASE_DATABASE_URL)
-  const [configured, setConfigured] = useState(false)
-
-  useEffect(() => {
-    setConfigured(firebaseConfigured && isVisitorCounterPage())
-  }, [firebaseConfigured])
-
-  const urls = useMemo(() => {
-    if (!configured) return null
-    const base = VISITOR_PATH.replace(/^\/+|\/+$/g, '')
-    return {
-      live: firebaseUrl(`${base}/live`),
-      total: firebaseUrl(`${base}/totalViews`),
-    }
-  }, [configured])
-
   const [stats, setStats] = useState<VisitorStats>({
     configured: false,
-    liveViewers: null,
     totalViews: null,
     loading: false,
     error: false,
   })
-  const viewerUrlRef = useRef<string | null>(null)
 
   useEffect(() => {
-    if (!configured || !urls) {
-      setStats({
-        configured: false,
-        liveViewers: null,
-        totalViews: null,
-        loading: false,
-        error: false,
-      })
+    if (!isVisitorCounterPage()) {
+      setStats({ configured: false, totalViews: null, loading: false, error: false })
       return
     }
 
     let cancelled = false
-    let heartbeatTimer: ReturnType<typeof setInterval> | null = null
-    let refreshTimer: ReturnType<typeof setInterval> | null = null
-    let cleanupCursor = 0
+    setStats((prev) => ({ ...prev, configured: true, loading: true }))
 
-    const viewerId = (() => {
+    const alreadyCounted = (() => {
       try {
-        const existing = sessionStorage.getItem(VIEWER_ID_KEY)
-        if (existing) return existing
-        const next = randomId()
-        sessionStorage.setItem(VIEWER_ID_KEY, next)
-        return next
+        return sessionStorage.getItem(VIEW_COUNTED_KEY) === '1'
       } catch {
-        return randomId()
+        return false
       }
     })()
-    const viewerUrl = `${urls.live}/${encodeURIComponent(viewerId)}.json`
-    viewerUrlRef.current = viewerUrl
 
-    const markPresence = async () => {
-      await putJson(viewerUrl, { seenAt: Date.now() })
-    }
-
-    const cleanupStale = async (records: Record<string, { seenAt?: number }>) => {
-      const now = Date.now()
-      const staleIds = Object.entries(records)
-        .filter(([, value]) => now - (readNumber(value?.seenAt) ?? 0) > CLEANUP_AFTER_MS)
-        .slice(0, 8)
-        .map(([id]) => id)
-      await Promise.allSettled(staleIds.map((id) => fetch(`${urls.live}/${encodeURIComponent(id)}.json`, {
-        method: 'DELETE',
-        cache: 'no-store',
-      })))
-    }
-
-    const refresh = async () => {
+    const load = async (action: 'up' | 'get') => {
       try {
-        const [liveRecords, totalRaw] = await Promise.all([
-          fetchJson<Record<string, { seenAt?: number }>>(urls.live),
-          fetchJson<unknown>(urls.total),
-        ])
+        const total = await fetchCount(action)
         if (cancelled) return
-
-        const cutoff = Date.now() - ACTIVE_WINDOW_MS
-        const liveViewers = Object.values(liveRecords || {}).filter((value) => {
-          const seenAt = readNumber(value?.seenAt)
-          return seenAt !== null && seenAt >= cutoff
-        }).length
-        const totalViews = readNumber(totalRaw) ?? 0
-
-        setStats({
-          configured: true,
-          liveViewers,
-          totalViews,
-          loading: false,
-          error: false,
-        })
-
-        cleanupCursor++
-        if (cleanupCursor % 8 === 0 && liveRecords) {
-          void cleanupStale(liveRecords)
+        setStats({ configured: true, totalViews: total, loading: false, error: total === null })
+        if (action === 'up' && total !== null) {
+          try {
+            sessionStorage.setItem(VIEW_COUNTED_KEY, '1')
+          } catch {}
         }
       } catch {
         if (!cancelled) {
@@ -216,64 +110,20 @@ export function useVisitorStats(): VisitorStats {
       }
     }
 
-    const countViewOnce = async () => {
-      let shouldCount = true
-      try {
-        shouldCount = sessionStorage.getItem(VIEW_COUNTED_KEY) !== '1'
-      } catch {}
-      if (!shouldCount) return
+    void load(alreadyCounted ? 'get' : 'up')
 
-      const next = await incrementTotalViews(urls.total)
-      if (next !== null && !cancelled) {
-        setStats((prev) => ({ ...prev, totalViews: next, loading: false, error: false }))
-      }
-      try {
-        sessionStorage.setItem(VIEW_COUNTED_KEY, '1')
-      } catch {}
-    }
-
-    void (async () => {
-      try {
-        await markPresence()
-        await countViewOnce()
-        await refresh()
-      } catch {
-        if (!cancelled) {
-          setStats((prev) => ({ ...prev, configured: true, loading: false, error: true }))
-        }
-      }
-    })()
-
-    heartbeatTimer = setInterval(() => {
-      if (!document.hidden) void markPresence().then(refresh).catch(() => {
-        if (!cancelled) setStats((prev) => ({ ...prev, error: true, loading: false }))
-      })
-    }, HEARTBEAT_MS)
-
-    refreshTimer = setInterval(() => {
-      if (!document.hidden) void refresh()
-    }, REFRESH_MS)
-
+    // Refresh the displayed total when the visitor returns to the tab, so it
+    // reflects other people's visits without a polling loop.
     const onVisibility = () => {
-      if (!document.hidden) void markPresence().then(refresh).catch(() => {})
+      if (!document.hidden) void load('get')
     }
-    const onPageHide = () => {
-      const url = viewerUrlRef.current
-      if (url) void fetch(url, { method: 'DELETE', keepalive: true })
-    }
-
     document.addEventListener('visibilitychange', onVisibility)
-    window.addEventListener('pagehide', onPageHide)
 
     return () => {
       cancelled = true
-      if (heartbeatTimer) clearInterval(heartbeatTimer)
-      if (refreshTimer) clearInterval(refreshTimer)
       document.removeEventListener('visibilitychange', onVisibility)
-      window.removeEventListener('pagehide', onPageHide)
-      onPageHide()
     }
-  }, [configured, urls])
+  }, [])
 
   return stats
 }

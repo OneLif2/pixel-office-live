@@ -728,17 +728,52 @@ export class OfficeState {
   }
 
   /**
-   * Pick a diverse palette for a new agent based on currently active agents.
-   * First round uses each available character variant once (random order).
-   * Beyond that, variants
-   * repeat in balanced rounds with a random hue shift (≥45°).
+   * Rule: no two rendered agent characters under the office may use the exact
+   * same skin at the same time. A "skin" is the (palette, hueShift) pair — two
+   * characters look identical only when both match. This returns the set of skin
+   * keys currently in use by every humanoid character (regular agents,
+   * subagents, and system roles). Pets are excluded. Palette indices are
+   * normalised to the available-variant range so the key matches what renders.
+   */
+  private usedSkinKeys(paletteCount: number): Set<string> {
+    const used = new Set<string>()
+    for (const ch of this.characters.values()) {
+      if (ch.isCat || ch.isDog || ch.isLobster) continue
+      const idx = ((ch.palette % paletteCount) + paletteCount) % paletteCount
+      used.add(`${idx}:${ch.hueShift}`)
+    }
+    return used
+  }
+
+  /**
+   * Choose a hueShift for `palette` so the resulting (palette, hueShift) skin is
+   * not already taken by another character. Prefers no shift (0) when the plain
+   * palette is still free; otherwise steps through distinguishable hue buckets
+   * (≥45° apart) to find an unused one — this is the secondary distinguishing
+   * rule once palettes are exhausted. Falls back to a random shift only if every
+   * bucket on this palette is somehow occupied.
+   */
+  private pickUniqueHueShift(palette: number, used: Set<string>): number {
+    if (!used.has(`${palette}:0`)) return 0
+    const STEP_DEG = HUE_SHIFT_MIN_DEG // 45° buckets keep hues visually distinct
+    for (let shift = HUE_SHIFT_MIN_DEG; shift < HUE_SHIFT_MIN_DEG + HUE_SHIFT_RANGE_DEG; shift += STEP_DEG) {
+      if (!used.has(`${palette}:${shift}`)) return shift
+    }
+    return HUE_SHIFT_MIN_DEG + Math.floor(Math.random() * HUE_SHIFT_RANGE_DEG)
+  }
+
+  /**
+   * Pick a diverse, non-duplicated skin for a new agent. Balances across the
+   * least-used palettes counting ALL humanoid characters (including subagents
+   * and system roles) so an unused palette is always chosen first. Once every
+   * palette is on screen, the exact skin is kept unique via a hue shift.
    */
   private pickDiversePalette(): { palette: number; hueShift: number } {
     const paletteCount = getAvailableCharacterVariantCount()
     const counts = new Array(paletteCount).fill(0) as number[]
     for (const ch of this.characters.values()) {
-      if (ch.isSubagent || ch.isCat || ch.isDog || ch.isLobster) continue
-      counts[ch.palette % paletteCount]++
+      if (ch.isCat || ch.isDog || ch.isLobster) continue
+      counts[((ch.palette % paletteCount) + paletteCount) % paletteCount]++
     }
     const minCount = Math.min(...counts)
     // Available = variants at the minimum count (least used)
@@ -749,11 +784,9 @@ export class OfficeState {
     const extraVariants = available.filter((index) => index >= CHARACTER_PALETTES.length)
     const preferred = minCount === 0 && extraVariants.length > 0 ? extraVariants : available
     const palette = preferred[Math.floor(Math.random() * preferred.length)]
-    // First round (minCount === 0): no hue shift. Subsequent rounds: random ≥45°.
-    let hueShift = 0
-    if (minCount > 0) {
-      hueShift = HUE_SHIFT_MIN_DEG + Math.floor(Math.random() * HUE_SHIFT_RANGE_DEG)
-    }
+    // Guarantee the exact (palette, hueShift) skin is unique: hueShift 0 while
+    // the palette is still free, a distinct hue bucket once it repeats.
+    const hueShift = this.pickUniqueHueShift(palette, this.usedSkinKeys(paletteCount))
     return { palette, hueShift }
   }
 
@@ -766,18 +799,17 @@ export class OfficeState {
   private pickSubagentPalette(parentPalette: number): { palette: number; hueShift: number } {
     const paletteCount = getAvailableCharacterVariantCount()
     const parentIdx = ((parentPalette % paletteCount) + paletteCount) % paletteCount
+    const used = this.usedSkinKeys(paletteCount)
     if (paletteCount <= 1) {
-      // Only one skin exists: differentiate the worker by hue instead.
-      return {
-        palette: parentPalette,
-        hueShift: HUE_SHIFT_MIN_DEG + Math.floor(Math.random() * HUE_SHIFT_RANGE_DEG),
-      }
+      // Only one skin exists: differentiate the worker by a unique hue instead.
+      return { palette: parentPalette, hueShift: this.pickUniqueHueShift(parentIdx, used) }
     }
-    // Count current usage (including other workers) so siblings spread out.
+    // Count current usage across ALL humanoid characters so siblings spread out
+    // and never collide with regular agents either.
     const counts = new Array(paletteCount).fill(0) as number[]
     for (const ch of this.characters.values()) {
       if (ch.isCat || ch.isDog || ch.isLobster) continue
-      counts[ch.palette % paletteCount]++
+      counts[((ch.palette % paletteCount) + paletteCount) % paletteCount]++
     }
     let minCount = Infinity
     for (let i = 0; i < paletteCount; i++) {
@@ -790,12 +822,10 @@ export class OfficeState {
       if (counts[i] === minCount) available.push(i)
     }
     const palette = available[Math.floor(Math.random() * available.length)]
-    // Add a hue shift when reusing a base palette in a later round so repeated
-    // workers stay visually distinct.
-    const hueShift =
-      minCount > 0 || palette >= CHARACTER_PALETTES.length
-        ? HUE_SHIFT_MIN_DEG + Math.floor(Math.random() * HUE_SHIFT_RANGE_DEG)
-        : 0
+    // Excluding the parent palette guarantees the worker never looks like its
+    // parent; the unique hue shift guarantees it never duplicates any other
+    // on-screen skin either (and stays distinct when palettes are exhausted).
+    const hueShift = this.pickUniqueHueShift(palette, used)
     return { palette, hueShift }
   }
 

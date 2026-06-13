@@ -271,16 +271,6 @@ export default function PublicOfficePage() {
           </div>
         </div>
         <div className="office-badges">
-          {visitorStats.configured && (
-            <span
-              className={`live-viewer-badge${visitorStats.error ? ' counter-error' : ''}`}
-              title="Live viewers"
-            >
-              <span className="live-viewer-dot" />
-              <span className="live-viewer-label">LIVE</span>
-              <span className="live-viewer-count">{formatCount(visitorStats.liveViewers)}</span>
-            </span>
-          )}
           {versionMismatch && <span className="badge badge-stale">update available — please refresh later</span>}
           {state && stale && !usingMock && (
             <span className="badge badge-stale">⚠ last updated {formatAgo(ageMs)}</span>

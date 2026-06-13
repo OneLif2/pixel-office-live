@@ -25,10 +25,11 @@ sanitized facts only                        main branch: this app ──▶ Page
 - If `NEXT_PUBLIC_FIREBASE_DATABASE_URL` is set at build time, the browser also
   subscribes to Firebase Realtime Database over Server-Sent Events and keeps
   GitHub polling as a slower fallback.
-- With the same Firebase database configured, the page shows a live viewer count
-  in the top-right HUD and a total viewed count at the bottom. Visitor counting
-  is enabled only on `https://onelif2.github.io/pixel-office-live/`; local and
-  Jetson preview URLs do not write visitor stats.
+- The page shows a **total viewed** count at the bottom-right, backed by
+  counterapi.dev (anonymous, no account, no backend of our own). There is no
+  live/concurrent viewer count. Counting is enabled only on
+  `https://onelif2.github.io/pixel-office-live/`; local and Jetson preview URLs
+  do not increment it.
 - The refresh button forces an immediate poll, including the GitHub Contents
   API freshness source.
 - Everything else (characters wandering, pets, weather, animations) runs
@@ -45,28 +46,48 @@ https://onelif2.github.io/pixel-office-live/
 ```
 
 At runtime the visitor counter checks both `window.location.origin` and the
-normalized pathname before it starts any Firebase visitor reads or writes.
-With the default settings, only this exact public page is counted:
+normalized pathname before it calls counterapi.dev. With the default settings,
+only this exact public page is counted:
 
 - origin: `https://onelif2.github.io`
 - path: `/pixel-office-live`
 
 Local preview, Jetson dashboard, and development URLs such as these do not
-increment the live viewer count or total viewed count:
+increment the total viewed count:
 
 - `http://192.168.1.164:3000`
-- `http://192.168.1.164:3100`
-- `http://localhost:3100`
+- `http://localhost:3001`
 
 The allowed URL can be changed at build time with
 `NEXT_PUBLIC_VISITOR_ALLOWED_ORIGIN` and `NEXT_PUBLIC_VISITOR_ALLOWED_PATH`, but
 those should normally stay on the GitHub Pages defaults.
 
+## Visitor counter
+
+The "total viewed" badge is backed by **counterapi.dev v1**, a free anonymous
+counter — no account, API key, or backend of our own. The visitor's browser
+calls it directly (CORS is open), so nothing runs on the Jetson:
+
+- increment once per tab session: `GET https://api.counterapi.dev/v1/<namespace>/<name>/up`
+- otherwise read the total: `GET https://api.counterapi.dev/v1/<namespace>/<name>/`
+- the displayed number is the `count` field of the JSON response
+
+Build-time overrides (all optional — the defaults work with zero setup):
+
+- `NEXT_PUBLIC_COUNTER_NAMESPACE`, default `onelif2-pixel-office-live`
+- `NEXT_PUBLIC_COUNTER_NAME`, default `views`
+- `NEXT_PUBLIC_COUNTER_BASE_URL`, default `https://api.counterapi.dev/v1`
+
+This is a public, decorative counter: anyone can hit the endpoint, so do not
+treat the number as audited analytics. v1 is counterapi.dev's legacy anonymous
+tier; if it is ever retired, point the override vars at a replacement that
+returns `{ "count": <number> }`.
+
 ## Development
 
 ```bash
 npm install
-npm run dev        # http://localhost:3100/pixel-office-live/ (uses mock-state.json)
+npm run dev        # http://localhost:3001/pixel-office-live/ (uses mock-state.json)
 npm run build      # static export to out/
 npm run check-static  # assert the build contains no /api references
 ```
@@ -77,47 +98,16 @@ from a private workspace via `npm run sync-engine`; edit them there, not here.
 ## Optional realtime transport
 
 The static page can receive snapshots from Firebase Realtime Database without
-adding a frontend dependency:
+adding a frontend dependency (this is for live *state*, separate from the
+visitor counter above):
 
 - Build-time GitHub repository variables:
   - `NEXT_PUBLIC_FIREBASE_DATABASE_URL`, for example
     `https://your-project-default-rtdb.firebaseio.com`
   - `NEXT_PUBLIC_FIREBASE_STATE_PATH`, default `pixel-office/live/state`
   - `NEXT_PUBLIC_FIREBASE_STREAM_URL`, optional full `.json` stream URL override
-  - `NEXT_PUBLIC_FIREBASE_VISITOR_PATH`, default `pixel-office/live/visitors`
-  - `NEXT_PUBLIC_VISITOR_ALLOWED_ORIGIN`, default `https://onelif2.github.io`
-  - `NEXT_PUBLIC_VISITOR_ALLOWED_PATH`, default `/pixel-office-live`
 - The database path must allow public read access to the sanitized state only.
   Do not expose private OpenClaw paths or raw session content.
-- Visitor counts are public, decorative counters. Public clients need read/write
-  access to the visitor counter path, so do not treat those numbers as audited
-  analytics.
-
-Minimal rule shape for the visitor counter:
-
-```json
-{
-  "rules": {
-    "pixel-office": {
-      "live": {
-        "visitors": {
-          ".read": true,
-          "totalViews": {
-            ".write": true,
-            ".validate": "newData.isNumber() && newData.val() >= 0"
-          },
-          "live": {
-            "$viewer": {
-              ".write": true,
-              ".validate": "newData.val() === null || (newData.hasChildren(['seenAt']) && newData.child('seenAt').isNumber())"
-            }
-          }
-        }
-      }
-    }
-  }
-}
-```
 
 When these variables are not set, the page behaves exactly like the GitHub-only
 polling version.
