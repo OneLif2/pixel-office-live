@@ -169,12 +169,13 @@ export function usePublicOfficeState(): PublicOfficeState {
       }
       sources.push(fetchFrom(SNAPSHOT_URL))
 
-      const results = await Promise.allSettled(sources)
-      for (const res of results) {
-        if (res.status !== 'fulfilled' || !res.value) continue
-        apply(res.value, false)
-        gotAny = true
-      }
+      const results = await Promise.allSettled(sources.map(async (source) => {
+        const state = await source
+        if (!state) return false
+        apply(state, false)
+        return true
+      }))
+      gotAny = results.some((res) => res.status === 'fulfilled' && res.value)
 
       cycle.current++
 
