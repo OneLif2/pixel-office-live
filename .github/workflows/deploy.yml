@@ -29,6 +29,8 @@ jobs:
           NEXT_PUBLIC_FIREBASE_STATE_PATH: ${{ vars.NEXT_PUBLIC_FIREBASE_STATE_PATH }}
           NEXT_PUBLIC_FIREBASE_STREAM_URL: ${{ vars.NEXT_PUBLIC_FIREBASE_STREAM_URL }}
           NEXT_PUBLIC_FIREBASE_VISITOR_PATH: ${{ vars.NEXT_PUBLIC_FIREBASE_VISITOR_PATH }}
+          NEXT_PUBLIC_VISITOR_ALLOWED_ORIGIN: ${{ vars.NEXT_PUBLIC_VISITOR_ALLOWED_ORIGIN }}
+          NEXT_PUBLIC_VISITOR_ALLOWED_PATH: ${{ vars.NEXT_PUBLIC_VISITOR_ALLOWED_PATH }}
       - run: bash scripts/check-static.sh
       - uses: actions/upload-pages-artifact@v3
         with:

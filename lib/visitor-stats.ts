@@ -4,6 +4,12 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 
 const FIREBASE_DATABASE_URL = (process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL || '').replace(/\/+$/, '')
 const VISITOR_PATH = process.env.NEXT_PUBLIC_FIREBASE_VISITOR_PATH || 'pixel-office/live/visitors'
+const VISITOR_ALLOWED_ORIGIN = (
+  process.env.NEXT_PUBLIC_VISITOR_ALLOWED_ORIGIN || 'https://onelif2.github.io'
+).replace(/\/+$/, '')
+const VISITOR_ALLOWED_PATH = normalizePath(
+  process.env.NEXT_PUBLIC_VISITOR_ALLOWED_PATH || '/pixel-office-live',
+)
 const HEARTBEAT_MS = 15_000
 const REFRESH_MS = 15_000
 const ACTIVE_WINDOW_MS = 45_000
@@ -17,6 +23,19 @@ export interface VisitorStats {
   totalViews: number | null
   loading: boolean
   error: boolean
+}
+
+function normalizePath(path: string): string {
+  const withSlash = path.startsWith('/') ? path : `/${path}`
+  return withSlash.replace(/\/+$/, '') || '/'
+}
+
+function isVisitorCounterPage(): boolean {
+  if (typeof window === 'undefined') return false
+  return (
+    window.location.origin === VISITOR_ALLOWED_ORIGIN &&
+    normalizePath(window.location.pathname) === VISITOR_ALLOWED_PATH
+  )
 }
 
 function encodeFirebasePath(statePath: string): string {
@@ -91,7 +110,13 @@ async function incrementTotalViews(totalUrl: string): Promise<number | null> {
 }
 
 export function useVisitorStats(): VisitorStats {
-  const configured = Boolean(FIREBASE_DATABASE_URL)
+  const firebaseConfigured = Boolean(FIREBASE_DATABASE_URL)
+  const [configured, setConfigured] = useState(false)
+
+  useEffect(() => {
+    setConfigured(firebaseConfigured && isVisitorCounterPage())
+  }, [firebaseConfigured])
+
   const urls = useMemo(() => {
     if (!configured) return null
     const base = VISITOR_PATH.replace(/^\/+|\/+$/g, '')
@@ -102,10 +127,10 @@ export function useVisitorStats(): VisitorStats {
   }, [configured])
 
   const [stats, setStats] = useState<VisitorStats>({
-    configured,
+    configured: false,
     liveViewers: null,
     totalViews: null,
-    loading: configured,
+    loading: false,
     error: false,
   })
   const viewerUrlRef = useRef<string | null>(null)

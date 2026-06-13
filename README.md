@@ -26,7 +26,9 @@ sanitized facts only                        main branch: this app ──▶ Page
   subscribes to Firebase Realtime Database over Server-Sent Events and keeps
   GitHub polling as a slower fallback.
 - With the same Firebase database configured, the page shows a live viewer count
-  in the top-right HUD and a total viewed count at the bottom.
+  in the top-right HUD and a total viewed count at the bottom. Visitor counting
+  is enabled only on `https://onelif2.github.io/pixel-office-live/`; local and
+  Jetson preview URLs do not write visitor stats.
 - The refresh button forces an immediate poll, including the GitHub Contents
   API freshness source.
 - Everything else (characters wandering, pets, weather, animations) runs
@@ -57,6 +59,8 @@ adding a frontend dependency:
   - `NEXT_PUBLIC_FIREBASE_STATE_PATH`, default `pixel-office/live/state`
   - `NEXT_PUBLIC_FIREBASE_STREAM_URL`, optional full `.json` stream URL override
   - `NEXT_PUBLIC_FIREBASE_VISITOR_PATH`, default `pixel-office/live/visitors`
+  - `NEXT_PUBLIC_VISITOR_ALLOWED_ORIGIN`, default `https://onelif2.github.io`
+  - `NEXT_PUBLIC_VISITOR_ALLOWED_PATH`, default `/pixel-office-live`
 - The database path must allow public read access to the sanitized state only.
   Do not expose private OpenClaw paths or raw session content.
 - Visitor counts are public, decorative counters. Public clients need read/write
