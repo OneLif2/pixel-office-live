@@ -27,7 +27,9 @@ import {
   usePublicOfficeState,
   toAgentActivities,
   toSeatAssignments,
+  decayAgentState,
 } from '@/lib/public-state'
+import { useVisitorStats } from '@/lib/visitor-stats'
 
 const FIT_PADDING_PX = 24
 const TOP_EXTRA_PX = 56 // keep room for the HUD above the office
@@ -59,6 +61,15 @@ function formatLatency(ms: number): string {
   return remMinutes ? `${hours}h ${remMinutes}m` : `${hours}h`
 }
 
+function formatCount(value: number | null): string {
+  if (value === null) return '--'
+  if (value < 10_000) return value.toLocaleString('en-US')
+  return new Intl.NumberFormat('en-US', {
+    notation: 'compact',
+    maximumFractionDigits: 1,
+  }).format(value)
+}
+
 export default function PublicOfficePage() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -71,6 +82,7 @@ export default function PublicOfficePage() {
   const [weather, setWeather] = useState<PixelOfficeWeather>('clear')
   const [now, setNow] = useState(() => Date.now())
   const { state, stale, lastFetched, usingMock, versionMismatch, refreshing, refresh } = usePublicOfficeState()
+  const visitorStats = useVisitorStats()
 
   // One-time init: sprite assets + office layout
   useEffect(() => {
@@ -126,18 +138,22 @@ export default function PublicOfficePage() {
     }
   }, [])
 
-  // Snapshot facts → engine characters
+  // Snapshot facts → engine characters. `now` is in the deps so the per-agent
+  // decay (toAgentActivities) re-evaluates on the 1s tick: a quiet agent stands
+  // down / leaves on the wall clock, not only when a fresh snapshot arrives.
+  // syncAgentsToOffice is idempotent across same-state calls, so re-running it
+  // each second is cheap and does not disturb movement (driven by office.update).
   useEffect(() => {
     const office = officeRef.current
     if (!ready || !office || !state) return
     syncAgentsToOffice(
-      toAgentActivities(state, stale),
+      toAgentActivities(state, stale, now),
       office,
       agentIdMapRef.current,
       nextIdRef.current,
       toSeatAssignments(state),
     )
-  }, [ready, state, stale])
+  }, [ready, state, stale, now])
 
   // Game loop: everything animates client-side between snapshots
   useEffect(() => {
@@ -232,8 +248,8 @@ export default function PublicOfficePage() {
   const STATE_LABELS: Record<string, string> = { w: 'working', i: 'idle', a: 'waiting', o: 'offline' }
   const agentChips = state
     ? Object.entries(state.agents).map(([id, a]) => {
-        const s = stale && (a.s === 'w' || a.s === 'a') ? 'i' : a.s
-        return { id, name: a.n, emoji: a.e, state: STATE_LABELS[s] ?? 'offline', sub: stale ? 0 : a.sub }
+        const s = decayAgentState(a.s, a.ls, stale, now)
+        return { id, name: a.n, emoji: a.e, state: STATE_LABELS[s] ?? 'offline', sub: stale || s === 'o' ? 0 : a.sub }
       })
     : []
 
@@ -255,6 +271,16 @@ export default function PublicOfficePage() {
           </div>
         </div>
         <div className="office-badges">
+          {visitorStats.configured && (
+            <span
+              className={`live-viewer-badge${visitorStats.error ? ' counter-error' : ''}`}
+              title="Live viewers"
+            >
+              <span className="live-viewer-dot" />
+              <span className="live-viewer-label">LIVE</span>
+              <span className="live-viewer-count">{formatCount(visitorStats.liveViewers)}</span>
+            </span>
+          )}
           {versionMismatch && <span className="badge badge-stale">update available — please refresh later</span>}
           {state && stale && !usingMock && (
             <span className="badge badge-stale">⚠ last updated {formatAgo(ageMs)}</span>
@@ -292,6 +318,12 @@ export default function PublicOfficePage() {
           </div>
         </div>
       </div>
+      {visitorStats.configured && (
+        <div className={`visitor-total${visitorStats.error ? ' counter-error' : ''}`} title="Total viewed count">
+          <span>Total viewed</span>
+          <strong>{formatCount(visitorStats.totalViews)}</strong>
+        </div>
+      )}
       {!ready && <div className="office-loading">loading office…</div>}
     </main>
   )

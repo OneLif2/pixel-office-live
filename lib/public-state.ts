@@ -69,14 +69,49 @@ export function isStale(state: PublicState, now = Date.now()): boolean {
   return now - state.ts > state.staleAfterMs
 }
 
+// Mirror of the exporter's offline threshold (snapshot-exporter
+// lib/build-snapshot.mjs: OFFLINE_MS, detectState `timeDiff > OFFLINE_MS → 'o'`).
+// Kept in sync by hand because the two apps are separate packages.
+const AGENT_OFFLINE_MS = 10 * 60 * 1000
+
+/**
+ * Decay one agent's last-exported status to what it should read *now*.
+ *
+ * The exporter recomputes every agent together, but only when it runs (its
+ * file-change watcher + 5-min timer). Between runs an agent that quietly stopped
+ * keeps its last-pushed status, so it only flips once some *other* event
+ * triggers the next export — which is why agents appeared to change status
+ * together. Applying the exporter's time rules here, against each agent's own
+ * `ls`, keeps status correct on the wall clock regardless of export timing.
+ *
+ * Only the offline rule is replicated: it depends solely on `ls` (which the
+ * snapshot carries), so it matches the exporter exactly. The working→idle
+ * transition there depends on the private session tail we don't have, so it is
+ * left to the exporter (bounded by its 5-min timer). `stale` (whole-snapshot
+ * age) still downgrades active agents to idle: signal lost ≠ busy.
+ */
+export function decayAgentState(
+  s: PublicAgent['s'],
+  ls: number,
+  stale: boolean,
+  now = Date.now(),
+): PublicAgent['s'] {
+  if (s === 'o') return 'o'
+  if (ls > 0 && now - ls > AGENT_OFFLINE_MS) return 'o'
+  if (stale && (s === 'w' || s === 'a')) return 'i'
+  return s
+}
+
 /**
  * Map the sanitized snapshot to the engine's AgentActivity shape.
- * When the snapshot is stale, active agents render as idle (signal lost ≠ busy).
+ * Each agent's status is decayed to the wall clock (see decayAgentState) so a
+ * quiet agent stands down/leaves on its own schedule, not when another agent's
+ * activity happens to trigger the next export.
  */
-export function toAgentActivities(state: PublicState, stale: boolean): AgentActivity[] {
+export function toAgentActivities(state: PublicState, stale: boolean, now = Date.now()): AgentActivity[] {
   return Object.entries(state.agents).map(([agentId, a]) => {
-    const s = stale && (a.s === 'w' || a.s === 'a') ? 'i' : a.s
-    const subCount = stale ? 0 : Math.max(0, Math.min(8, a.sub | 0))
+    const s = decayAgentState(a.s, a.ls, stale, now)
+    const subCount = stale || s === 'o' ? 0 : Math.max(0, Math.min(8, a.sub | 0))
     return {
       // use the display name as the engine id so labels render as "Dido"
       // rather than "Dido (dido)" (agentBridge appends ids that differ)

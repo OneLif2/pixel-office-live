@@ -25,6 +25,8 @@ sanitized facts only                        main branch: this app ──▶ Page
 - If `NEXT_PUBLIC_FIREBASE_DATABASE_URL` is set at build time, the browser also
   subscribes to Firebase Realtime Database over Server-Sent Events and keeps
   GitHub polling as a slower fallback.
+- With the same Firebase database configured, the page shows a live viewer count
+  in the top-right HUD and a total viewed count at the bottom.
 - The refresh button forces an immediate poll, including the GitHub Contents
   API freshness source.
 - Everything else (characters wandering, pets, weather, animations) runs
@@ -54,8 +56,38 @@ adding a frontend dependency:
     `https://your-project-default-rtdb.firebaseio.com`
   - `NEXT_PUBLIC_FIREBASE_STATE_PATH`, default `pixel-office/live/state`
   - `NEXT_PUBLIC_FIREBASE_STREAM_URL`, optional full `.json` stream URL override
+  - `NEXT_PUBLIC_FIREBASE_VISITOR_PATH`, default `pixel-office/live/visitors`
 - The database path must allow public read access to the sanitized state only.
   Do not expose private OpenClaw paths or raw session content.
+- Visitor counts are public, decorative counters. Public clients need read/write
+  access to the visitor counter path, so do not treat those numbers as audited
+  analytics.
+
+Minimal rule shape for the visitor counter:
+
+```json
+{
+  "rules": {
+    "pixel-office": {
+      "live": {
+        "visitors": {
+          ".read": true,
+          "totalViews": {
+            ".write": true,
+            ".validate": "newData.isNumber() && newData.val() >= 0"
+          },
+          "live": {
+            "$viewer": {
+              ".write": true,
+              ".validate": "newData.val() === null || (newData.hasChildren(['seenAt']) && newData.child('seenAt').isNumber())"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 When these variables are not set, the page behaves exactly like the GitHub-only
 polling version.
