@@ -39,9 +39,24 @@ const SNAPSHOT_API_URL =
   process.env.NEXT_PUBLIC_SNAPSHOT_API_URL ||
   'https://api.github.com/repos/OneLif2/pixel-office-live/contents/state.json?ref=data'
 
+const FIREBASE_DATABASE_URL = (process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL || '').replace(/\/+$/, '')
+const FIREBASE_STATE_PATH = process.env.NEXT_PUBLIC_FIREBASE_STATE_PATH || 'pixel-office/live/state'
+const FIREBASE_STREAM_URL =
+  process.env.NEXT_PUBLIC_FIREBASE_STREAM_URL ||
+  (FIREBASE_DATABASE_URL ? `${FIREBASE_DATABASE_URL}/${encodeFirebasePath(FIREBASE_STATE_PATH)}.json` : '')
+
 const MOCK_URL = `${ASSET_BASE}/mock-state.json`
 const FETCH_INTERVAL_MS = 20_000
+const REALTIME_FALLBACK_INTERVAL_MS = 60_000
 const API_EVERY_N_CYCLES = 4
+
+function encodeFirebasePath(statePath: string): string {
+  return statePath
+    .split('/')
+    .filter(Boolean)
+    .map((part) => encodeURIComponent(part))
+    .join('/')
+}
 
 const STATE_MAP: Record<PublicAgent['s'], AgentActivity['state']> = {
   w: 'working',
@@ -107,7 +122,7 @@ export interface PublicOfficeState {
 
 type PublicOfficeFetchState = Omit<PublicOfficeState, 'refreshing' | 'refresh'>
 
-/** Fetch the snapshot every 20 s; pause when hidden; refetch on visibility/manual refresh. */
+/** Subscribe to realtime when configured; keep GitHub polling as fallback/manual refresh. */
 export function usePublicOfficeState(): PublicOfficeState {
   const [result, setResult] = useState<PublicOfficeFetchState>({
     state: null,
@@ -129,6 +144,7 @@ export function usePublicOfficeState(): PublicOfficeState {
   useEffect(() => {
     let cancelled = false
     let timer: ReturnType<typeof setInterval> | null = null
+    let realtime: EventSource | null = null
     let manualRefreshInFlight = false
 
     const apply = (state: PublicState, usingMock: boolean) => {
@@ -155,6 +171,17 @@ export function usePublicOfficeState(): PublicOfficeState {
         setResult((prev) => ({ ...prev, versionMismatch: true }))
       }
       return state
+    }
+
+    const applyRealtimeEvent = (event: Event) => {
+      const message = event as MessageEvent<string>
+      try {
+        const payload = JSON.parse(message.data) as { data?: unknown }
+        const state = parsePublicState(payload?.data)
+        if (state) apply(state, false)
+      } catch {
+        // Firebase keep-alive / malformed payload: ignore and let polling recover.
+      }
     }
 
     const fetchSnapshot = async (forceApi = false) => {
@@ -204,14 +231,21 @@ export function usePublicOfficeState(): PublicOfficeState {
       if (!document.hidden) void fetchSnapshot(true)
     }
 
+    if (FIREBASE_STREAM_URL && typeof EventSource !== 'undefined') {
+      realtime = new EventSource(FIREBASE_STREAM_URL)
+      realtime.addEventListener('put', applyRealtimeEvent)
+      realtime.addEventListener('patch', applyRealtimeEvent)
+    }
+
     void fetchSnapshot(true)
     timer = setInterval(() => {
       if (!document.hidden) void fetchSnapshot()
-    }, FETCH_INTERVAL_MS)
+    }, FIREBASE_STREAM_URL ? REALTIME_FALLBACK_INTERVAL_MS : FETCH_INTERVAL_MS)
     document.addEventListener('visibilitychange', onVisibility)
 
     return () => {
       cancelled = true
+      if (realtime) realtime.close()
       if (timer) clearInterval(timer)
       document.removeEventListener('visibilitychange', onVisibility)
     }

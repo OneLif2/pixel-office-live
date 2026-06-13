@@ -10,8 +10,8 @@ private machine                          GitHub                      visitors
 ────────────────                         ──────────────────────      ────────
 snapshot exporter (path + cron)  ──push──▶  data branch: state.json
 sanitized facts only                        main branch: this app ──▶ Pages (static)
-                                                                      fetches state.json
-                                                                      every 20 s
+                                                                      realtime stream
+                                                                      + state.json fallback
 ```
 
 - The page is a **static export** (`next build`, `output: 'export'`). There are
@@ -22,6 +22,9 @@ sanitized facts only                        main branch: this app ──▶ Page
   `v, ts, staleAfterMs, agents.{n,e,s,ls,sub,seat}, pets[].{kind,name}`.
 - The browser polls raw GitHub every 20 seconds and the GitHub Contents API
   every 4th cycle as the fresher source.
+- If `NEXT_PUBLIC_FIREBASE_DATABASE_URL` is set at build time, the browser also
+  subscribes to Firebase Realtime Database over Server-Sent Events and keeps
+  GitHub polling as a slower fallback.
 - The refresh button forces an immediate poll, including the GitHub Contents
   API freshness source.
 - Everything else (characters wandering, pets, weather, animations) runs
@@ -40,6 +43,22 @@ npm run check-static  # assert the build contains no /api references
 
 `lib/pixel-office/` (engine) and `public/assets/pixel-office/` are vendored
 from a private workspace via `npm run sync-engine`; edit them there, not here.
+
+## Optional realtime transport
+
+The static page can receive snapshots from Firebase Realtime Database without
+adding a frontend dependency:
+
+- Build-time GitHub repository variables:
+  - `NEXT_PUBLIC_FIREBASE_DATABASE_URL`, for example
+    `https://your-project-default-rtdb.firebaseio.com`
+  - `NEXT_PUBLIC_FIREBASE_STATE_PATH`, default `pixel-office/live/state`
+  - `NEXT_PUBLIC_FIREBASE_STREAM_URL`, optional full `.json` stream URL override
+- The database path must allow public read access to the sanitized state only.
+  Do not expose private OpenClaw paths or raw session content.
+
+When these variables are not set, the page behaves exactly like the GitHub-only
+polling version.
 
 ## Data scrub procedure
 
