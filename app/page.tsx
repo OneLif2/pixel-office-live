@@ -48,6 +48,17 @@ function formatAgo(ms: number): string {
   return `${Math.round(min / 60)} h ago`
 }
 
+function formatLatency(ms: number): string {
+  const totalSeconds = Math.max(0, Math.round(ms / 1000))
+  if (totalSeconds < 60) return `${totalSeconds}s`
+  const minutes = Math.floor(totalSeconds / 60)
+  const seconds = totalSeconds % 60
+  if (minutes < 60) return seconds ? `${minutes}m ${seconds}s` : `${minutes}m`
+  const hours = Math.floor(minutes / 60)
+  const remMinutes = minutes % 60
+  return remMinutes ? `${hours}h ${remMinutes}m` : `${hours}h`
+}
+
 export default function PublicOfficePage() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -58,7 +69,8 @@ export default function PublicOfficePage() {
 
   const [ready, setReady] = useState(false)
   const [weather, setWeather] = useState<PixelOfficeWeather>('clear')
-  const { state, stale, usingMock, versionMismatch, refreshing, refresh } = usePublicOfficeState()
+  const [now, setNow] = useState(() => Date.now())
+  const { state, stale, lastFetched, usingMock, versionMismatch, refreshing, refresh } = usePublicOfficeState()
 
   // One-time init: sprite assets + office layout
   useEffect(() => {
@@ -90,6 +102,12 @@ export default function PublicOfficePage() {
     return () => {
       cancelled = true
     }
+  }, [])
+
+  // Keep age/latency badges live even between snapshot fetches.
+  useEffect(() => {
+    const timer = setInterval(() => setNow(Date.now()), 1000)
+    return () => clearInterval(timer)
   }, [])
 
   // Weather: per-visitor, localStorage only
@@ -204,7 +222,12 @@ export default function PublicOfficePage() {
     setWeather(w)
   }
 
-  const ageMs = state ? Date.now() - state.ts : 0
+  const ageMs = state ? now - state.ts : 0
+  const receiveLagMs = state && lastFetched ? Math.max(0, lastFetched - state.ts) : null
+  const latencyTitle =
+    receiveLagMs === null
+      ? 'Snapshot age from exporter timestamp.'
+      : `Snapshot age from exporter timestamp. Browser received it after ${formatLatency(receiveLagMs)}.`
 
   const STATE_LABELS: Record<string, string> = { w: 'working', i: 'idle', a: 'waiting', o: 'offline' }
   const agentChips = state
@@ -238,6 +261,11 @@ export default function PublicOfficePage() {
           )}
           {state && !stale && !usingMock && (
             <span className="badge">updated {formatAgo(ageMs)}</span>
+          )}
+          {state && !usingMock && (
+            <span className={`badge badge-latency${stale ? ' badge-stale' : ''}`} title={latencyTitle}>
+              latency {formatLatency(ageMs)}
+            </span>
           )}
           {usingMock && <span className="badge badge-mock">demo data</span>}
           <button

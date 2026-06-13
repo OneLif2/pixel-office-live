@@ -146,6 +146,16 @@ body {
   color: #8b949e;
 }
 
+.badge-latency {
+  color: #7ee787;
+  border-color: rgba(126, 231, 135, 0.45);
+}
+
+.badge-latency.badge-stale {
+  color: #f0b429;
+  border-color: rgba(240, 180, 41, 0.5);
+}
+
 .refresh-btn {
   width: 28px;
   height: 28px;
