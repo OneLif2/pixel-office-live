@@ -31,6 +31,12 @@ const VISITOR_ALLOWED_PATH = normalizePath(
   process.env.NEXT_PUBLIC_VISITOR_ALLOWED_PATH || '/pixel-office-live',
 )
 
+// A browser counts as a new view at most once per this window: a refresh sooner
+// than this does not add to the total, a return visit after it does. Stored in
+// localStorage so the cooldown spans refreshes and tabs. Override via env.
+const VIEW_COOLDOWN_MS = Number(process.env.NEXT_PUBLIC_COUNTER_COOLDOWN_MS) || 2 * 60 * 1000
+const VIEW_COUNTED_AT_KEY = 'pixel-office-live-view-counted-at-v1'
+
 export interface VisitorStats {
   configured: boolean
   totalViews: number | null
@@ -55,6 +61,21 @@ function readCount(raw: unknown): number | null {
   const value = (raw as { count?: unknown } | null)?.count
   if (typeof value === 'number' && Number.isFinite(value)) return Math.max(0, Math.floor(value))
   return null
+}
+
+function shouldCountView(now: number): boolean {
+  try {
+    const last = Number(localStorage.getItem(VIEW_COUNTED_AT_KEY)) || 0
+    return now - last > VIEW_COOLDOWN_MS
+  } catch {
+    return true
+  }
+}
+
+function markViewCounted(now: number): void {
+  try {
+    localStorage.setItem(VIEW_COUNTED_AT_KEY, String(now))
+  } catch {}
 }
 
 async function fetchCount(action: 'up' | 'get'): Promise<number | null> {
@@ -87,6 +108,7 @@ export function useVisitorStats(): VisitorStats {
         const total = await fetchCount(action)
         if (cancelled) return
         setStats({ configured: true, totalViews: total, loading: false, error: total === null })
+        if (action === 'up' && total !== null) markViewCounted(Date.now())
       } catch {
         if (!cancelled) {
           setStats((prev) => ({ ...prev, configured: true, loading: false, error: true }))
@@ -94,8 +116,9 @@ export function useVisitorStats(): VisitorStats {
       }
     }
 
-    // Every page load / refresh counts as one view (counterapi `/up`).
-    void load('up')
+    // A page load counts as a new view only once per cooldown window, so rapid
+    // refreshes don't inflate the total but a genuine return visit does.
+    void load(shouldCountView(Date.now()) ? 'up' : 'get')
 
     // Refresh the displayed total when the visitor returns to the tab, so it
     // reflects other people's visits without a polling loop.
