@@ -31,9 +31,6 @@ const VISITOR_ALLOWED_PATH = normalizePath(
   process.env.NEXT_PUBLIC_VISITOR_ALLOWED_PATH || '/pixel-office-live',
 )
 
-// One increment per browser tab session; repeat loads only read the total.
-const VIEW_COUNTED_KEY = 'pixel-office-live-view-counted-v1'
-
 export interface VisitorStats {
   configured: boolean
   totalViews: number | null
@@ -85,24 +82,11 @@ export function useVisitorStats(): VisitorStats {
     let cancelled = false
     setStats((prev) => ({ ...prev, configured: true, loading: true }))
 
-    const alreadyCounted = (() => {
-      try {
-        return sessionStorage.getItem(VIEW_COUNTED_KEY) === '1'
-      } catch {
-        return false
-      }
-    })()
-
     const load = async (action: 'up' | 'get') => {
       try {
         const total = await fetchCount(action)
         if (cancelled) return
         setStats({ configured: true, totalViews: total, loading: false, error: total === null })
-        if (action === 'up' && total !== null) {
-          try {
-            sessionStorage.setItem(VIEW_COUNTED_KEY, '1')
-          } catch {}
-        }
       } catch {
         if (!cancelled) {
           setStats((prev) => ({ ...prev, configured: true, loading: false, error: true }))
@@ -110,7 +94,8 @@ export function useVisitorStats(): VisitorStats {
       }
     }
 
-    void load(alreadyCounted ? 'get' : 'up')
+    // Every page load / refresh counts as one view (counterapi `/up`).
+    void load('up')
 
     // Refresh the displayed total when the visitor returns to the tab, so it
     // reflects other people's visits without a polling loop.

@@ -77,18 +77,14 @@ const AGENT_OFFLINE_MS = 10 * 60 * 1000
 /**
  * Decay one agent's last-exported status to what it should read *now*.
  *
- * The exporter recomputes every agent together, but only when it runs (its
- * file-change watcher + 5-min timer). Between runs an agent that quietly stopped
- * keeps its last-pushed status, so it only flips once some *other* event
- * triggers the next export — which is why agents appeared to change status
- * together. Applying the exporter's time rules here, against each agent's own
- * `ls`, keeps status correct on the wall clock regardless of export timing.
- *
- * Only the offline rule is replicated: it depends solely on `ls` (which the
- * snapshot carries), so it matches the exporter exactly. The working→idle
- * transition there depends on the private session tail we don't have, so it is
- * left to the exporter (bounded by its 5-min timer). `stale` (whole-snapshot
- * age) still downgrades active agents to idle: signal lost ≠ busy.
+ * While the snapshot is fresh, trust the exporter's status exactly: it
+ * recomputes every agent from the live session + trace state on each run (file
+ * watcher + heartbeat), so re-deriving status here only fabricates wrong
+ * transitions (e.g. flipping a busy agent to idle/offline because its rounded
+ * `ls` looks old between heartbeats). Only once the whole snapshot has gone
+ * stale — signal genuinely lost — do we conservatively decay: drop to offline
+ * when `ls` is well past the offline window, otherwise stand active agents down
+ * to idle since we can no longer confirm they are busy.
  */
 export function decayAgentState(
   s: PublicAgent['s'],
@@ -97,8 +93,9 @@ export function decayAgentState(
   now = Date.now(),
 ): PublicAgent['s'] {
   if (s === 'o') return 'o'
+  if (!stale) return s
   if (ls > 0 && now - ls > AGENT_OFFLINE_MS) return 'o'
-  if (stale && (s === 'w' || s === 'a')) return 'i'
+  if (s === 'w' || s === 'a') return 'i'
   return s
 }
 
@@ -145,6 +142,9 @@ function parsePublicState(raw: unknown): PublicState | null {
   return d
 }
 
+/** Outcome of the last manual refresh, for honest button feedback. */
+export type RefreshState = 'idle' | 'refreshing' | 'updated' | 'nochange' | 'error'
+
 export interface PublicOfficeState {
   state: PublicState | null
   stale: boolean
@@ -152,10 +152,11 @@ export interface PublicOfficeState {
   usingMock: boolean
   versionMismatch: boolean
   refreshing: boolean
+  refreshState: RefreshState
   refresh: () => void
 }
 
-type PublicOfficeFetchState = Omit<PublicOfficeState, 'refreshing' | 'refresh'>
+type PublicOfficeFetchState = Omit<PublicOfficeState, 'refreshing' | 'refreshState' | 'refresh'>
 
 /** Subscribe to realtime when configured; keep GitHub polling as fallback/manual refresh. */
 export function usePublicOfficeState(): PublicOfficeState {
@@ -167,6 +168,7 @@ export function usePublicOfficeState(): PublicOfficeState {
     versionMismatch: false,
   })
   const [refreshing, setRefreshing] = useState(false)
+  const [refreshState, setRefreshState] = useState<RefreshState>('idle')
   const hasRealData = useRef(false)
   const newestTs = useRef(0)
   const cycle = useRef(0)
@@ -181,6 +183,7 @@ export function usePublicOfficeState(): PublicOfficeState {
     let timer: ReturnType<typeof setInterval> | null = null
     let realtime: EventSource | null = null
     let manualRefreshInFlight = false
+    let refreshClearTimer: ReturnType<typeof setTimeout> | null = null
 
     const apply = (state: PublicState, usingMock: boolean) => {
       if (cancelled) return
@@ -220,24 +223,34 @@ export function usePublicOfficeState(): PublicOfficeState {
     }
 
     const fetchSnapshot = async (forceApi = false) => {
-      let gotAny = false
       const shouldFetchApi = forceApi || cycle.current % API_EVERY_N_CYCLES === 0
-      const sources: Array<Promise<PublicState | null>> = []
+      let apiOk = false
 
+      const tasks: Array<Promise<boolean>> = []
       if (shouldFetchApi) {
-        sources.push(fetchFrom(SNAPSHOT_API_URL, {
-          headers: { Accept: 'application/vnd.github.raw+json' },
-        }))
+        tasks.push(
+          (async () => {
+            const state = await fetchFrom(SNAPSHOT_API_URL, {
+              headers: { Accept: 'application/vnd.github.raw+json' },
+            })
+            if (!state) return false
+            apply(state, false)
+            apiOk = true
+            return true
+          })(),
+        )
       }
-      sources.push(fetchFrom(SNAPSHOT_URL))
+      tasks.push(
+        (async () => {
+          const state = await fetchFrom(SNAPSHOT_URL)
+          if (!state) return false
+          apply(state, false)
+          return true
+        })(),
+      )
 
-      const results = await Promise.allSettled(sources.map(async (source) => {
-        const state = await source
-        if (!state) return false
-        apply(state, false)
-        return true
-      }))
-      gotAny = results.some((res) => res.status === 'fulfilled' && res.value)
+      const results = await Promise.allSettled(tasks)
+      const gotAny = results.some((res) => res.status === 'fulfilled' && res.value)
 
       cycle.current++
 
@@ -248,17 +261,35 @@ export function usePublicOfficeState(): PublicOfficeState {
           if (state) apply({ ...state, ts: Date.now() }, true)
         } catch {}
       }
+
+      return { gotAny, apiAttempted: shouldFetchApi, apiOk }
     }
 
     refreshRef.current = async () => {
       if (manualRefreshInFlight || cancelled) return
       manualRefreshInFlight = true
       setRefreshing(true)
+      setRefreshState('refreshing')
+      const prevTs = newestTs.current
+      let outcome: RefreshState = 'error'
       try {
-        await fetchSnapshot(true)
+        const { gotAny, apiAttempted, apiOk } = await fetchSnapshot(true)
+        if (newestTs.current > prevTs) outcome = 'updated' // got a newer snapshot
+        else if (apiAttempted && !apiOk) outcome = 'error' // fresh source unreachable (e.g. rate-limited)
+        else if (gotAny) outcome = 'nochange' // reached GitHub, already current
+        else outcome = 'error'
+      } catch {
+        outcome = 'error'
       } finally {
         manualRefreshInFlight = false
         if (!cancelled) setRefreshing(false)
+      }
+      if (!cancelled) {
+        setRefreshState(outcome)
+        if (refreshClearTimer) clearTimeout(refreshClearTimer)
+        refreshClearTimer = setTimeout(() => {
+          if (!cancelled) setRefreshState('idle')
+        }, 2500)
       }
     }
 
@@ -282,9 +313,10 @@ export function usePublicOfficeState(): PublicOfficeState {
       cancelled = true
       if (realtime) realtime.close()
       if (timer) clearInterval(timer)
+      if (refreshClearTimer) clearTimeout(refreshClearTimer)
       document.removeEventListener('visibilitychange', onVisibility)
     }
   }, [])
 
-  return { ...result, refreshing, refresh }
+  return { ...result, refreshing, refreshState, refresh }
 }

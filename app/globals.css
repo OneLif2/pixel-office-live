@@ -214,6 +214,18 @@ body {
   animation: refresh-spin 0.7s linear infinite;
 }
 
+/* Transient outcome feedback after a manual refresh. */
+.refresh-btn.refresh-updated,
+.refresh-btn.refresh-nochange {
+  border-color: #3fb950;
+  color: #3fb950;
+}
+
+.refresh-btn.refresh-error {
+  border-color: #f0b429;
+  color: #f0b429;
+}
+
 @keyframes refresh-spin {
   to {
     transform: rotate(360deg);

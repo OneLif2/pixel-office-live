@@ -42,6 +42,22 @@ const WEATHER_ICONS: Record<PixelOfficeWeather, string> = {
   night: '🌙',
 }
 
+// Honest feedback for the manual refresh button.
+const REFRESH_GLYPH: Record<string, string> = {
+  idle: '↻',
+  refreshing: '↻',
+  updated: '✓',
+  nochange: '✓',
+  error: '⚠',
+}
+const REFRESH_TITLE: Record<string, string> = {
+  idle: 'Refresh status',
+  refreshing: 'Refreshing…',
+  updated: 'Updated to the latest snapshot',
+  nochange: 'Already up to date',
+  error: 'Could not reach the fresh source (GitHub rate limit?) — try again shortly',
+}
+
 function formatAgo(ms: number): string {
   const min = Math.max(0, Math.round(ms / 60000))
   if (min < 1) return 'just now'
@@ -81,7 +97,8 @@ export default function PublicOfficePage() {
   const [ready, setReady] = useState(false)
   const [weather, setWeather] = useState<PixelOfficeWeather>('clear')
   const [now, setNow] = useState(() => Date.now())
-  const { state, stale, lastFetched, usingMock, versionMismatch, refreshing, refresh } = usePublicOfficeState()
+  const { state, stale, lastFetched, usingMock, versionMismatch, refreshing, refreshState, refresh } =
+    usePublicOfficeState()
   const visitorStats = useVisitorStats()
 
   // One-time init: sprite assets + office layout
@@ -286,13 +303,13 @@ export default function PublicOfficePage() {
           {usingMock && <span className="badge badge-mock">demo data</span>}
           <button
             type="button"
-            className={`refresh-btn${refreshing ? ' refreshing' : ''}`}
-            title="Refresh status"
-            aria-label="Refresh status"
+            className={`refresh-btn${refreshing ? ' refreshing' : ''} refresh-${refreshState}`}
+            title={REFRESH_TITLE[refreshState]}
+            aria-label={REFRESH_TITLE[refreshState]}
             onClick={refresh}
             disabled={refreshing}
           >
-            ↻
+            {refreshing ? '↻' : REFRESH_GLYPH[refreshState]}
           </button>
           <div className="weather-bar">
             {WEATHER_OPTIONS.map((opt) => (
