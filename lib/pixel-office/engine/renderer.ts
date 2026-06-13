@@ -1093,9 +1093,11 @@ export function renderScene(
     }
 
     const baseSprites = ch.isCat ? getCatSprites(ch.palette) : ch.isDog ? getDogSprites() : getCharacterSprites(ch.palette, ch.hueShift)
-    const sprites = (ch.isCat || ch.isDog) && ch.petColor
-      ? colorizeCharacterSprites(baseSprites, ch.isCat ? `cat-${ch.palette}` : 'dog', ch.petColor)
-      : baseSprites
+    // FloorColor tint: pets carry it as petColor, agents as colorTint. Either
+    // way it runs through the same colorize path on top of the base sprites.
+    const tint = ch.isCat || ch.isDog ? ch.petColor : ch.colorTint
+    const tintKey = ch.isCat ? `cat-${ch.palette}` : ch.isDog ? 'dog' : `agent-${ch.palette}-${ch.hueShift}`
+    const sprites = tint ? colorizeCharacterSprites(baseSprites, tintKey, tint) : baseSprites
     const spriteData = getCharacterSprite(ch, sprites)
     const cached = getCachedSprite(spriteData, zoom)
     const charSpriteW = spriteWidth(spriteData)

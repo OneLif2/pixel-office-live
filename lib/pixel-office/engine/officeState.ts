@@ -600,6 +600,12 @@ export class OfficeState {
     return null
   }
 
+  /** Replace pets from an external source (e.g. the public snapshot) and re-sync. */
+  syncPets(pets: OfficePet[]): void {
+    this.layout.pets = pets
+    this.syncPetsFromLayout()
+  }
+
   private syncPetsFromLayout(): void {
     const pets = this.layout.pets ?? []
     const livePetIds = new Set(pets.map((p) => p.id))

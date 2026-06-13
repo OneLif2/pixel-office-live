@@ -27,6 +27,8 @@ import {
   usePublicOfficeState,
   toAgentActivities,
   toSeatAssignments,
+  toAgentAppearance,
+  toOfficePets,
   decayAgentState,
 } from '@/lib/public-state'
 import { useVisitorStats } from '@/lib/visitor-stats'
@@ -169,8 +171,17 @@ export default function PublicOfficePage() {
       agentIdMapRef.current,
       nextIdRef.current,
       toSeatAssignments(state),
+      toAgentAppearance(state),
     )
   }, [ready, state, stale, now])
+
+  // Pets come from the snapshot so the public office matches the dashboard
+  // (skin/color/position). Keyed on the snapshot only, not the 1s clock tick.
+  useEffect(() => {
+    const office = officeRef.current
+    if (!ready || !office || !state) return
+    office.syncPets(toOfficePets(state))
+  }, [ready, state])
 
   // Game loop: everything animates client-side between snapshots
   useEffect(() => {

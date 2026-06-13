@@ -1,4 +1,11 @@
 import { OfficeState } from './engine/officeState'
+import type { FloorColor } from './types'
+
+/** User-chosen appearance for an agent, persisted per OpenClaw agent id. */
+export interface AgentAppearance {
+  skin?: number
+  color?: FloorColor | null
+}
 
 export interface SubagentInfo {
   toolId: string
@@ -90,6 +97,7 @@ export function syncAgentsToOffice(
   agentIdMap: Map<string, number>,
   nextIdRef: { current: number },
   seatAssignments?: Record<string, string>,
+  agentAppearance?: Record<string, AgentAppearance>,
 ): void {
   const currentAgentIds = new Set(activities.map(a => a.agentId))
   refreshVariantOwners(activities)
@@ -128,9 +136,10 @@ export function syncAgentsToOffice(
       // 只有從 offline 恢復時才從門口走進來；
       // 頁面初始載入（isNew）時直接放到座位，避免讓使用者以為角色剛去摸魚回來
       const wasOffline = prevAgentStates.get(activity.agentId) === 'offline'
+      const initialSkin = agentAppearance?.[activity.agentId]?.skin ?? pinnedVariantForAgent(activity.agentId)
       office.addAgent(
         charId,
-        pinnedVariantForAgent(activity.agentId),
+        initialSkin,
         undefined,
         seatAssignments?.[activity.agentId],
         undefined,
@@ -141,11 +150,19 @@ export function syncAgentsToOffice(
     // Set label, avoiding duplicated values like "main (main)"
     const ch = office.characters.get(charId)
     if (ch) {
-      const preferredVariant = pinnedVariantForAgent(activity.agentId)
-      if (preferredVariant !== undefined) {
-        ch.palette = preferredVariant
+      const appearance = agentAppearance?.[activity.agentId]
+      if (appearance?.skin !== undefined) {
+        // user-chosen skin wins over the auto-assigned reserved/diverse variant
+        ch.palette = appearance.skin
         ch.hueShift = 0
+      } else {
+        const preferredVariant = pinnedVariantForAgent(activity.agentId)
+        if (preferredVariant !== undefined) {
+          ch.palette = preferredVariant
+          ch.hueShift = 0
+        }
       }
+      ch.colorTint = appearance?.color ?? undefined
       const displayName = activity.name?.trim()
       ch.label = displayName && displayName !== activity.agentId
         ? `${displayName} (${activity.agentId})`

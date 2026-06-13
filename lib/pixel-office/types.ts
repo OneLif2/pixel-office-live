@@ -239,6 +239,8 @@ export interface Character {
   isDog: boolean
   isLobster: boolean
   petColor?: FloorColor
+  /** Optional per-agent color tint (FloorColor colorize), set from the editor. */
+  colorTint?: FloorColor
   lobsterRageTimer: number
   lobsterBubbles: Array<{ age: number; x: number; y: number }>
   codeSnippets: Array<{ text: string; age: number; x: number; y: number }>

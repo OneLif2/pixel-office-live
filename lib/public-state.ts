@@ -1,7 +1,8 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
-import type { AgentActivity } from '@/lib/pixel-office/agentBridge'
+import type { AgentActivity, AgentAppearance } from '@/lib/pixel-office/agentBridge'
+import type { FloorColor, OfficePet } from '@/lib/pixel-office/types'
 import { ASSET_BASE } from '@/lib/asset-base'
 
 /**
@@ -15,6 +16,8 @@ export interface PublicAgent {
   ls: number // lastActive epoch ms
   sub: number // subagent count
   seat?: string // seat uid from agent-seats.json
+  skin?: number // palette index chosen in the dashboard
+  color?: FloorColor // color tint chosen in the dashboard
 }
 
 export interface PublicState {
@@ -22,7 +25,7 @@ export interface PublicState {
   ts: number
   staleAfterMs: number
   agents: Record<string, PublicAgent>
-  pets?: Array<{ kind: string; name?: string }>
+  pets?: Array<{ kind: string; name?: string; col?: number; row?: number; skin?: number; color?: FloorColor }>
 }
 
 export const SCHEMA_VERSION = 1
@@ -131,6 +134,44 @@ export function toSeatAssignments(state: PublicState): Record<string, string> {
     if (typeof a.seat === 'string' && a.seat) seats[a.n || agentId] = a.seat
   }
   return seats
+}
+
+/**
+ * Per-agent appearance (skin/color) from the snapshot, keyed by the same engine
+ * id toAgentActivities uses (display name), so the public office matches the
+ * dashboard's chosen look.
+ */
+export function toAgentAppearance(state: PublicState): Record<string, AgentAppearance> {
+  const out: Record<string, AgentAppearance> = {}
+  for (const [agentId, a] of Object.entries(state.agents)) {
+    const appearance: AgentAppearance = {}
+    if (typeof a.skin === 'number') appearance.skin = a.skin
+    if (a.color) appearance.color = a.color
+    if (appearance.skin !== undefined || appearance.color) out[a.n || agentId] = appearance
+  }
+  return out
+}
+
+const KNOWN_PET_KINDS = new Set(['cat', 'dog', 'lobster'])
+
+/** Map snapshot pets to engine OfficePet[] so the public office matches the dashboard. */
+export function toOfficePets(state: PublicState): OfficePet[] {
+  const pets = state.pets ?? []
+  const out: OfficePet[] = []
+  pets.forEach((p, i) => {
+    if (!KNOWN_PET_KINDS.has(p.kind)) return
+    const pet: OfficePet = {
+      id: `snap-pet-${i}`,
+      kind: p.kind as OfficePet['kind'],
+      col: typeof p.col === 'number' ? p.col : 0,
+      row: typeof p.row === 'number' ? p.row : 0,
+    }
+    if (typeof p.skin === 'number') pet.skin = p.skin
+    if (p.color) pet.color = p.color
+    if (p.name) pet.name = p.name
+    out.push(pet)
+  })
+  return out
 }
 
 function parsePublicState(raw: unknown): PublicState | null {
