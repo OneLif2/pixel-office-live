@@ -58,7 +58,7 @@ export default function PublicOfficePage() {
 
   const [ready, setReady] = useState(false)
   const [weather, setWeather] = useState<PixelOfficeWeather>('clear')
-  const { state, stale, usingMock, versionMismatch } = usePublicOfficeState()
+  const { state, stale, usingMock, versionMismatch, refreshing, refresh } = usePublicOfficeState()
 
   // One-time init: sprite assets + office layout
   useEffect(() => {
@@ -240,6 +240,16 @@ export default function PublicOfficePage() {
             <span className="badge">updated {formatAgo(ageMs)}</span>
           )}
           {usingMock && <span className="badge badge-mock">demo data</span>}
+          <button
+            type="button"
+            className={`refresh-btn${refreshing ? ' refreshing' : ''}`}
+            title="Refresh status"
+            aria-label="Refresh status"
+            onClick={refresh}
+            disabled={refreshing}
+          >
+            ↻
+          </button>
           <div className="weather-bar">
             {WEATHER_OPTIONS.map((opt) => (
               <button

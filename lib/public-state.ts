@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import type { AgentActivity } from '@/lib/pixel-office/agentBridge'
 import { ASSET_BASE } from '@/lib/asset-base'
 
@@ -32,16 +32,16 @@ const SNAPSHOT_URL =
   'https://raw.githubusercontent.com/OneLif2/pixel-office-live/data/state.json'
 
 // raw.githubusercontent caches ~5 min and ignores query-string cache busting,
-// so the GitHub contents API (no CDN cache, CORS *) is polled as a slower
-// freshness source: every 3rd cycle ≈ 20 req/h/viewer, well under the
-// unauthenticated 60/h limit.
+// so the GitHub contents API (no CDN cache, CORS *) is polled as the freshness
+// source: every 4th 20s cycle ≈ 45 req/h/viewer, leaving room under the common
+// unauthenticated 60/h limit for load/focus refreshes.
 const SNAPSHOT_API_URL =
   process.env.NEXT_PUBLIC_SNAPSHOT_API_URL ||
   'https://api.github.com/repos/OneLif2/pixel-office-live/contents/state.json?ref=data'
 
 const MOCK_URL = `${ASSET_BASE}/mock-state.json`
-const FETCH_INTERVAL_MS = 60_000
-const API_EVERY_N_CYCLES = 3
+const FETCH_INTERVAL_MS = 20_000
+const API_EVERY_N_CYCLES = 4
 
 const STATE_MAP: Record<PublicAgent['s'], AgentActivity['state']> = {
   w: 'working',
@@ -101,24 +101,35 @@ export interface PublicOfficeState {
   lastFetched: number | null
   usingMock: boolean
   versionMismatch: boolean
+  refreshing: boolean
+  refresh: () => void
 }
 
-/** Fetch the snapshot every 60 s; pause when hidden; refetch on visibility. */
+type PublicOfficeFetchState = Omit<PublicOfficeState, 'refreshing' | 'refresh'>
+
+/** Fetch the snapshot every 20 s; pause when hidden; refetch on visibility/manual refresh. */
 export function usePublicOfficeState(): PublicOfficeState {
-  const [result, setResult] = useState<PublicOfficeState>({
+  const [result, setResult] = useState<PublicOfficeFetchState>({
     state: null,
     stale: false,
     lastFetched: null,
     usingMock: false,
     versionMismatch: false,
   })
+  const [refreshing, setRefreshing] = useState(false)
   const hasRealData = useRef(false)
   const newestTs = useRef(0)
   const cycle = useRef(0)
+  const refreshRef = useRef<() => Promise<void>>(async () => {})
+
+  const refresh = useCallback(() => {
+    void refreshRef.current()
+  }, [])
 
   useEffect(() => {
     let cancelled = false
     let timer: ReturnType<typeof setInterval> | null = null
+    let manualRefreshInFlight = false
 
     const apply = (state: PublicState, usingMock: boolean) => {
       if (cancelled) return
@@ -148,26 +159,23 @@ export function usePublicOfficeState(): PublicOfficeState {
 
     const fetchSnapshot = async (forceApi = false) => {
       let gotAny = false
-      try {
-        const state = await fetchFrom(SNAPSHOT_URL)
-        if (state) {
-          apply(state, false)
-          gotAny = true
-        }
-      } catch {}
+      const shouldFetchApi = forceApi || cycle.current % API_EVERY_N_CYCLES === 0
+      const sources: Array<Promise<PublicState | null>> = []
 
-      // slower API poll for freshness (raw CDN caches ~5 min)
-      if (forceApi || cycle.current % API_EVERY_N_CYCLES === 0) {
-        try {
-          const state = await fetchFrom(SNAPSHOT_API_URL, {
-            headers: { Accept: 'application/vnd.github.raw+json' },
-          })
-          if (state) {
-            apply(state, false)
-            gotAny = true
-          }
-        } catch {}
+      if (shouldFetchApi) {
+        sources.push(fetchFrom(SNAPSHOT_API_URL, {
+          headers: { Accept: 'application/vnd.github.raw+json' },
+        }))
       }
+      sources.push(fetchFrom(SNAPSHOT_URL))
+
+      const results = await Promise.allSettled(sources)
+      for (const res of results) {
+        if (res.status !== 'fulfilled' || !res.value) continue
+        apply(res.value, false)
+        gotAny = true
+      }
+
       cycle.current++
 
       // keep last state; if we never got real data, fall back to mock (dev/offline)
@@ -176,6 +184,18 @@ export function usePublicOfficeState(): PublicOfficeState {
           const state = parsePublicState(await (await fetch(MOCK_URL, { cache: 'no-store' })).json())
           if (state) apply({ ...state, ts: Date.now() }, true)
         } catch {}
+      }
+    }
+
+    refreshRef.current = async () => {
+      if (manualRefreshInFlight || cancelled) return
+      manualRefreshInFlight = true
+      setRefreshing(true)
+      try {
+        await fetchSnapshot(true)
+      } finally {
+        manualRefreshInFlight = false
+        if (!cancelled) setRefreshing(false)
       }
     }
 
@@ -196,5 +216,5 @@ export function usePublicOfficeState(): PublicOfficeState {
     }
   }, [])
 
-  return result
+  return { ...result, refreshing, refresh }
 }

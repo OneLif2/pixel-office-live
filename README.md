@@ -8,10 +8,10 @@ GitHub Pages: **https://onelif2.github.io/pixel-office-live/**
 ```text
 private machine                          GitHub                      visitors
 ────────────────                         ──────────────────────      ────────
-snapshot exporter (cron, 5 min)  ──push──▶  data branch: state.json
+snapshot exporter (path + cron)  ──push──▶  data branch: state.json
 sanitized facts only                        main branch: this app ──▶ Pages (static)
                                                                       fetches state.json
-                                                                      every 60 s
+                                                                      every 20 s
 ```
 
 - The page is a **static export** (`next build`, `output: 'export'`). There are
@@ -20,6 +20,10 @@ sanitized facts only                        main branch: this app ──▶ Page
   the `data` branch — a single, amended commit written by an exporter that
   projects private state through an allow-list sanitizer. Schema v1 fields:
   `v, ts, staleAfterMs, agents.{n,e,s,ls,sub,seat}, pets[].{kind,name}`.
+- The browser polls raw GitHub every 20 seconds and the GitHub Contents API
+  every 4th cycle as the fresher source.
+- The refresh button forces an immediate poll, including the GitHub Contents
+  API freshness source.
 - Everything else (characters wandering, pets, weather, animations) runs
   client-side in your browser between snapshots.
 - If snapshots stop, the page stays up and shows a stale badge.
