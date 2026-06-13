@@ -36,6 +36,32 @@ sanitized facts only                        main branch: this app ──▶ Page
 - If snapshots stop, the page stays up and shows a stale badge.
 - Weather selection is per-visitor (localStorage only).
 
+## Visitor counting scope
+
+Visitor counting is deliberately limited to the public GitHub Pages URL:
+
+```text
+https://onelif2.github.io/pixel-office-live/
+```
+
+At runtime the visitor counter checks both `window.location.origin` and the
+normalized pathname before it starts any Firebase visitor reads or writes.
+With the default settings, only this exact public page is counted:
+
+- origin: `https://onelif2.github.io`
+- path: `/pixel-office-live`
+
+Local preview, Jetson dashboard, and development URLs such as these do not
+increment the live viewer count or total viewed count:
+
+- `http://192.168.1.164:3000`
+- `http://192.168.1.164:3100`
+- `http://localhost:3100`
+
+The allowed URL can be changed at build time with
+`NEXT_PUBLIC_VISITOR_ALLOWED_ORIGIN` and `NEXT_PUBLIC_VISITOR_ALLOWED_PATH`, but
+those should normally stay on the GitHub Pages defaults.
+
 ## Development
 
 ```bash
