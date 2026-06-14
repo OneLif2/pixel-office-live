@@ -141,6 +141,7 @@ export const EditTool = {
   FURNITURE_PLACE: 'furniture_place',
   FURNITURE_PICK: 'furniture_pick',
   PET_PLACE: 'pet_place',
+  AGENTS: 'agents',
   SELECT: 'select',
   EYEDROPPER: 'eyedropper',
   ERASE: 'erase',

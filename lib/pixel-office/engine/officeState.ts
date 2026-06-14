@@ -426,6 +426,13 @@ export class OfficeState {
   private nextPetCharacterId = -9900
   private petCharacterIds: Map<string, number> = new Map()
   private petIdsByCharacterId: Map<number, string> = new Map()
+  /**
+   * Last layout position applied per pet id. Pets wander on their own, so on a
+   * re-sync we must only re-place a pet when its snapshot position actually
+   * changed (e.g. moved in the dashboard) — never just because it walked away
+   * from its starting tile, which would teleport it home every poll.
+   */
+  private petLayoutPositions: Map<string, { col: number; row: number }> = new Map()
   private static CAT_ID = -9999
   private static LOBSTER_ID = -9998
   private static HUNTER_LOBSTER_ID = -9997
@@ -615,6 +622,7 @@ export class OfficeState {
       this.characters.delete(characterId)
       this.petCharacterIds.delete(petId)
       this.petIdsByCharacterId.delete(characterId)
+      this.petLayoutPositions.delete(petId)
     }
 
     for (const pet of pets) {
@@ -625,6 +633,10 @@ export class OfficeState {
         this.petIdsByCharacterId.set(characterId, pet.id)
       }
 
+      const prevPos = this.petLayoutPositions.get(pet.id)
+      const layoutMoved = !prevPos || prevPos.col !== pet.col || prevPos.row !== pet.row
+      this.petLayoutPositions.set(pet.id, { col: pet.col, row: pet.row })
+
       const existing = this.characters.get(characterId)
       if (existing) {
         this.applyPetKind(existing, pet.kind)
@@ -632,7 +644,9 @@ export class OfficeState {
         existing.hueShift = 0
         this.applyPetColor(existing, pet)
         existing.label = pet.name ?? ''
-        if (existing.tileCol !== pet.col || existing.tileRow !== pet.row) {
+        // Only snap back to the layout tile when the snapshot itself moved the
+        // pet; otherwise leave it wherever it has wandered to.
+        if (layoutMoved) {
           this.placePetCharacter(existing, pet)
         }
         continue
