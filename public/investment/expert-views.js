@@ -8,7 +8,9 @@
   const more = document.getElementById('expert-more');
   const refresh = document.getElementById('expert-refresh');
   const staleMs = 24 * 60 * 60 * 1000;
+  const refreshMs = 5 * 60 * 1000;
   let items = [], limit = 12, generated = null;
+  let loading = false, loadFailed = false, lastAttempt = 0;
   function node(tag, text, cls) {
     const el = document.createElement(tag);
     if (text != null) el.textContent = text;
@@ -98,13 +100,19 @@
   function freshness() {
     if (!generated) return;
     const stale = Date.now() - generated.getTime() > staleMs;
-    state.textContent = stale ? '快照已過期' : items.length + ' 則公開貼文';
-    updated.replaceChildren(time('快照更新：', generated.toISOString()));
-    updated.classList.toggle('expert-warning', stale);
-    if (stale) updated.append('超過 24 小時未更新，不代表最新市場觀點。');
+    state.textContent = loadFailed ? '更新失敗 · 舊快照' : stale ? '快照已過期' : items.length + ' 則公開貼文';
+    updated.replaceChildren(time('已發布快照產生時間：', generated.toISOString()));
+    updated.append(node('p', '完整來源檢查：尚無可驗證的完成時間。快照產生、排程成功或本站重讀皆不代表完整來源檢查已完成。', 'tiny'));
+    updated.classList.toggle('expert-warning', !!(stale || loadFailed));
+    if (loadFailed) updated.append(node('p', '無法取得新快照，保留上次內容；仍依原有時間判斷資料年齡。', 'tiny'));
+    if (stale) updated.append(node('p', '快照已超過 24 小時，不代表最新市場觀點。', 'tiny'));
   }
   async function load() {
-    refresh.disabled = true; state.textContent = '載入中';
+    if (loading) return;
+    loading = true; lastAttempt = Date.now();
+    refresh.disabled = true;
+    if (!generated) state.textContent = '載入中';
+    else freshness();
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 12000);
     try {
@@ -114,25 +122,41 @@
       if (data.schemaVersion !== 1 || data.source !== 'x-post-tracker' || !Array.isArray(data.items)) throw new Error('Unsupported schema');
       const stamp = date(data.generatedAt);
       if (!stamp || stamp.getTime() > Date.now() + 300000) throw new Error('Missing or invalid timestamp');
+      if (generated && stamp.getTime() < generated.getTime()) throw new Error('Older snapshot rejected');
       const seen = new Set();
       const nextItems = data.items.filter(validItem).filter(item => !seen.has(item.id) && seen.add(item.id)).sort((a, b) => (Date.parse(b.forwardedAt) || 0) - (Date.parse(a.forwardedAt) || 0));
       const rejected = data.items.length && !nextItems.length;
       if (rejected) throw new Error('No valid entries');
-      items = nextItems; generated = stamp; limit = 12;
+      // Schema v1 has no attested complete-check timestamp. Never infer it from a heartbeat.
+      items = nextItems; generated = stamp; loadFailed = false;
       const previous = author.value;
       author.replaceChildren(new Option('全部帳號', ''));
       [...new Set(items.map(i => i.sourceHandle))].sort().forEach(handle => author.add(new Option('@' + handle, handle)));
       if ([...author.options].some(o => o.value === previous)) author.value = previous;
       render(); freshness();
     } catch (_) {
-      state.textContent = generated ? '更新失敗 · 舊快照' : '尚無可用快照';
-      updated.textContent = generated ? '無法取得新資料，以下保留上次載入的內容；快照時間：' + generated.toISOString() : '公開資料尚未就緒或暫時無法讀取，請稍後重新讀取。';
-      updated.classList.add('expert-warning');
-      if (!generated) { items = []; render(); }
-    } finally { clearTimeout(timeout); refresh.disabled = false; }
+      loadFailed = true;
+      if (generated) freshness();
+      else {
+        state.textContent = '尚無可用快照';
+        updated.textContent = '公開資料尚未就緒或暫時無法讀取，請稍後重新讀取。';
+        updated.classList.add('expert-warning');
+        items = []; render();
+      }
+    } finally { clearTimeout(timeout); loading = false; refresh.disabled = false; }
   }
   author.addEventListener('change', () => { limit = 12; render(); });
   more.addEventListener('click', () => { limit += 12; render(); });
   refresh.addEventListener('click', load);
+  function resume() {
+    freshness();
+    if (!document.hidden && Date.now() - lastAttempt >= 60000) load();
+  }
+  // Age changes even when no new snapshot arrives. Resume handles throttled background timers.
+  setInterval(freshness, 60000);
+  setInterval(() => { if (!document.hidden) load(); }, refreshMs);
+  document.addEventListener('visibilitychange', resume);
+  window.addEventListener('focus', resume);
+  window.addEventListener('pageshow', resume);
   load();
 }());
