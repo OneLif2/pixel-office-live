@@ -51,6 +51,15 @@
     if (!text || Array.from(text).length >= 100 || /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u202A-\u202E\u2066-\u2069]/u.test(text)) return null;
     return text;
   }
+  function publicCorrection(item) {
+    const correction = item.correction;
+    if (!correction || typeof correction !== 'object') return null;
+    const text = publicSummary({summaryKind: 'ai', summary: correction.text});
+    if (!text || !Array.isArray(correction.sources) || correction.sources.length < 1 || correction.sources.length > 3) return null;
+    const safeSEC = /^https:\/\/www\.sec\.gov\/Archives\/edgar\/data\/\d+\/\d+\/(?:xslF345X\d+\/)?[A-Za-z0-9_.-]+\.xml$/;
+    if (correction.sources.some(source => !source || typeof source.url !== 'string' || !safeSEC.test(source.url))) return null;
+    return {text, sources: correction.sources};
+  }
   function render() {
     list.replaceChildren();
     const selected = items.filter(item => !author.value || item.sourceHandle === author.value);
@@ -62,11 +71,24 @@
       body.append(node('h4', '@' + item.sourceHandle));
       body.append(node('span', provenance(item), 'badge expert-provenance'));
       body.append(time('發布：', item.publishedAt), time('最近收錄：', item.forwardedAt));
-      const summary = publicSummary(item);
+      const correction = publicCorrection(item);
+      const invalidCorrection = Object.prototype.hasOwnProperty.call(item, 'correction') && !correction;
+      const summary = invalidCorrection ? null : publicSummary(item);
       if (summary) {
         body.append(node('p', 'AI 原文摘要 · 未經獨立查核，請對照來源', 'expert-warning'));
         body.append(node('p', summary, 'expert-summary'));
-      } else body.append(node('p', '原文連結 · 暫無可用的原文摘要'));
+      } else body.append(node('p', invalidCorrection ? '補充查核資料待核對，暫不顯示摘要。' : '原文連結 · 暫無可用的原文摘要'));
+      if (correction) {
+        const note = node('aside', null, 'expert-correction');
+        note.append(node('strong', '補充查核 · SEC 文件'));
+        note.append(node('p', correction.text));
+        correction.sources.forEach(source => {
+          const citation = node('a', '查看 SEC Form 4 與註腳 ↗');
+          citation.href = source.url; citation.target = '_blank'; citation.rel = 'noopener noreferrer';
+          note.append(citation);
+        });
+        body.append(note);
+      }
       const link = node('a', '閱讀 X 原始貼文 ↗');
       link.href = item.url; link.target = '_blank'; link.rel = 'noopener noreferrer';
       body.append(link); entry.append(body); list.append(entry);
