@@ -1,0 +1,1387 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-07T12:24:18Z",
+  "source": "x-post-tracker",
+  "items": [
+    {
+      "id": "2118927675574378552",
+      "url": "https://x.com/Benzinga/status/2118927675574378552",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-07T04:45:00Z",
+      "forwardedAt": "2026-11-07T05:58:54Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118895463344849082",
+      "url": "https://x.com/Benzinga/status/2118895463344849082",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-07T02:37:00Z",
+      "forwardedAt": "2026-11-07T03:59:45Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118867780514549832",
+      "url": "https://x.com/Benzinga/status/2118867780514549832",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-07T00:47:00Z",
+      "forwardedAt": "2026-11-07T02:02:36Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118873065841135951",
+      "url": "https://x.com/Benzinga/status/2118873065841135951",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-07T01:08:00Z",
+      "forwardedAt": "2026-11-07T02:02:21Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118878602951311603",
+      "url": "https://x.com/Benzinga/status/2118878602951311603",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-07T01:30:00Z",
+      "forwardedAt": "2026-11-07T02:02:01Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118794045275152405",
+      "url": "https://x.com/Benzinga/status/2118794045275152405",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-06T19:54:00Z",
+      "forwardedAt": "2026-11-06T20:02:17Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118768871528337587",
+      "url": "https://x.com/pelositracker/status/2118768871528337587",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-11-06T18:13:58Z",
+      "forwardedAt": "2026-11-06T19:51:47Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118756044755132818",
+      "url": "https://x.com/Benzinga/status/2118756044755132818",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-06T17:23:00Z",
+      "forwardedAt": "2026-11-06T18:02:02Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118716786187149798",
+      "url": "https://x.com/Benzinga/status/2118716786187149798",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-06T14:47:00Z",
+      "forwardedAt": "2026-11-06T16:04:00Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118726852265005118",
+      "url": "https://x.com/Benzinga/status/2118726852265005118",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-06T15:27:00Z",
+      "forwardedAt": "2026-11-06T16:03:37Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118732864569188563",
+      "url": "https://x.com/Benzinga/status/2118732864569188563",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-06T15:50:53Z",
+      "forwardedAt": "2026-11-06T16:03:04Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118735040335249552",
+      "url": "https://x.com/Benzinga/status/2118735040335249552",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-06T15:59:32Z",
+      "forwardedAt": "2026-11-06T16:02:38Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118717448363065785",
+      "url": "https://x.com/pelositracker/status/2118717448363065785",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-11-06T14:49:38Z",
+      "forwardedAt": "2026-11-06T15:51:45Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118704454715220113",
+      "url": "https://x.com/Benzinga/status/2118704454715220113",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-06T13:58:00Z",
+      "forwardedAt": "2026-11-06T14:01:34Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118569067988803595",
+      "url": "https://x.com/Benzinga/status/2118569067988803595",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-06T05:00:01Z",
+      "forwardedAt": "2026-11-06T05:58:55Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118468650592063493",
+      "url": "https://x.com/Benzinga/status/2118468650592063493",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T22:21:00Z",
+      "forwardedAt": "2026-11-06T00:01:16Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118486267088478718",
+      "url": "https://x.com/Benzinga/status/2118486267088478718",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T23:31:00Z",
+      "forwardedAt": "2026-11-06T00:00:48Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118493313246331198",
+      "url": "https://x.com/Benzinga/status/2118493313246331198",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T23:59:00Z",
+      "forwardedAt": "2026-11-06T00:00:23Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118486040247976357",
+      "url": "https://x.com/CoFoundersNik/status/2118486040247976357",
+      "sourceHandle": "CoFoundersNik",
+      "trackedHandles": [
+        "cofoundersnik"
+      ],
+      "publishedAt": "2026-11-05T23:30:06Z",
+      "forwardedAt": "2026-11-05T23:56:20Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118394402687041970",
+      "url": "https://x.com/AsiaFinance/status/2118394402687041970",
+      "sourceHandle": "AsiaFinance",
+      "trackedHandles": [
+        "AsiaFinance"
+      ],
+      "publishedAt": "2026-11-05T17:25:58Z",
+      "forwardedAt": "2026-11-05T18:44:36Z",
+      "tier": "CRITICAL",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118388624047653280",
+      "url": "https://x.com/Benzinga/status/2118388624047653280",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T17:03:00Z",
+      "forwardedAt": "2026-11-05T18:05:08Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118393656466133476",
+      "url": "https://x.com/Benzinga/status/2118393656466133476",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T17:23:00Z",
+      "forwardedAt": "2026-11-05T18:04:40Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118397477661413873",
+      "url": "https://x.com/Benzinga/status/2118397477661413873",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T17:38:11Z",
+      "forwardedAt": "2026-11-05T18:03:58Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118400451192230209",
+      "url": "https://x.com/Benzinga/status/2118400451192230209",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T17:50:00Z",
+      "forwardedAt": "2026-11-05T18:03:29Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118388744357097496",
+      "url": "https://x.com/pelositracker/status/2118388744357097496",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-11-05T17:03:29Z",
+      "forwardedAt": "2026-11-05T17:50:45Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118357674471330117",
+      "url": "https://x.com/Benzinga/status/2118357674471330117",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T15:00:01Z",
+      "forwardedAt": "2026-11-05T15:59:17Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118191826859659716",
+      "url": "https://x.com/Benzinga/status/2118191826859659716",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T04:01:00Z",
+      "forwardedAt": "2026-11-05T05:57:55Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118197866350972962",
+      "url": "https://x.com/Benzinga/status/2118197866350972962",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T04:25:00Z",
+      "forwardedAt": "2026-11-05T05:57:38Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118161879516504089",
+      "url": "https://x.com/Benzinga/status/2118161879516504089",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T02:02:00Z",
+      "forwardedAt": "2026-11-05T03:57:43Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118169177378697578",
+      "url": "https://x.com/Benzinga/status/2118169177378697578",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T02:31:00Z",
+      "forwardedAt": "2026-11-05T03:57:29Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118179243964404121",
+      "url": "https://x.com/Benzinga/status/2118179243964404121",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T03:11:00Z",
+      "forwardedAt": "2026-11-05T03:57:11Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118130422169448717",
+      "url": "https://x.com/Benzinga/status/2118130422169448717",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T23:57:00Z",
+      "forwardedAt": "2026-11-05T01:57:27Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118146780483240008",
+      "url": "https://x.com/Benzinga/status/2118146780483240008",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T01:02:00Z",
+      "forwardedAt": "2026-11-05T01:57:12Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118154078018834472",
+      "url": "https://x.com/Benzinga/status/2118154078018834472",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-05T01:31:00Z",
+      "forwardedAt": "2026-11-05T01:56:53Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118124130599895542",
+      "url": "https://x.com/Benzinga/status/2118124130599895542",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T23:32:00Z",
+      "forwardedAt": "2026-11-04T23:57:03Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118079222342169026",
+      "url": "https://x.com/insiderwave/status/2118079222342169026",
+      "sourceHandle": "insiderwave",
+      "trackedHandles": [
+        "insiderwave"
+      ],
+      "publishedAt": "2026-11-04T20:33:33Z",
+      "forwardedAt": "2026-11-04T21:42:44Z",
+      "tier": "CRITICAL",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118049698733064433",
+      "url": "https://x.com/aleabitoreddit/status/2118049698733064433",
+      "sourceHandle": "aleabitoreddit",
+      "trackedHandles": [
+        "aleabitoreddit"
+      ],
+      "publishedAt": "2026-11-04T18:36:14Z",
+      "forwardedAt": "2026-11-04T19:35:57Z",
+      "tier": "CRITICAL",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118020683674386736",
+      "url": "https://x.com/Benzinga/status/2118020683674386736",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T16:40:56Z",
+      "forwardedAt": "2026-11-04T17:56:39Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118027997508997249",
+      "url": "https://x.com/Benzinga/status/2118027997508997249",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T17:10:00Z",
+      "forwardedAt": "2026-11-04T17:56:24Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118035295157277024",
+      "url": "https://x.com/Benzinga/status/2118035295157277024",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T17:39:00Z",
+      "forwardedAt": "2026-11-04T17:56:08Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118010288050208789",
+      "url": "https://x.com/pelositracker/status/2118010288050208789",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-11-04T15:59:38Z",
+      "forwardedAt": "2026-11-04T17:45:26Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117995786101272766",
+      "url": "https://x.com/Benzinga/status/2117995786101272766",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T15:02:00Z",
+      "forwardedAt": "2026-11-04T15:53:53Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117966595956126040",
+      "url": "https://x.com/Benzinga/status/2117966595956126040",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T13:06:01Z",
+      "forwardedAt": "2026-11-04T13:55:29Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117967851219042413",
+      "url": "https://x.com/Benzinga/status/2117967851219042413",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T13:11:00Z",
+      "forwardedAt": "2026-11-04T13:55:07Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117974898001735720",
+      "url": "https://x.com/Benzinga/status/2117974898001735720",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T13:39:00Z",
+      "forwardedAt": "2026-11-04T13:54:39Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117833465270014429",
+      "url": "https://x.com/Benzinga/status/2117833465270014429",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T04:17:00Z",
+      "forwardedAt": "2026-11-04T05:54:45Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117809054714105974",
+      "url": "https://x.com/Benzinga/status/2117809054714105974",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T02:40:00Z",
+      "forwardedAt": "2026-11-04T03:55:04Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117818617937158268",
+      "url": "https://x.com/Benzinga/status/2117818617937158268",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T03:18:00Z",
+      "forwardedAt": "2026-11-04T03:54:49Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117826167202021626",
+      "url": "https://x.com/Benzinga/status/2117826167202021626",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T03:48:00Z",
+      "forwardedAt": "2026-11-04T03:54:31Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117772312309317693",
+      "url": "https://x.com/Benzinga/status/2117772312309317693",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T00:14:00Z",
+      "forwardedAt": "2026-11-04T01:54:46Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117778855389954309",
+      "url": "https://x.com/Benzinga/status/2117778855389954309",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T00:40:00Z",
+      "forwardedAt": "2026-11-04T01:54:31Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117794206747865117",
+      "url": "https://x.com/Benzinga/status/2117794206747865117",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-04T01:41:00Z",
+      "forwardedAt": "2026-11-04T01:54:13Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117749411740524842",
+      "url": "https://x.com/Benzinga/status/2117749411740524842",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-03T22:43:00Z",
+      "forwardedAt": "2026-11-03T23:54:03Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117660073015275998",
+      "url": "https://x.com/Benzinga/status/2117660073015275998",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-03T16:48:00Z",
+      "forwardedAt": "2026-11-03T17:54:34Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117639122081010109",
+      "url": "https://x.com/Benzinga/status/2117639122081010109",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-03T15:24:45Z",
+      "forwardedAt": "2026-11-03T15:54:05Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117645477264978332",
+      "url": "https://x.com/Benzinga/status/2117645477264978332",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-03T15:50:00Z",
+      "forwardedAt": "2026-11-03T15:53:48Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117418733568246124",
+      "url": "https://x.com/Benzinga/status/2117418733568246124",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-03T00:49:00Z",
+      "forwardedAt": "2026-11-03T01:51:57Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117425023896199423",
+      "url": "https://x.com/Benzinga/status/2117425023896199423",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-03T01:14:00Z",
+      "forwardedAt": "2026-11-03T01:51:44Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117428295465660891",
+      "url": "https://x.com/Benzinga/status/2117428295465660891",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-03T01:27:00Z",
+      "forwardedAt": "2026-11-03T01:51:29Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117353555762069995",
+      "url": "https://x.com/Benzinga/status/2117353555762069995",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-02T20:30:00Z",
+      "forwardedAt": "2026-11-02T21:51:10Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117360599277699574",
+      "url": "https://x.com/Benzinga/status/2117360599277699574",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-02T20:58:00Z",
+      "forwardedAt": "2026-11-02T21:50:57Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117370414305362033",
+      "url": "https://x.com/Benzinga/status/2117370414305362033",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-02T21:37:00Z",
+      "forwardedAt": "2026-11-02T21:50:41Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117328890490499513",
+      "url": "https://x.com/Benzinga/status/2117328890490499513",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-02T18:52:00Z",
+      "forwardedAt": "2026-11-02T19:50:45Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117333168617599174",
+      "url": "https://x.com/Benzinga/status/2117333168617599174",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-02T19:09:00Z",
+      "forwardedAt": "2026-11-02T19:50:32Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117338956991713300",
+      "url": "https://x.com/Benzinga/status/2117338956991713300",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-02T19:32:00Z",
+      "forwardedAt": "2026-11-02T19:50:18Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2116959055055028706",
+      "url": "https://x.com/wliang/status/2116959055055028706",
+      "sourceHandle": "wliang",
+      "trackedHandles": [
+        "wliang"
+      ],
+      "publishedAt": "2026-11-01T18:22:24Z",
+      "forwardedAt": "2026-11-02T18:45:17Z",
+      "tier": "HIGH",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117288625251483956",
+      "url": "https://x.com/Benzinga/status/2117288625251483956",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-02T16:12:00Z",
+      "forwardedAt": "2026-11-02T17:51:05Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2115962431704871030",
+      "url": "https://x.com/SmallCapSnipa/status/2115962431704871030",
+      "sourceHandle": "SmallCapSnipa",
+      "trackedHandles": [
+        "SmallCapSnipa"
+      ],
+      "publishedAt": "2026-10-30T00:22:11Z",
+      "forwardedAt": "2026-10-30T06:38:19Z",
+      "tier": "HIGH",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2115506784173785349",
+      "url": "https://x.com/pelositracker/status/2115506784173785349",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-28T18:11:36Z",
+      "forwardedAt": "2026-10-28T19:38:10Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2115453810948833734",
+      "url": "https://x.com/pelositracker/status/2115453810948833734",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-28T14:41:06Z",
+      "forwardedAt": "2026-10-28T15:37:33Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2115094150626644115",
+      "url": "https://x.com/aleabitoreddit/status/2115094150626644115",
+      "sourceHandle": "aleabitoreddit",
+      "trackedHandles": [
+        "aleabitoreddit"
+      ],
+      "publishedAt": "2026-10-27T14:51:56Z",
+      "forwardedAt": "2026-10-28T13:25:55Z",
+      "tier": "HIGH",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2114753128302059756",
+      "url": "https://x.com/pelositracker/status/2114753128302059756",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-26T16:16:50Z",
+      "forwardedAt": "2026-10-26T17:30:40Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2114719900241469893",
+      "url": "https://x.com/pelositracker/status/2114719900241469893",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-26T14:04:48Z",
+      "forwardedAt": "2026-10-26T15:30:03Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2113260854145908914",
+      "url": "https://x.com/SmallCapSnipa/status/2113260854145908914",
+      "sourceHandle": "SmallCapSnipa",
+      "trackedHandles": [
+        "SmallCapSnipa"
+      ],
+      "publishedAt": "2026-10-22T13:27:04Z",
+      "forwardedAt": "2026-10-22T14:45:27Z",
+      "tier": "CRITICAL",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2112544004470407456",
+      "url": "https://x.com/pelositracker/status/2112544004470407456",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-20T13:58:34Z",
+      "forwardedAt": "2026-10-20T15:13:17Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2112182012865871996",
+      "url": "https://x.com/pelositracker/status/2112182012865871996",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-19T14:00:08Z",
+      "forwardedAt": "2026-10-19T14:46:09Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2111250341409046989",
+      "url": "https://x.com/BeatTheInsider/status/2111250341409046989",
+      "sourceHandle": "BeatTheInsider",
+      "trackedHandles": [
+        "BeatTheInsider"
+      ],
+      "publishedAt": "2026-10-17T00:18:01Z",
+      "forwardedAt": "2026-10-17T01:24:48Z",
+      "tier": "CRITICAL",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2110932178645275075",
+      "url": "https://x.com/JEFETRADES/status/2110932178645275075",
+      "sourceHandle": "JEFETRADES",
+      "trackedHandles": [
+        "JEFETRADES"
+      ],
+      "publishedAt": "2026-10-16T03:13:45Z",
+      "forwardedAt": "2026-10-17T01:21:12Z",
+      "tier": "CRITICAL",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2111124083211399417",
+      "url": "https://x.com/pelositracker/status/2111124083211399417",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-16T15:56:18Z",
+      "forwardedAt": "2026-10-16T16:36:55Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2110817988077363208",
+      "url": "https://x.com/pelositracker/status/2110817988077363208",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-15T19:40:00Z",
+      "forwardedAt": "2026-10-15T20:33:40Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2110780600756125982",
+      "url": "https://x.com/pelositracker/status/2110780600756125982",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-15T17:11:26Z",
+      "forwardedAt": "2026-10-15T18:33:23Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2110451204635471962",
+      "url": "https://x.com/JEFETRADES/status/2110451204635471962",
+      "sourceHandle": "JEFETRADES",
+      "trackedHandles": [
+        "JEFETRADES"
+      ],
+      "publishedAt": "2026-10-14T19:22:32Z",
+      "forwardedAt": "2026-10-15T11:14:34Z",
+      "tier": "HIGH",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2110453508441084397",
+      "url": "https://x.com/pelositracker/status/2110453508441084397",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-14T19:31:41Z",
+      "forwardedAt": "2026-10-14T20:31:25Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2110167944236093813",
+      "url": "https://x.com/SmallCapSnipa/status/2110167944236093813",
+      "sourceHandle": "SmallCapSnipa",
+      "trackedHandles": [
+        "SmallCapSnipa"
+      ],
+      "publishedAt": "2026-10-14T00:36:57Z",
+      "forwardedAt": "2026-10-14T17:29:56Z",
+      "tier": "CRITICAL",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2110389218312593800",
+      "url": "https://x.com/pelositracker/status/2110389218312593800",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-14T15:16:13Z",
+      "forwardedAt": "2026-10-14T16:30:42Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2110389167163052491",
+      "url": "https://x.com/pelositracker/status/2110389167163052491",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-14T15:16:01Z",
+      "forwardedAt": "2026-10-14T16:30:24Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2110193805035200778",
+      "url": "https://x.com/pelositracker/status/2110193805035200778",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-14T02:19:43Z",
+      "forwardedAt": "2026-10-14T02:28:41Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2110062305350144383",
+      "url": "https://x.com/pelositracker/status/2110062305350144383",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-13T17:37:11Z",
+      "forwardedAt": "2026-10-13T18:27:27Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2109777916154585327",
+      "url": "https://x.com/JEFETRADES/status/2109777916154585327",
+      "sourceHandle": "JEFETRADES",
+      "trackedHandles": [
+        "JEFETRADES"
+      ],
+      "publishedAt": "2026-10-12T22:47:07Z",
+      "forwardedAt": "2026-10-13T11:12:36Z",
+      "tier": "CRITICAL",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2108555666629497317",
+      "url": "https://x.com/burrytracker/status/2108555666629497317",
+      "sourceHandle": "burrytracker",
+      "trackedHandles": [
+        "burrytracker"
+      ],
+      "publishedAt": "2026-10-09T13:50:20Z",
+      "forwardedAt": "2026-10-09T21:20:43Z",
+      "tier": "CRITICAL",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2108580659279155580",
+      "url": "https://x.com/pelositracker/status/2108580659279155580",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-09T15:29:39Z",
+      "forwardedAt": "2026-10-09T16:16:11Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2108218290489201138",
+      "url": "https://x.com/pelositracker/status/2108218290489201138",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-10-08T15:29:43Z",
+      "forwardedAt": "2026-10-08T16:13:51Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    }
+  ]
+}
