@@ -1494,8 +1494,17 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "作者稱PepsiCo內部人士Robert C. Pohlad買入184,646股，價值約2,368.6萬美元；文中列出PEP現價131.49美元。",
-      "summaryKind": "ai"
+      "summary": "作者稱Robert C. Pohlad「買入」184,646股PEP，約2,368.6萬美元；交易性質另見SEC補充查核。",
+      "summaryKind": "ai",
+      "correction": {
+        "text": "SEC註腳1載明：可撤銷信託以等值現金換取不可撤銷信託的股份，屬信託資產置換，而非公開市場買入。",
+        "sources": [
+          {
+            "label": "SEC Form 4 · 註腳1",
+            "url": "https://www.sec.gov/Archives/edgar/data/77476/000106127226000004/xslF345X06/wk-form4_1792180971.xml"
+          }
+        ]
+      }
     },
     {
       "id": "2110932178645275075",
