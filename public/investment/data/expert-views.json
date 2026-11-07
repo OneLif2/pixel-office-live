@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T12:27:10Z",
+  "generatedAt": "2026-11-07T16:16:07Z",
   "source": "x-post-tracker",
   "items": [
     {
@@ -1422,21 +1422,6 @@
       ],
       "publishedAt": "2026-10-09T15:29:39Z",
       "forwardedAt": "2026-10-09T16:16:11Z",
-      "tier": "FORWARD",
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
-    },
-    {
-      "id": "2108218290489201138",
-      "url": "https://x.com/pelositracker/status/2108218290489201138",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-08T15:29:43Z",
-      "forwardedAt": "2026-10-08T16:13:51Z",
       "tier": "FORWARD",
       "tickers": [],
       "sentiment": "UNKNOWN",
