@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T12:24:18Z",
+  "generatedAt": "2026-11-07T12:27:10Z",
   "source": "x-post-tracker",
   "items": [
     {
@@ -1002,6 +1002,66 @@
       ],
       "publishedAt": "2026-11-02T16:12:00Z",
       "forwardedAt": "2026-11-02T17:51:05Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117295420103594185",
+      "url": "https://x.com/Benzinga/status/2117295420103594185",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-02T16:39:00Z",
+      "forwardedAt": "2026-11-02T17:50:50Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117308506340786178",
+      "url": "https://x.com/Benzinga/status/2117308506340786178",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-02T17:31:00Z",
+      "forwardedAt": "2026-11-02T17:50:36Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117281964629905454",
+      "url": "https://x.com/pelositracker/status/2117281964629905454",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-11-02T15:45:32Z",
+      "forwardedAt": "2026-11-02T17:40:21Z",
+      "tier": "FORWARD",
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2117292725712425311",
+      "url": "https://x.com/pelositracker/status/2117292725712425311",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-11-02T16:28:17Z",
+      "forwardedAt": "2026-11-02T17:40:07Z",
       "tier": "FORWARD",
       "tickers": [],
       "sentiment": "UNKNOWN",
