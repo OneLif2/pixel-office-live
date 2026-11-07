@@ -1,8 +1,44 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T16:16:07Z",
+  "generatedAt": "2026-11-07T16:36:45Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2118835164835086745",
+      "url": "https://x.com/JEFETRADES/status/2118835164835086745",
+      "sourceHandle": "JEFETRADES",
+      "trackedHandles": [
+        "JEFETRADES"
+      ],
+      "publishedAt": "2026-11-06T22:37:24Z",
+      "forwardedAt": "2026-11-07T15:00:42Z",
+      "tier": "DIGEST",
+      "deliveryKinds": [
+        "digest"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2118765448694993019",
+      "url": "https://x.com/burrytracker/status/2118765448694993019",
+      "sourceHandle": "burrytracker",
+      "trackedHandles": [
+        "burrytracker"
+      ],
+      "publishedAt": "2026-11-06T18:00:22Z",
+      "forwardedAt": "2026-11-07T15:00:42Z",
+      "tier": "DIGEST",
+      "deliveryKinds": [
+        "digest"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2118927675574378552",
       "url": "https://x.com/Benzinga/status/2118927675574378552",
@@ -13,6 +49,9 @@
       "publishedAt": "2026-11-07T04:45:00Z",
       "forwardedAt": "2026-11-07T05:58:54Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -28,6 +67,9 @@
       "publishedAt": "2026-11-07T02:37:00Z",
       "forwardedAt": "2026-11-07T03:59:45Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -43,6 +85,9 @@
       "publishedAt": "2026-11-07T00:47:00Z",
       "forwardedAt": "2026-11-07T02:02:36Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -58,6 +103,9 @@
       "publishedAt": "2026-11-07T01:08:00Z",
       "forwardedAt": "2026-11-07T02:02:21Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -73,6 +121,9 @@
       "publishedAt": "2026-11-07T01:30:00Z",
       "forwardedAt": "2026-11-07T02:02:01Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -88,6 +139,9 @@
       "publishedAt": "2026-11-06T19:54:00Z",
       "forwardedAt": "2026-11-06T20:02:17Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -103,6 +157,9 @@
       "publishedAt": "2026-11-06T18:13:58Z",
       "forwardedAt": "2026-11-06T19:51:47Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -118,6 +175,9 @@
       "publishedAt": "2026-11-06T17:23:00Z",
       "forwardedAt": "2026-11-06T18:02:02Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -133,6 +193,9 @@
       "publishedAt": "2026-11-06T14:47:00Z",
       "forwardedAt": "2026-11-06T16:04:00Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -148,6 +211,9 @@
       "publishedAt": "2026-11-06T15:27:00Z",
       "forwardedAt": "2026-11-06T16:03:37Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -163,6 +229,9 @@
       "publishedAt": "2026-11-06T15:50:53Z",
       "forwardedAt": "2026-11-06T16:03:04Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -178,6 +247,9 @@
       "publishedAt": "2026-11-06T15:59:32Z",
       "forwardedAt": "2026-11-06T16:02:38Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -193,6 +265,9 @@
       "publishedAt": "2026-11-06T14:49:38Z",
       "forwardedAt": "2026-11-06T15:51:45Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -208,6 +283,9 @@
       "publishedAt": "2026-11-06T13:58:00Z",
       "forwardedAt": "2026-11-06T14:01:34Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -223,6 +301,9 @@
       "publishedAt": "2026-11-06T05:00:01Z",
       "forwardedAt": "2026-11-06T05:58:55Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -238,6 +319,9 @@
       "publishedAt": "2026-11-05T22:21:00Z",
       "forwardedAt": "2026-11-06T00:01:16Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -253,6 +337,9 @@
       "publishedAt": "2026-11-05T23:31:00Z",
       "forwardedAt": "2026-11-06T00:00:48Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -268,6 +355,9 @@
       "publishedAt": "2026-11-05T23:59:00Z",
       "forwardedAt": "2026-11-06T00:00:23Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -283,6 +373,9 @@
       "publishedAt": "2026-11-05T23:30:06Z",
       "forwardedAt": "2026-11-05T23:56:20Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -298,6 +391,9 @@
       "publishedAt": "2026-11-05T17:25:58Z",
       "forwardedAt": "2026-11-05T18:44:36Z",
       "tier": "CRITICAL",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -313,6 +409,9 @@
       "publishedAt": "2026-11-05T17:03:00Z",
       "forwardedAt": "2026-11-05T18:05:08Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -328,6 +427,9 @@
       "publishedAt": "2026-11-05T17:23:00Z",
       "forwardedAt": "2026-11-05T18:04:40Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -343,6 +445,9 @@
       "publishedAt": "2026-11-05T17:38:11Z",
       "forwardedAt": "2026-11-05T18:03:58Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -358,6 +463,9 @@
       "publishedAt": "2026-11-05T17:50:00Z",
       "forwardedAt": "2026-11-05T18:03:29Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -373,6 +481,9 @@
       "publishedAt": "2026-11-05T17:03:29Z",
       "forwardedAt": "2026-11-05T17:50:45Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -388,6 +499,9 @@
       "publishedAt": "2026-11-05T15:00:01Z",
       "forwardedAt": "2026-11-05T15:59:17Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -403,6 +517,9 @@
       "publishedAt": "2026-11-05T04:01:00Z",
       "forwardedAt": "2026-11-05T05:57:55Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -418,6 +535,9 @@
       "publishedAt": "2026-11-05T04:25:00Z",
       "forwardedAt": "2026-11-05T05:57:38Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -433,6 +553,9 @@
       "publishedAt": "2026-11-05T02:02:00Z",
       "forwardedAt": "2026-11-05T03:57:43Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -448,6 +571,9 @@
       "publishedAt": "2026-11-05T02:31:00Z",
       "forwardedAt": "2026-11-05T03:57:29Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -463,6 +589,9 @@
       "publishedAt": "2026-11-05T03:11:00Z",
       "forwardedAt": "2026-11-05T03:57:11Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -478,6 +607,9 @@
       "publishedAt": "2026-11-04T23:57:00Z",
       "forwardedAt": "2026-11-05T01:57:27Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -493,6 +625,9 @@
       "publishedAt": "2026-11-05T01:02:00Z",
       "forwardedAt": "2026-11-05T01:57:12Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -508,6 +643,9 @@
       "publishedAt": "2026-11-05T01:31:00Z",
       "forwardedAt": "2026-11-05T01:56:53Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -523,6 +661,9 @@
       "publishedAt": "2026-11-04T23:32:00Z",
       "forwardedAt": "2026-11-04T23:57:03Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -538,6 +679,9 @@
       "publishedAt": "2026-11-04T20:33:33Z",
       "forwardedAt": "2026-11-04T21:42:44Z",
       "tier": "CRITICAL",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -553,6 +697,9 @@
       "publishedAt": "2026-11-04T18:36:14Z",
       "forwardedAt": "2026-11-04T19:35:57Z",
       "tier": "CRITICAL",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -568,6 +715,9 @@
       "publishedAt": "2026-11-04T16:40:56Z",
       "forwardedAt": "2026-11-04T17:56:39Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -583,6 +733,9 @@
       "publishedAt": "2026-11-04T17:10:00Z",
       "forwardedAt": "2026-11-04T17:56:24Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -598,6 +751,9 @@
       "publishedAt": "2026-11-04T17:39:00Z",
       "forwardedAt": "2026-11-04T17:56:08Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -613,6 +769,9 @@
       "publishedAt": "2026-11-04T15:59:38Z",
       "forwardedAt": "2026-11-04T17:45:26Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -628,6 +787,9 @@
       "publishedAt": "2026-11-04T15:02:00Z",
       "forwardedAt": "2026-11-04T15:53:53Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -643,6 +805,9 @@
       "publishedAt": "2026-11-04T13:06:01Z",
       "forwardedAt": "2026-11-04T13:55:29Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -658,6 +823,9 @@
       "publishedAt": "2026-11-04T13:11:00Z",
       "forwardedAt": "2026-11-04T13:55:07Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -673,6 +841,9 @@
       "publishedAt": "2026-11-04T13:39:00Z",
       "forwardedAt": "2026-11-04T13:54:39Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -688,6 +859,9 @@
       "publishedAt": "2026-11-04T04:17:00Z",
       "forwardedAt": "2026-11-04T05:54:45Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -703,6 +877,9 @@
       "publishedAt": "2026-11-04T02:40:00Z",
       "forwardedAt": "2026-11-04T03:55:04Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -718,6 +895,9 @@
       "publishedAt": "2026-11-04T03:18:00Z",
       "forwardedAt": "2026-11-04T03:54:49Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -733,6 +913,9 @@
       "publishedAt": "2026-11-04T03:48:00Z",
       "forwardedAt": "2026-11-04T03:54:31Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -748,6 +931,9 @@
       "publishedAt": "2026-11-04T00:14:00Z",
       "forwardedAt": "2026-11-04T01:54:46Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -763,6 +949,9 @@
       "publishedAt": "2026-11-04T00:40:00Z",
       "forwardedAt": "2026-11-04T01:54:31Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -778,6 +967,9 @@
       "publishedAt": "2026-11-04T01:41:00Z",
       "forwardedAt": "2026-11-04T01:54:13Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -793,6 +985,9 @@
       "publishedAt": "2026-11-03T22:43:00Z",
       "forwardedAt": "2026-11-03T23:54:03Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -808,6 +1003,9 @@
       "publishedAt": "2026-11-03T16:48:00Z",
       "forwardedAt": "2026-11-03T17:54:34Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -823,6 +1021,9 @@
       "publishedAt": "2026-11-03T15:24:45Z",
       "forwardedAt": "2026-11-03T15:54:05Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -838,6 +1039,9 @@
       "publishedAt": "2026-11-03T15:50:00Z",
       "forwardedAt": "2026-11-03T15:53:48Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -853,6 +1057,9 @@
       "publishedAt": "2026-11-03T00:49:00Z",
       "forwardedAt": "2026-11-03T01:51:57Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -868,6 +1075,9 @@
       "publishedAt": "2026-11-03T01:14:00Z",
       "forwardedAt": "2026-11-03T01:51:44Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -883,6 +1093,9 @@
       "publishedAt": "2026-11-03T01:27:00Z",
       "forwardedAt": "2026-11-03T01:51:29Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -898,6 +1111,9 @@
       "publishedAt": "2026-11-02T20:30:00Z",
       "forwardedAt": "2026-11-02T21:51:10Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -913,6 +1129,9 @@
       "publishedAt": "2026-11-02T20:58:00Z",
       "forwardedAt": "2026-11-02T21:50:57Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -928,6 +1147,9 @@
       "publishedAt": "2026-11-02T21:37:00Z",
       "forwardedAt": "2026-11-02T21:50:41Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -943,6 +1165,9 @@
       "publishedAt": "2026-11-02T18:52:00Z",
       "forwardedAt": "2026-11-02T19:50:45Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -958,6 +1183,9 @@
       "publishedAt": "2026-11-02T19:09:00Z",
       "forwardedAt": "2026-11-02T19:50:32Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -973,6 +1201,9 @@
       "publishedAt": "2026-11-02T19:32:00Z",
       "forwardedAt": "2026-11-02T19:50:18Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -988,6 +1219,9 @@
       "publishedAt": "2026-11-01T18:22:24Z",
       "forwardedAt": "2026-11-02T18:45:17Z",
       "tier": "HIGH",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1003,6 +1237,9 @@
       "publishedAt": "2026-11-02T16:12:00Z",
       "forwardedAt": "2026-11-02T17:51:05Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1018,6 +1255,9 @@
       "publishedAt": "2026-11-02T16:39:00Z",
       "forwardedAt": "2026-11-02T17:50:50Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1033,6 +1273,9 @@
       "publishedAt": "2026-11-02T17:31:00Z",
       "forwardedAt": "2026-11-02T17:50:36Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1048,6 +1291,9 @@
       "publishedAt": "2026-11-02T15:45:32Z",
       "forwardedAt": "2026-11-02T17:40:21Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1063,6 +1309,9 @@
       "publishedAt": "2026-11-02T16:28:17Z",
       "forwardedAt": "2026-11-02T17:40:07Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1078,6 +1327,9 @@
       "publishedAt": "2026-10-30T00:22:11Z",
       "forwardedAt": "2026-10-30T06:38:19Z",
       "tier": "HIGH",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1093,6 +1345,9 @@
       "publishedAt": "2026-10-28T18:11:36Z",
       "forwardedAt": "2026-10-28T19:38:10Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1108,6 +1363,9 @@
       "publishedAt": "2026-10-28T14:41:06Z",
       "forwardedAt": "2026-10-28T15:37:33Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1123,6 +1381,9 @@
       "publishedAt": "2026-10-27T14:51:56Z",
       "forwardedAt": "2026-10-28T13:25:55Z",
       "tier": "HIGH",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1138,6 +1399,9 @@
       "publishedAt": "2026-10-26T16:16:50Z",
       "forwardedAt": "2026-10-26T17:30:40Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1153,6 +1417,9 @@
       "publishedAt": "2026-10-26T14:04:48Z",
       "forwardedAt": "2026-10-26T15:30:03Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1168,6 +1435,9 @@
       "publishedAt": "2026-10-22T13:27:04Z",
       "forwardedAt": "2026-10-22T14:45:27Z",
       "tier": "CRITICAL",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1183,6 +1453,9 @@
       "publishedAt": "2026-10-20T13:58:34Z",
       "forwardedAt": "2026-10-20T15:13:17Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1198,6 +1471,9 @@
       "publishedAt": "2026-10-19T14:00:08Z",
       "forwardedAt": "2026-10-19T14:46:09Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1213,6 +1489,9 @@
       "publishedAt": "2026-10-17T00:18:01Z",
       "forwardedAt": "2026-10-17T01:24:48Z",
       "tier": "CRITICAL",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1228,6 +1507,9 @@
       "publishedAt": "2026-10-16T03:13:45Z",
       "forwardedAt": "2026-10-17T01:21:12Z",
       "tier": "CRITICAL",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1243,6 +1525,9 @@
       "publishedAt": "2026-10-16T15:56:18Z",
       "forwardedAt": "2026-10-16T16:36:55Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1258,6 +1543,9 @@
       "publishedAt": "2026-10-15T19:40:00Z",
       "forwardedAt": "2026-10-15T20:33:40Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1273,6 +1561,9 @@
       "publishedAt": "2026-10-15T17:11:26Z",
       "forwardedAt": "2026-10-15T18:33:23Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1288,6 +1579,9 @@
       "publishedAt": "2026-10-14T19:22:32Z",
       "forwardedAt": "2026-10-15T11:14:34Z",
       "tier": "HIGH",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1303,6 +1597,9 @@
       "publishedAt": "2026-10-14T19:31:41Z",
       "forwardedAt": "2026-10-14T20:31:25Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1318,6 +1615,9 @@
       "publishedAt": "2026-10-14T00:36:57Z",
       "forwardedAt": "2026-10-14T17:29:56Z",
       "tier": "CRITICAL",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1333,6 +1633,9 @@
       "publishedAt": "2026-10-14T15:16:13Z",
       "forwardedAt": "2026-10-14T16:30:42Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1348,6 +1651,9 @@
       "publishedAt": "2026-10-14T15:16:01Z",
       "forwardedAt": "2026-10-14T16:30:24Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1363,6 +1669,9 @@
       "publishedAt": "2026-10-14T02:19:43Z",
       "forwardedAt": "2026-10-14T02:28:41Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1378,6 +1687,9 @@
       "publishedAt": "2026-10-13T17:37:11Z",
       "forwardedAt": "2026-10-13T18:27:27Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1393,6 +1705,9 @@
       "publishedAt": "2026-10-12T22:47:07Z",
       "forwardedAt": "2026-10-13T11:12:36Z",
       "tier": "CRITICAL",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1408,6 +1723,9 @@
       "publishedAt": "2026-10-09T13:50:20Z",
       "forwardedAt": "2026-10-09T21:20:43Z",
       "tier": "CRITICAL",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
@@ -1423,6 +1741,9 @@
       "publishedAt": "2026-10-09T15:29:39Z",
       "forwardedAt": "2026-10-09T16:16:11Z",
       "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "",
