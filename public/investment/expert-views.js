@@ -29,6 +29,21 @@
     if (typeof item.sourceHandle !== 'string' || !/^[A-Za-z0-9_]{1,15}$/.test(item.sourceHandle)) return false;
     return item.url === 'https://x.com/' + item.sourceHandle + '/status/' + item.id;
   }
+  function provenance(item) {
+    // Only fixed labels are displayed; unknown metadata is never echoed.
+    if (item.deliveryKinds !== undefined) {
+      if (!Array.isArray(item.deliveryKinds) || !item.deliveryKinds.length ||
+          item.deliveryKinds.some(kind => kind !== 'individual' && kind !== 'digest')) return '收錄方式未詳';
+      const individual = item.deliveryKinds.includes('individual');
+      const digest = item.deliveryKinds.includes('digest');
+      if (individual && digest) return '個別轉發 + 摘要收錄';
+      return digest ? '摘要收錄' : '個別轉發';
+    }
+    // Compatible with snapshots created before deliveryKinds was introduced.
+    if (item.tier === 'DIGEST') return '摘要收錄';
+    if (['FORWARD', 'HIGH', 'CRITICAL'].includes(item.tier)) return '個別轉發';
+    return '收錄方式未詳';
+  }
   function render() {
     list.replaceChildren();
     const selected = items.filter(item => !author.value || item.sourceHandle === author.value);
@@ -38,7 +53,8 @@
       entry.append(node('div', 'X', 'avatar'));
       const body = node('div');
       body.append(node('h4', '@' + item.sourceHandle));
-      body.append(time('發布：', item.publishedAt), time('收錄轉發：', item.forwardedAt));
+      body.append(node('span', provenance(item), 'badge expert-provenance'));
+      body.append(time('發布：', item.publishedAt), time('最近收錄：', item.forwardedAt));
       if (item.summaryKind === 'ai' && typeof item.summary === 'string' && item.summary.trim()) {
         body.append(node('p', 'AI 摘要 · 非原文，請對照來源查核', 'expert-warning'));
         body.append(node('p', item.summary.slice(0, 700)));
@@ -69,10 +85,10 @@
       const stamp = date(data.generatedAt);
       if (!stamp || stamp.getTime() > Date.now() + 300000) throw new Error('Missing or invalid timestamp');
       const seen = new Set();
-      items = data.items.filter(validItem).filter(item => !seen.has(item.id) && seen.add(item.id)).sort((a, b) => (Date.parse(b.forwardedAt) || 0) - (Date.parse(a.forwardedAt) || 0));
-      const rejected = data.items.length && !items.length;
+      const nextItems = data.items.filter(validItem).filter(item => !seen.has(item.id) && seen.add(item.id)).sort((a, b) => (Date.parse(b.forwardedAt) || 0) - (Date.parse(a.forwardedAt) || 0));
+      const rejected = data.items.length && !nextItems.length;
       if (rejected) throw new Error('No valid entries');
-      generated = stamp; limit = 12;
+      items = nextItems; generated = stamp; limit = 12;
       const previous = author.value;
       author.replaceChildren(new Option('全部帳號', ''));
       [...new Set(items.map(i => i.sourceHandle))].sort().forEach(handle => author.add(new Option('@' + handle, handle)));
