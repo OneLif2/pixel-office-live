@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T16:36:45Z",
+  "generatedAt": "2026-11-07T18:01:32Z",
   "source": "x-post-tracker",
   "items": [
     {
@@ -18,8 +18,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者警告不要落入陷阱，稱$QQQ與$SPY位於曾引發大量賣盤的關鍵位置；這不代表還會續跌，但買方需在此介入才能掌控市場。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118765448694993019",
@@ -36,8 +36,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱Michael Burry看對了Oracle，列出其為AI資料中心募資200億美元、在美方施壓後取消與騰訊的70億美元AI晶片租約，以及受AI基建股拋售影響下跌7%；貼文結尾截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118927675574378552",
@@ -54,8 +54,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Bloom Energy將為Google在懷俄明州首座資料中心的702兆瓦電力計畫供應燃料電池，Google另宣布在該州投資170億美元。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118895463344849082",
@@ -72,8 +72,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Bloomin’ Brands第三季美國既有餐廳客流減1.8%，但平均消費增3.7%，帶動同店銷售上升。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118867780514549832",
@@ -90,8 +90,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者以標題詢問：若在Cybertruck發表時投資1,000美元買入特斯拉股票，如今會值多少。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118873065841135951",
@@ -108,8 +108,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Under Armour預計假日季度營收下滑8%至9%、調整後每股虧損1至3美分；分析師原預期每股獲利4美分。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118878602951311603",
@@ -126,8 +126,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者引述Dan Ives稱，迪士尼將迎來「成長新篇章」，裁員可釋放獲利能力。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118794045275152405",
@@ -144,8 +144,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者指出，巴菲特90/10退休策略雖簡單，市場波動時如何安排提領才是退休者的難題；原文後段截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118768871528337587",
@@ -162,8 +162,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，裴洛西並不支持預測市場，卻在市場中表現不錯，並推介查看或跟隨她的股票交易。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118756044755132818",
@@ -180,8 +180,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，川普將選後股市大跌、標普500蒸發約3兆美元及納斯達克100創2020年以來最差單日表現歸咎於民主黨；其引述川普稱市場經歷歷史性糟糕的一天。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118716786187149798",
@@ -198,8 +198,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Papa John’s第三季營收跌10.5%、北美同店銷售跌8.3%；公司表示手頭拮据的消費者、尤其低收入者減少點餐，並下修全年展望。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118726852265005118",
@@ -216,8 +216,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者預告今日內容：五項衰退警訊再現；Nvidia與Micron失守關鍵技術位，Airbnb與IREN因財報上漲，太陽能股創四年來最大漲勢等。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118732864569188563",
@@ -234,8 +234,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者以標題指出，民主黨贏得國會後道瓊大漲1,500點，並詢問為何這些AI股票下跌。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118735040335249552",
@@ -252,8 +252,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，特斯拉因美國銷量持續下滑，計畫約於2027年年中縮減Cybertruck產量；馬斯克稱此舉將為增產Cybercab騰出空間，轉向機器人計程車業務。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118717448363065785",
@@ -270,8 +270,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Gottheimer於10月15日賣出印尼電信股TLK，隔日印尼股市創1998年來最大跌幅，TLK跌13.7%，並諷刺其時機。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118704454715220113",
@@ -288,8 +288,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者指出，NVDA遠期本益比15.2倍，低於KMB的15.5倍及必需消費品股中位數；分析師預期其下季營收年增近一倍。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118569067988803595",
@@ -306,8 +306,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者以提問探討：一檔ETF從美光股價崩跌中大賺，能否繼續獲利？",
+      "summaryKind": "ai"
     },
     {
       "id": "2118468650592063493",
@@ -324,8 +324,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Sony受《Spider-Man: Brand New Day》帶動，季度營業利潤增45%、影視營收增48%、遊戲營收增9%，並上調全年利潤展望。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118486267088478718",
@@ -342,8 +342,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者引述Equable Institute估計，州與地方退休基金持有AI相關公司約5,780億至7,070億美元，NVDA、AAPL、MSFT為大額持倉，集中度引發擔憂。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118493313246331198",
@@ -360,8 +360,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱策略師Shay Boloor視AI股賣壓為機會，認為資料中心許可放慢不代表需求消失，並看好AMD、VRT、CRDO、DOCN、NBIS。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118486040247976357",
@@ -378,8 +378,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者表示當日買入SPCX 7股、GOOG 5股、META 2股、MU 5股及IREN 100股，認為適合開始定期投入，並詢問他人看法。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118394402687041970",
@@ -396,8 +396,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，英特爾執行長陳立武以65美元再買入1,000萬美元股票，8月曾以95美元買入同額；並問INTC五年內能否漲十倍。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118388624047653280",
@@ -414,8 +414,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，民主黨在2026年期中選舉掌控國會兩院後，馬斯克財富約蒸發230億美元；彭博報導其週二身家約8980億美元。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118393656466133476",
@@ -432,8 +432,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱油價下跌帶動太陽能股相對油商創四年最大單日漲幅；TAN漲5.7%、XOP跌6.4%，ARRY、NXT、SHLS分別漲14.9%、11.1%、8.1%。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118397477661413873",
@@ -450,8 +450,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，一場選舉、一場戰爭及一份糟糕財報，使納斯達克由漲勢轉為暴跌。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118400451192230209",
@@ -468,8 +468,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，康明斯第三季獲利創高，AI資料中心需求推升電力系統銷售增15%至22.9億美元、淨利逾倍至11.4億美元；但因皮卡需求轉弱下調2026營收展望。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118388744357097496",
@@ -486,8 +486,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：佩洛西近期市場表現不佳，但並非短線投資者；作者稱可追蹤其交易，掌握何時跟進。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118357674471330117",
@@ -504,8 +504,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱麥當勞Q3獲利超預期後股價近漲6%，但CEO警告2027年食品與紙品成本可能中個位數上升。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118191826859659716",
@@ -522,8 +522,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：Zimmer Biomet第三季業績優於預期，營收20.6億美元、調整後每股盈餘1.90美元，股價創52週新高。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118197866350972962",
@@ -540,8 +540,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：馬斯克表示，他把時間投入特斯拉與SpaceX進展受阻之處；若事情進展順利，他就較少露面。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118161879516504089",
@@ -558,8 +558,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：貝佐斯回憶巴菲特稱其投資方法是「慢慢致富」；貝佐斯認為耐心讓投資者占優勢。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118169177378697578",
@@ -576,8 +576,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：Booking的業績指引遠低於華爾街預期，但股價仍漲10%。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118179243964404121",
@@ -594,8 +594,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：Roku營收增24%、調整後EBITDA逾倍增；Rosenblatt將評級由買進下調至中性，維持160美元目標價，稱福斯待完成收購已反映大部分上行空間。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118130422169448717",
@@ -612,8 +612,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱SpaceX申請許可，擬部署最多100萬顆太陽能運算衛星；馬斯克在期中選舉後稱太空資料中心看來很有吸引力，原文截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118146780483240008",
@@ -630,8 +630,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：摩根士丹利透過DTCC新服務將美股與美國公債代幣化；證券仍由託管，參與機構可轉移所有權權利的數位紀錄，原文遭截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118154078018834472",
@@ -648,8 +648,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：投資人Tom Nash的基本情境模型估Palantir每股917美元，較其參考價隱含近423%上漲空間。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118124130599895542",
@@ -666,8 +666,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱馬斯克據報花4.74億美元支持共和黨參與2026年期中選舉，但民主黨掌控國會兩院；選後特斯拉與SpaceX股價下跌，馬斯克身家估減230億美元。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118079222342169026",
@@ -684,8 +684,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：貼文稱英特爾執行長陳立武8月股價95美元時買入1,000萬美元，兩天前股價65美元時再買入1,000萬美元；另稱20名政界人士持有英特爾股票。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118049698733064433",
@@ -702,8 +702,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：SEC文件披露，英特爾CEO透過家族信託以每股64.7美元買入971萬美元英特爾股票；作者認為在本月跌49.9%後是信心表態，並聯想到台積電前董事長買入美光。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118020683674386736",
@@ -720,8 +720,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：Duolingo營收勝預期並上調2026年銷售展望，股價上漲33%；富國銀行調升評級至持有並將目標價提高至120美元，一日漲幅抵消一個月賣壓。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118027997508997249",
@@ -738,8 +738,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：Ackman與Pershing Square投資長Israel在股東信中稱，應將微軟、亞馬遜和Meta的大規模AI支出視為成長投資，而非防禦性支出；後文遭截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118035295157277024",
@@ -756,8 +756,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：摩根大通維持Block目標價110美元，認為其支付業務成長帶來近45%上行空間；Dorsey推出Builderlab，擬向其他企業銷售Block內部AI工具，可能開拓新收入。",
+      "summaryKind": "ai"
     },
     {
       "id": "2118010288050208789",
@@ -774,8 +774,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：作者稱裴洛西持有的英特爾買權可能虧損40%至50%；列出兩次買入及英特爾10月30日自1974年來最差單日表現，並問是否逢低買入。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117995786101272766",
@@ -792,8 +792,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：過去十年美國上市大型企業中，輝達漲12,122%居首，其次為AMD的7,608%及美光的5,116%。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117966595956126040",
@@ -810,8 +810,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：Cycurion推出AI驅動的安全營運中心Habit，稱其旨在於威脅中斷營運前識別威脅。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117967851219042413",
@@ -828,8 +828,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：祖克柏表示自己避免咖啡因，偏好不依賴刺激物維持精力；他形容咖啡因等物質是可能干擾身體自然運作的「化學物質」，後文遭截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117974898001735720",
@@ -846,8 +846,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：馬斯克稱，100萬台Optimus機器人與1吉瓦太陽能可支援遠超地球的擴張願景；貼文所述內容遭截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117833465270014429",
@@ -864,8 +864,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱亞馬遜持有Anthropic帳面估值1,462億美元的62億美元可轉換票據，上市時或轉為股權；Anthropic承諾十年內向AWS支出逾1,000億美元。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117809054714105974",
@@ -882,8 +882,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：Palantir第三季營收年增96%至23.1億美元，美國商業營收增148%至9.84億美元；Dan Ives稱其展示AI支出如何轉為實際營收與現金流。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117818617937158268",
@@ -900,8 +900,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：Starlink衛星可連接遠離基地台的用戶，但公寓內訊號是另一難題；作者稱這有助解釋SpaceX在軌衛星逾11,000顆仍追求地面無線網路。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117826167202021626",
@@ -918,8 +918,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，標普500科技板塊遠期本益比降至18.2倍，回到ChatGPT於2022年推出前水準，與標普500整體估值相同。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117772312309317693",
@@ -936,8 +936,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱蘋果CEO表示目前記憶體價格「前所未見」，成本可能在12月季度後續升；先進晶片短缺預計持續影響Mac與iPad供應至2027年。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117778855389954309",
@@ -954,8 +954,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Bill Ackman認為微軟、亞馬遜與Meta的大規模AI支出是「進攻而非防守」。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117794206747865117",
@@ -972,8 +972,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Palantir執行長Alex Karp表示中國AI發展出色，警告美國不能落後，並主張美國必須維持領先。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117749411740524842",
@@ -990,8 +990,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，特斯拉10月在西班牙與瑞典的登記量年增271%及248%，其他歐洲市場也上升，但各地增幅因原有銷量而異；原文未完。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117660073015275998",
@@ -1008,8 +1008,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Melius Research仍看好輝達，但因融資疑慮將目標價由420美元下調至315美元，並調降多家晶片與科技公司的目標價；原文未完。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117639122081010109",
@@ -1026,8 +1026,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者預告今日《Ring The Bell》內容，涵蓋期中選舉對投資組合的影響、10月市場輪動、Cathie Wood動向及蘋果與Palantir財報。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117645477264978332",
@@ -1044,8 +1044,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，蘋果第四財季營收與獲利均雙位數成長，超出華爾街預期，活躍裝置安裝基數再創紀錄；營收1144.8億美元，高於預估。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117418733568246124",
@@ -1062,8 +1062,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，比爾蓋茲警告AI可能比許多勞工預期更早重塑就業市場，並表示他極度擔憂日益強大的AI系統對工作的影響；原文未完。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117425023896199423",
@@ -1080,8 +1080,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者引述市場策略師稱，蘋果是唯一跑贏標普500的「七巨頭」股票，原因是避開AI支出潮。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117428295465660891",
@@ -1098,8 +1098,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，SpaceX總裁Gwynne Shotwell表示，與Elon Musk共事讓她不再輕易否定雄心勃勃的想法；她的工作是將其轉為可實現目標。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117353555762069995",
@@ -1116,8 +1116,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Jeff Bezos警告，將複雜經濟問題歸咎於特定群體的政治言論，可能使選民忽略根本政策成因；原文未完。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117360599277699574",
@@ -1134,8 +1134,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者指出，標普500半導體指數遠期本益比為14.7倍，低於標普500整體的18.9倍。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117370414305362033",
@@ -1152,8 +1152,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱比爾蓋茲警告，若政府與企業未建立充分防護，日益強大的AI可能帶來嚴重風險；他曾把先進AI比作「外星人入侵」，原文截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117328890490499513",
@@ -1170,8 +1170,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者指出，必需消費品板塊10月上漲10.9%，創單月最佳；科技板塊跌8.3%，必需消費品對科技比率升21%，為2001年2月以來最大月增幅。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117333168617599174",
@@ -1188,8 +1188,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者指出，科技板塊從標普500表現最佳轉為最差：9月2日至10月2日漲8.83%，其後至10月30日跌10.2%；能源板塊同期漲11.5%。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117338956991713300",
@@ -1206,8 +1206,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱蘋果將於收盤後公布Q4業績，華爾街預期營收1,133.9億美元、每股盈餘1.99美元；Dan Ives看好需求，焦點在iPhone 18需求與假日展望。",
+      "summaryKind": "ai"
     },
     {
       "id": "2116959055055028706",
@@ -1224,8 +1224,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，BTC月度藍鑽訊號已確認，並認為從現在到2027年第一季持續定期定額買入ASST／MSTR應會有不錯表現。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117288625251483956",
@@ -1242,8 +1242,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者列出11月2日至6日財報週安排：蘋果、Palantir週一，AMD週二，Arm與高通週三；另有Uber、Airbnb及週五就業報告。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117295420103594185",
@@ -1260,8 +1260,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Tom Sosnoff預期輝達、AMD與美光還會下跌，稱晶片股拋售「才剛開始」，並希望跌25%至35%後才考慮其是否超賣。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117308506340786178",
@@ -1278,8 +1278,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者指出，特斯拉德州機器人計程車登記數9月30日至11月1日增128%至1,244輛，僅比Waymo少15輛；數字未顯示載客或無安全監控員營運的車輛數。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117281964629905454",
@@ -1296,8 +1296,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱眾議員John McGuire申報買入最多4.5萬美元的Micron，並指出他任職的軍事委員會監督晶片供應鏈；其均價1,087美元，MU當日881美元。",
+      "summaryKind": "ai"
     },
     {
       "id": "2117292725712425311",
@@ -1314,8 +1314,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者以Pelosi的TEM投資為例：她在股價31美元時買入買權，股價曾漲至103美元後跌至41美元；財報優於預期後當日漲10%，她行使選擇權並仍持有5,000股，原文截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2115962431704871030",
@@ -1332,8 +1332,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者轉述Jim Cramer稱不想買IREN或NBIS，並以「虧錢的人會買」形容這兩檔股票。",
+      "summaryKind": "ai"
     },
     {
       "id": "2115506784173785349",
@@ -1350,8 +1350,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者認為Fetterman擅長選股，也稱Pelosi如此，並建議查看她的持倉或跟著交易。",
+      "summaryKind": "ai"
     },
     {
       "id": "2115453810948833734",
@@ -1368,8 +1368,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱曾指出費特曼在3月底買入美光、接近低點；股價今日再漲4%，其持倉獲利約200%，並以引號標示其商務委員會席位為「巧合」。",
+      "summaryKind": "ai"
     },
     {
       "id": "2115094150626644115",
@@ -1386,8 +1386,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱新建「一切都完了」投資組合，挑選比AAOI beta更高的股票，條件包括暴跌、低於催化劑公布時價格、基本面改善、圖表形態及放空興趣上升；後文截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2114753128302059756",
@@ -1404,8 +1404,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱裴洛西的Bloom Energy持倉今日漲7%，單日獲利約21.5萬美元，並估其淨值約2.655億美元。",
+      "summaryKind": "ai"
     },
     {
       "id": "2114719900241469893",
@@ -1422,8 +1422,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱眾議員Cleo Fields自2025年6月起買進至多1,100萬美元的輝達與台積電股票，並指出他任職於協助監督股市的次級委員會。",
+      "summaryKind": "ai"
     },
     {
       "id": "2113260854145908914",
@@ -1440,8 +1440,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱Citadel申報持有CIFR 5.5%股份，但13G持倉主要是Citadel Securities做市庫存，並非基金的方向性押注。",
+      "summaryKind": "ai"
     },
     {
       "id": "2112544004470407456",
@@ -1458,8 +1458,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱眾議員Laurel Lee在8月24日賣出至多10萬美元BAC；七週後該行因洗錢防制失誤遭12億美元罰款，股票自她賣出後跌18%。",
+      "summaryKind": "ai"
     },
     {
       "id": "2112182012865871996",
@@ -1476,8 +1476,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱David Taylor在AT&T因SpaceX宣布競爭而跌11%當日買進AT&T，並稱他協助領導國會一個相關團體；後文截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2111250341409046989",
@@ -1494,8 +1494,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱PepsiCo內部人士Robert C. Pohlad買入184,646股，價值約2,368.6萬美元；文中列出PEP現價131.49美元。",
+      "summaryKind": "ai"
     },
     {
       "id": "2110932178645275075",
@@ -1512,8 +1512,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者認為美光及記憶體股看跌，理由包括中國公司預計2029年過量生產RAM、美國公司及對美銷售者不能使用中國產品；並稱美光未來在HBM而非傳統RAM。",
+      "summaryKind": "ai"
     },
     {
       "id": "2111124083211399417",
@@ -1530,8 +1530,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱美國政府透過現金、交換補助或認股權證持有35家公司股權，並開始列出晶片與量子企業及持股資訊；清單後文截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2110817988077363208",
@@ -1548,8 +1548,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者表示看到大家詢問裴洛西持股，並請查看她持有哪些股票獲利或虧損。",
+      "summaryKind": "ai"
     },
     {
       "id": "2110780600756125982",
@@ -1566,8 +1566,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱英特爾股價低於裴洛西於2026年5月29日買入時的價格：買入價115美元，現價94美元。",
+      "summaryKind": "ai"
     },
     {
       "id": "2110451204635471962",
@@ -1584,8 +1584,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱今日市場不佳、明日可能更糟，認為CPI令SPY與QQQ受挫，且明天還有PPI；呼籲先了解原因再決定買什麼，並把握恐慌。",
+      "summaryKind": "ai"
     },
     {
       "id": "2110453508441084397",
@@ -1602,8 +1602,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者提到有人詢問佩洛西的股票清單，稱可查看她的持倉或跟著交易。",
+      "summaryKind": "ai"
     },
     {
       "id": "2110167944236093813",
@@ -1620,8 +1620,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者轉述Jim Cramer稱，他唯一信任並想持有的新雲股是CRWV，並補充「無意冒犯IREN」。",
+      "summaryKind": "ai"
     },
     {
       "id": "2110389218312593800",
@@ -1638,8 +1638,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者列出賣股金額上限：CB、HD、LOW各1.5萬美元；CVX、EMR、LIN、NEE、ROK各5萬美元，後續清單截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2110389167163052491",
@@ -1656,8 +1656,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱共和黨眾議員Kevin Hern申報18筆新交易，全是賣出、買入為零，賣出金額最高約94.5萬美元，涉及LMT、UNH、CVX、DVN等。",
+      "summaryKind": "ai"
     },
     {
       "id": "2110193805035200778",
@@ -1674,8 +1674,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者更正編輯錯誤，並稱總統持倉是公開資訊，可查看其股票部位或跟著交易。",
+      "summaryKind": "ai"
     },
     {
       "id": "2110062305350144383",
@@ -1692,8 +1692,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者比較IBRX交易披露與其後股價表現，提到9月28、30日買入、10月12日披露，並稱股價兩週漲23%；原文截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2109777916154585327",
@@ -1710,8 +1710,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱蘋果承認記憶體嚴重短缺，七成產品漲價逾三成；又稱馬斯克指出RAM供應是問題，質疑MU股價卻下跌的原因。",
+      "summaryKind": "ai"
     },
     {
       "id": "2108555666629497317",
@@ -1728,8 +1728,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者列出BULL兩筆高層售股：總裁9月8日售51.6萬美元，財務長六日後售49.4萬美元，並稱股價之後單日跌19%；原文截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2108580659279155580",
@@ -1746,8 +1746,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者回顧2024年11月曾提及Debbie Schultz買入VSAT，並指出她當時的軍事建設委員會職務與Viasat軍用通訊業務；報酬段落截斷。",
+      "summaryKind": "ai"
     }
   ]
 }
