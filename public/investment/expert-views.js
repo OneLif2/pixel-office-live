@@ -44,6 +44,13 @@
     if (['FORWARD', 'HIGH', 'CRITICAL'].includes(item.tier)) return '個別轉發';
     return '收錄方式未詳';
   }
+  function publicSummary(item) {
+    if (item.summaryKind !== 'ai' || typeof item.summary !== 'string') return null;
+    const text = item.summary.trim();
+    // Reject overlength rather than cutting a qualifier or changing the author's meaning.
+    if (!text || Array.from(text).length >= 100 || /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u202A-\u202E\u2066-\u2069]/u.test(text)) return null;
+    return text;
+  }
   function render() {
     list.replaceChildren();
     const selected = items.filter(item => !author.value || item.sourceHandle === author.value);
@@ -55,10 +62,11 @@
       body.append(node('h4', '@' + item.sourceHandle));
       body.append(node('span', provenance(item), 'badge expert-provenance'));
       body.append(time('發布：', item.publishedAt), time('最近收錄：', item.forwardedAt));
-      if (item.summaryKind === 'ai' && typeof item.summary === 'string' && item.summary.trim()) {
-        body.append(node('p', 'AI 摘要 · 非原文，請對照來源查核', 'expert-warning'));
-        body.append(node('p', item.summary.slice(0, 700)));
-      } else body.append(node('p', '原文連結 · 未提供已審閱摘要'));
+      const summary = publicSummary(item);
+      if (summary) {
+        body.append(node('p', 'AI 原文摘要 · 未經獨立查核，請對照來源', 'expert-warning'));
+        body.append(node('p', summary, 'expert-summary'));
+      } else body.append(node('p', '原文連結 · 暫無可用的原文摘要'));
       const link = node('a', '閱讀 X 原始貼文 ↗');
       link.href = item.url; link.target = '_blank'; link.rel = 'noopener noreferrer';
       body.append(link); entry.append(body); list.append(entry);
