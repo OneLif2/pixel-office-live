@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "status": "not_connected",
+  "generatedAt": null,
+  "expectedSession": null,
+  "publicRedistributionApproved": false,
+  "records": [],
+  "note": "No licensed production market data has been connected. Missing data must remain unknown. Synthetic examples are generated separately in the browser and are never persisted here."
+}

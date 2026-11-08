@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "mode": "publisher",
+  "sessionDate": "2026-11-06",
+  "description": "單一公開已刊日期，用於驗證門檻計分，並非獨立行情或當日訊號。",
+  "publishedScore": 10,
+  "sourceUrl": "https://www.cashmate.hk/market-monitor",
+  "observations": {
+    "vix5d": {"value": 22.47},
+    "idx50d": {"value": -6.43},
+    "breadth50": {"value": 43.3},
+    "stock52w": {"value": -26.16},
+    "breadth200": {"value": 40.0},
+    "trend50200": {"value": 4.84},
+    "rvol21": {"value": 19.5},
+    "spx52w": {"value": -5.96}
+  }
+}
