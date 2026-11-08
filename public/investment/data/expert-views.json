@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T10:15:57Z",
+  "generatedAt": "2026-11-08T14:16:57Z",
   "source": "x-post-tracker",
   "items": [
     {
@@ -1738,24 +1738,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者稱蘋果承認記憶體嚴重短缺，七成產品漲價逾三成；又稱馬斯克指出RAM供應是問題，質疑MU股價卻下跌的原因。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2108555666629497317",
-      "url": "https://x.com/burrytracker/status/2108555666629497317",
-      "sourceHandle": "burrytracker",
-      "trackedHandles": [
-        "burrytracker"
-      ],
-      "publishedAt": "2026-10-09T13:50:20Z",
-      "forwardedAt": "2026-10-09T21:20:43Z",
-      "tier": "CRITICAL",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者列出BULL兩筆高層售股：總裁9月8日售51.6萬美元，財務長六日後售49.4萬美元，並稱股價之後單日跌19%；原文截斷。",
       "summaryKind": "ai"
     },
     {
