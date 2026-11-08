@@ -1,8 +1,26 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T00:16:57Z",
+  "generatedAt": "2026-11-08T04:15:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2119203251262574738",
+      "url": "https://x.com/Benzinga/status/2119203251262574738",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-07T23:00:02Z",
+      "forwardedAt": "2026-11-08T02:59:32Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "作者稱，華爾街最準確的分析師對3檔股息殖利率逾10%的金融股發表看法。",
+      "summaryKind": "ai"
+    },
     {
       "id": "2118835164835086745",
       "url": "https://x.com/JEFETRADES/status/2118835164835086745",
