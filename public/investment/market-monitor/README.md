@@ -43,3 +43,13 @@ The source's terms restrict bulk redistribution and systematic scraping. No sour
 A targeted license check did not establish a ready-to-use consolidated SPY/QQQ source suitable for public redistribution. Twelve Data requires relevant display/redistribution rights, and Alpha Vantage's default terms restrict use. A public GitHub JSON archive may need rights beyond chart display. Synthetic fixtures remain isolated until an approved data source, timing policy and calculation contract are implemented and tested.
 
 Price model tests cover valid OHLC, weekly aggregation, log/linear mapping, calendar windows, shared synthetic events, boundary clamping, and pointer inverse-mapping at desktop and scaled mobile widths. The optional `price-dom.cjs` harness exercises mode isolation, symbol/period/type/scale switches, zoom/pan/reset, keyboard selection and hidden-marker behavior.
+
+## Daily records visibility and header help
+
+The daily record section is near the top at `#daily-records`, with a prominent overview card, sidebar link and in-page shortcut. Its default is the latest 120 records, newest first. The formal feed remains empty: no real 120-trading-day history is claimed. The table explicitly separates the requested reference universe (about 2,500 stocks with close >= US$5 and 20-day average volume >=300,000) from an actually verified daily constituent set, which is not available.
+
+Seventeen columns include SPY/QQQ synthetic closes consistent with the price-chart fixtures, the eight score inputs and five breadth fields. Every column has hover/focus/tap help with threshold or definition and uncertainty. The fixed help panel does not move table headers, supports Close/Escape, and restores keyboard focus. Date and score columns stay visible during horizontal scrolling.
+
+Synthetic 5/10-period breadth ratios now use totals of the corresponding gain/loss counts. Incomplete windows and zero denominators remain unknown. Filtering does not recalculate those underlying windows. Source-described breadth color thresholds are informational, separate from the eight score inputs; oversold green does not imply safety.
+
+Tests add coverage for 120-row defaults/order, all 17 help definitions, cross-chart price consistency, rolling-window arithmetic, formal/synthetic isolation, touch/click/hover/focus help and close/focus restoration. No CashMate historical table or member records were imported.

@@ -1,8 +1,10 @@
+import { HISTORY_COLUMNS, initHistoryHelp } from './history.mjs?v=daily-v1';
 import { initPriceChart } from './price-chart.mjs';
 import { RULES } from './rules.mjs';
 import { scoreValue } from './engine.mjs';
-import { BAND, tone, demoRecords, validateFeed, filterRecords, makeCsv } from './model.mjs';
+import { BAND, tone, demoRecords, validateFeed, filterRecords, makeCsv } from './model.mjs?v=daily-v1';
 const $ = id => document.getElementById(id);
+initHistoryHelp();
 const priceChart = initPriceChart(() => switchMode('demo'));
 let mode = 'real', records = [], production = [], selected = -1, range = 60, request = 0, feedError = false, lastFeed = null;
 const number = (value, decimals = 0) => typeof value === 'number' && Number.isFinite(value) ? value.toLocaleString('en-US', {minimumFractionDigits: decimals, maximumFractionDigits: decimals}) : '—';
@@ -63,10 +65,24 @@ function renderChart() {
 }
 function historyRows() { return filterRecords(records, { band:$('history-band').value, limit:Number($('history-limit').value), sort:$('history-sort').value }); }
 function renderHistory() {
-  const rows=historyRows(); $('history-count').textContent=records.length ? `${rows.length} 筆顯示 / ${records.length} 筆${mode==='demo'?'合成示範':'核實記錄'}` : '尚無正式記錄';
-  $('table-caption').textContent=mode==='demo'?'以下全部為合成示範，並非真實歷史。日期僅供操作展示。':'數值依其來源與日期閱讀，不是即時行情。'; $('export').disabled=!rows.length;
-  $('history-body').replaceChildren(...rows.map(row=>{ const tr=document.createElement('tr'); const cells=[row.sessionDate,row.score,...RULES.map(r=>number(row.observations?.[r.id]?.value,r.decimals)),...['advancers','decliners','ratio5','ratio10','above40'].map(k=>number(row.breadth?.[k],k.startsWith('ratio')?2:k==='above40'?1:0))]; cells.forEach((val,i)=>{ const td=document.createElement('td'); if(i===1){const badge=document.createElement('span');badge.className='point '+tone(row.score);badge.textContent=val;td.append(badge);}else td.textContent=val; tr.append(td);}); return tr;}));
-  if(!rows.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=15;td.textContent=records.length?'此區間沒有符合條件的記錄。':'尚無已驗證歷史資料。可切換示範查看篩選與匯出功能。';tr.append(td);$('history-body').append(tr);}
+  const rows=historyRows(), demo=mode==='demo', limit=Number($('history-limit').value), order=$('history-sort').value==='asc'?'舊至新':'最新在上';
+  $('history-count').textContent=demo?`${rows.length} 筆顯示 / 120 筆合成示範`:records.length?`${rows.length} 筆顯示 / ${records.length} 筆已核實記錄`:'正式記錄：未知（沒有已核實資料）';
+  $('history-count').parentElement.classList.toggle('demo',demo);
+  $('history-order-note').textContent=demo?`目前查看最近 ${limit} 筆合成示範，${order}。示範日期不是真實交易日曆。`:`正式目標為最近 120 個美股交易日，${order}；${records.length?'實際可用數目以上方狀態為準。':'目前沒有已核實的正式記錄。'}`;
+  $('history-provenance').textContent=demo?`合成日期 ${records[0]?.sessionDate} 至 ${records.at(-1)?.sessionDate} · 市場擷取：不適用 · 實際母體：未知`:records.length?`資料日 ${records.at(-1).sessionDate} · 擷取 ${records.at(-1).observations?.vix5d?.retrievedAt??'未知'} · 廣度母體未知`:'資料日：未知 · 擷取時間：未知 · 來源：尚未接通 · 實際樣本數／覆蓋率：未知';
+  $('table-caption').textContent=demo?'以下價格、分數及家數全部為合成示範，並非真實歷史。八項指標的色彩表示0／1／2分；廣度色彩不計入總分。':'正式行情未接通。沒有可冒充當日或歷史市況的數值。';
+  $('history-data-note').textContent=demo?'120 筆為合成工作日，未套用交易所假期，不等於 120 個實際交易日。SPY／QQQ 與本頁合成 K 線共用資料；5／10 日比率按連續合成日期的升跌家數合計，篩選不改變原本計算窗口，不足窗口顯示「—」。2,500 僅為示範設定，非已核實樣本。':'未搬運原站 120 日資料表或會員記錄；正式數據需先確認公開分發授權、來源、歷史母體及計算方法。';
+  $('history-demo').textContent=demo?'切回正式資料（未知）':'試看 120 筆合成示範';$('history-demo').setAttribute('aria-pressed',String(demo));$('export').disabled=!rows.length;
+  $('history-body').replaceChildren(...rows.map(row=>{
+    const tr=document.createElement('tr');
+    const date=document.createElement('td');date.textContent=row.sessionDate;tr.append(date);
+    const score=document.createElement('td'),badge=document.createElement('span');badge.className='point '+tone(row.score);badge.textContent=row.score;score.append(badge);tr.append(score);
+    for(const symbol of ['SPY','QQQ']){const td=document.createElement('td');td.className='price-cell';td.textContent=number(row.prices?.[symbol]?.close,2);const small=document.createElement('small'),change=row.prices?.[symbol]?.changePercent;small.textContent=typeof change==='number'?(change>0?'+':'')+number(change,2)+'%':'—';td.append(small);tr.append(td);}
+    for(const rule of RULES){const td=document.createElement('td'),span=document.createElement('span'),scored=scoreValue(rule.id,row.observations?.[rule.id]?.value);span.textContent=number(scored.value,rule.decimals);span.className='point '+(scored.score===null?'':'p'+scored.score);span.setAttribute('aria-label',span.textContent+(scored.score===null?'，未知':'，'+scored.score+'分'));td.append(span);tr.append(td);}
+    for(const key of ['advancers','decliners','ratio5','ratio10','above40']){const td=document.createElement('td'),span=document.createElement('span'),value=row.breadth?.[key];span.textContent=number(value,key.startsWith('ratio')?2:key==='above40'?1:0);if(typeof value==='number'){span.className=key==='advancers'&&value>=300?'breadth-up':key==='decliners'&&value>=300?'breadth-down':key.startsWith('ratio')&&value>=2?'breadth-up':(key==='ratio5'&&value<.5)||(key==='ratio10'&&value<1)?'breadth-down':key==='above40'&&value<20?'breadth-oversold':'';}td.append(span);tr.append(td);}
+    return tr;
+  }));
+  if(!rows.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=HISTORY_COLUMNS.length;const strong=document.createElement('strong');strong.textContent=records.length?'目前篩選沒有符合的記錄。':'正式歷史尚未接通，數值維持未知。';const text=document.createElement('span');text.textContent=records.length?'請切換分數區間或增加顯示筆數。':'可按上方「試看 120 筆合成示範」查看完整表格；它不是實際行情。';td.append(strong,text);tr.append(td);$('history-body').append(tr);}
 }
 function render() { priceChart.setMode(mode); markMode(); renderScore(); renderIndicators(); renderChart(); renderHistory(); }
 function switchMode(next) { mode=next; records=mode==='demo'?demoRecords():production; selected=records.length-1; render(); }
@@ -76,6 +92,7 @@ async function load() {
   catch { if(id!==request)return;production=[];lastFeed=null;feedError=true; }
   finally { if(id===request){$('reload').disabled=false;$('reload').textContent='↻ 重新讀取';if(mode==='real'){records=production;selected=records.length-1;}render();} }
 }
+$('history-demo').addEventListener('click',()=>{switchMode(mode==='demo'?'real':'demo');});
 $('mode-real').addEventListener('click',()=>switchMode('real')); $('mode-demo').addEventListener('click',()=>switchMode('demo')); $('reload').addEventListener('click',load);
 document.querySelectorAll('[data-range]').forEach(button=>button.addEventListener('click',()=>{range=Number(button.dataset.range);selected=Math.max(records.length-Math.min(range,records.length),selected);document.querySelectorAll('[data-range]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});renderScore();renderIndicators();renderChart();}));
 $('date-slider').addEventListener('input',()=>{selected=records.length-Math.min(range,records.length)+Number($('date-slider').value);renderScore();renderIndicators();renderChart();});
