@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T14:16:57Z",
+  "generatedAt": "2026-11-08T16:15:06Z",
   "source": "x-post-tracker",
   "items": [
     {
@@ -1738,24 +1738,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者稱蘋果承認記憶體嚴重短缺，七成產品漲價逾三成；又稱馬斯克指出RAM供應是問題，質疑MU股價卻下跌的原因。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2108580659279155580",
-      "url": "https://x.com/pelositracker/status/2108580659279155580",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-09T15:29:39Z",
-      "forwardedAt": "2026-10-09T16:16:11Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者回顧2024年11月曾提及Debbie Schultz買入VSAT，並指出她當時的軍事建設委員會職務與Viasat軍用通訊業務；報酬段落截斷。",
       "summaryKind": "ai"
     }
   ]
