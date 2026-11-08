@@ -33,3 +33,13 @@ Reference: https://www.cashmate.hk/market-monitor
 Terms: https://www.cashmate.hk/terms
 
 The source's terms restrict bulk redistribution and systematic scraping. No source dataset or scraper is included. An isolated one-row prior public example exists only in unit tests for arithmetic regression, not in the site's published data.
+
+## Original price-chart increment
+
+`price-model.mjs` and `price-chart.mjs` provide original SPY/QQQ selector UI with candlestick/close-line, log/linear axes, 1/3/5/10-year/all windows, daily bars for 1 year and weekly OHLC aggregation for longer windows, zoom, pan, touch-friendly controls, keyboard selection and original primary/secondary marker styles. The global mode controls score and price demonstrations together.
+
+**There is no production price adapter.** Formal prices and all actual signal states remain unknown. The only bundled OHLC consists of 3,348 deterministic synthetic weekday bars per selector, dated 2013-01-02 through 2025-10-31, plus 29 shared illustrative event dates. These dates are not a verified exchange calendar. Neither the prices nor events describe real SPY/QQQ performance. No returns, false-signal rates, proprietary trigger algorithm, subscriber event history or forward-performance brackets are claimed.
+
+A targeted license check did not establish a ready-to-use consolidated SPY/QQQ source suitable for public redistribution. Twelve Data requires relevant display/redistribution rights, and Alpha Vantage's default terms restrict use. A public GitHub JSON archive may need rights beyond chart display. Synthetic fixtures remain isolated until an approved data source, timing policy and calculation contract are implemented and tested.
+
+Price model tests cover valid OHLC, weekly aggregation, log/linear mapping, calendar windows, shared synthetic events, boundary clamping, and pointer inverse-mapping at desktop and scaled mobile widths. The optional `price-dom.cjs` harness exercises mode isolation, symbol/period/type/scale switches, zoom/pan/reset, keyboard selection and hidden-marker behavior.

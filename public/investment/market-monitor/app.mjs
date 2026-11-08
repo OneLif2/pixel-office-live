@@ -1,7 +1,9 @@
+import { initPriceChart } from './price-chart.mjs';
 import { RULES } from './rules.mjs';
 import { scoreValue } from './engine.mjs';
 import { BAND, tone, demoRecords, validateFeed, filterRecords, makeCsv } from './model.mjs';
 const $ = id => document.getElementById(id);
+const priceChart = initPriceChart(() => switchMode('demo'));
 let mode = 'real', records = [], production = [], selected = -1, range = 60, request = 0, feedError = false, lastFeed = null;
 const number = (value, decimals = 0) => typeof value === 'number' && Number.isFinite(value) ? value.toLocaleString('en-US', {minimumFractionDigits: decimals, maximumFractionDigits: decimals}) : '—';
 for (let i = 0; i < 16; i++) $('segments').appendChild(document.createElement('i'));
@@ -66,7 +68,7 @@ function renderHistory() {
   $('history-body').replaceChildren(...rows.map(row=>{ const tr=document.createElement('tr'); const cells=[row.sessionDate,row.score,...RULES.map(r=>number(row.observations?.[r.id]?.value,r.decimals)),...['advancers','decliners','ratio5','ratio10','above40'].map(k=>number(row.breadth?.[k],k.startsWith('ratio')?2:k==='above40'?1:0))]; cells.forEach((val,i)=>{ const td=document.createElement('td'); if(i===1){const badge=document.createElement('span');badge.className='point '+tone(row.score);badge.textContent=val;td.append(badge);}else td.textContent=val; tr.append(td);}); return tr;}));
   if(!rows.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=15;td.textContent=records.length?'此區間沒有符合條件的記錄。':'尚無已驗證歷史資料。可切換示範查看篩選與匯出功能。';tr.append(td);$('history-body').append(tr);}
 }
-function render() { markMode(); renderScore(); renderIndicators(); renderChart(); renderHistory(); }
+function render() { priceChart.setMode(mode); markMode(); renderScore(); renderIndicators(); renderChart(); renderHistory(); }
 function switchMode(next) { mode=next; records=mode==='demo'?demoRecords():production; selected=records.length-1; render(); }
 async function load() {
   const id=++request; $('reload').disabled=true; $('reload').textContent='讀取中…';
