@@ -1,8 +1,44 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T22:16:57Z",
+  "generatedAt": "2026-11-09T02:16:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2119580729235611669",
+      "url": "https://x.com/Benzinga/status/2119580729235611669",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-09T00:00:00Z",
+      "forwardedAt": "2026-11-09T01:07:12Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2119586822330437829",
+      "url": "https://x.com/Benzinga/status/2119586822330437829",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-09T00:24:13Z",
+      "forwardedAt": "2026-11-09T01:06:55Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2119203251262574738",
       "url": "https://x.com/Benzinga/status/2119203251262574738",
