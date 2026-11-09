@@ -1,8 +1,62 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T10:15:57Z",
+  "generatedAt": "2026-11-09T16:16:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2119789856716984723",
+      "url": "https://x.com/Benzinga/status/2119789856716984723",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-09T13:51:00Z",
+      "forwardedAt": "2026-11-09T15:10:46Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2119800175124218207",
+      "url": "https://x.com/Benzinga/status/2119800175124218207",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-09T14:32:00Z",
+      "forwardedAt": "2026-11-09T15:10:27Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2119801533303001534",
+      "url": "https://x.com/pelositracker/status/2119801533303001534",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-11-09T14:37:24Z",
+      "forwardedAt": "2026-11-09T14:59:19Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "作者稱裴洛西申報出售最多10萬美元華納兄弟（WBD）股票；稱該股源自2022年AT&T分拆，出售與華納兄弟和派拉蒙天舞合併有關。",
+      "summaryKind": "ai"
+    },
     {
       "id": "2119580729235611669",
       "url": "https://x.com/Benzinga/status/2119580729235611669",
@@ -1756,24 +1810,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者比較IBRX交易披露與其後股價表現，提到9月28、30日買入、10月12日披露，並稱股價兩週漲23%；原文截斷。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2109777916154585327",
-      "url": "https://x.com/JEFETRADES/status/2109777916154585327",
-      "sourceHandle": "JEFETRADES",
-      "trackedHandles": [
-        "JEFETRADES"
-      ],
-      "publishedAt": "2026-10-12T22:47:07Z",
-      "forwardedAt": "2026-10-13T11:12:36Z",
-      "tier": "CRITICAL",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱蘋果承認記憶體嚴重短缺，七成產品漲價逾三成；又稱馬斯克指出RAM供應是問題，質疑MU股價卻下跌的原因。",
       "summaryKind": "ai"
     }
   ]
