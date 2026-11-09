@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T02:16:57Z",
+  "generatedAt": "2026-11-09T04:16:06Z",
   "source": "x-post-tracker",
   "items": [
     {
@@ -18,8 +18,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Ross Gerber認為，馬斯克開始賣股收購Twitter時，Tesla的「好日子」便已結束。",
+      "summaryKind": "ai"
     },
     {
       "id": "2119586822330437829",
@@ -36,8 +36,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，黃仁勳承認與疑似中國間諜有染，董事會將調查；並提及$NVDA。",
+      "summaryKind": "ai"
     },
     {
       "id": "2119203251262574738",
