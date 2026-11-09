@@ -1,8 +1,62 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T16:16:57Z",
+  "generatedAt": "2026-11-09T18:16:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2119831631741722666",
+      "url": "https://x.com/Benzinga/status/2119831631741722666",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-09T16:37:00Z",
+      "forwardedAt": "2026-11-09T17:10:28Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2119836348110832110",
+      "url": "https://x.com/Benzinga/status/2119836348110832110",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-09T16:55:44Z",
+      "forwardedAt": "2026-11-09T17:10:11Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2119837923629768925",
+      "url": "https://x.com/Benzinga/status/2119837923629768925",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-09T17:02:00Z",
+      "forwardedAt": "2026-11-09T17:09:48Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2119789856716984723",
       "url": "https://x.com/Benzinga/status/2119789856716984723",
@@ -1756,60 +1810,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者列出賣股金額上限：CB、HD、LOW各1.5萬美元；CVX、EMR、LIN、NEE、ROK各5萬美元，後續清單截斷。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2110389167163052491",
-      "url": "https://x.com/pelositracker/status/2110389167163052491",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-14T15:16:01Z",
-      "forwardedAt": "2026-10-14T16:30:24Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱共和黨眾議員Kevin Hern申報18筆新交易，全是賣出、買入為零，賣出金額最高約94.5萬美元，涉及LMT、UNH、CVX、DVN等。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2110193805035200778",
-      "url": "https://x.com/pelositracker/status/2110193805035200778",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-14T02:19:43Z",
-      "forwardedAt": "2026-10-14T02:28:41Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者更正編輯錯誤，並稱總統持倉是公開資訊，可查看其股票部位或跟著交易。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2110062305350144383",
-      "url": "https://x.com/pelositracker/status/2110062305350144383",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-13T17:37:11Z",
-      "forwardedAt": "2026-10-13T18:27:27Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者比較IBRX交易披露與其後股價表現，提到9月28、30日買入、10月12日披露，並稱股價兩週漲23%；原文截斷。",
       "summaryKind": "ai"
     }
   ]
