@@ -1,8 +1,62 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T18:16:57Z",
+  "generatedAt": "2026-11-09T20:16:06Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2119855539094167684",
+      "url": "https://x.com/Benzinga/status/2119855539094167684",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-09T18:12:00Z",
+      "forwardedAt": "2026-11-09T19:09:39Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2119858055823421505",
+      "url": "https://x.com/Benzinga/status/2119858055823421505",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-09T18:22:00Z",
+      "forwardedAt": "2026-11-09T19:09:26Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2119866360486568155",
+      "url": "https://x.com/Benzinga/status/2119866360486568155",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-09T18:55:00Z",
+      "forwardedAt": "2026-11-09T19:09:13Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2119831631741722666",
       "url": "https://x.com/Benzinga/status/2119831631741722666",
@@ -1756,60 +1810,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者稱今日市場不佳、明日可能更糟，認為CPI令SPY與QQQ受挫，且明天還有PPI；呼籲先了解原因再決定買什麼，並把握恐慌。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2110453508441084397",
-      "url": "https://x.com/pelositracker/status/2110453508441084397",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-14T19:31:41Z",
-      "forwardedAt": "2026-10-14T20:31:25Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者提到有人詢問佩洛西的股票清單，稱可查看她的持倉或跟著交易。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2110167944236093813",
-      "url": "https://x.com/SmallCapSnipa/status/2110167944236093813",
-      "sourceHandle": "SmallCapSnipa",
-      "trackedHandles": [
-        "SmallCapSnipa"
-      ],
-      "publishedAt": "2026-10-14T00:36:57Z",
-      "forwardedAt": "2026-10-14T17:29:56Z",
-      "tier": "CRITICAL",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者轉述Jim Cramer稱，他唯一信任並想持有的新雲股是CRWV，並補充「無意冒犯IREN」。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2110389218312593800",
-      "url": "https://x.com/pelositracker/status/2110389218312593800",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-14T15:16:13Z",
-      "forwardedAt": "2026-10-14T16:30:42Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者列出賣股金額上限：CB、HD、LOW各1.5萬美元；CVX、EMR、LIN、NEE、ROK各5萬美元，後續清單截斷。",
       "summaryKind": "ai"
     }
   ]
