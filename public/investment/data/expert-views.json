@@ -1,8 +1,26 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T12:16:57Z",
+  "generatedAt": "2026-11-10T14:15:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2120138654702297192",
+      "url": "https://x.com/Benzinga/status/2120138654702297192",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-10T12:57:00Z",
+      "forwardedAt": "2026-11-10T13:12:04Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2119985898427212282",
       "url": "https://x.com/Benzinga/status/2119985898427212282",
@@ -1784,33 +1802,6 @@
       "sentiment": "UNKNOWN",
       "summary": "作者稱David Taylor在AT&T因SpaceX宣布競爭而跌11%當日買進AT&T，並稱他協助領導國會一個相關團體；後文截斷。",
       "summaryKind": "ai"
-    },
-    {
-      "id": "2111250341409046989",
-      "url": "https://x.com/BeatTheInsider/status/2111250341409046989",
-      "sourceHandle": "BeatTheInsider",
-      "trackedHandles": [
-        "BeatTheInsider"
-      ],
-      "publishedAt": "2026-10-17T00:18:01Z",
-      "forwardedAt": "2026-10-17T01:24:48Z",
-      "tier": "CRITICAL",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱Robert C. Pohlad「買入」184,646股PEP，約2,368.6萬美元；交易性質另見SEC補充查核。",
-      "summaryKind": "ai",
-      "correction": {
-        "text": "SEC註腳1載明：可撤銷信託以等值現金換取不可撤銷信託的股份，屬信託資產置換，而非公開市場買入。",
-        "sources": [
-          {
-            "label": "SEC Form 4 · 註腳1",
-            "url": "https://www.sec.gov/Archives/edgar/data/77476/000106127226000004/xslF345X06/wk-form4_1792180971.xml"
-          }
-        ]
-      }
     }
   ]
 }
