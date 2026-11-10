@@ -1,8 +1,44 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T16:16:58Z",
+  "generatedAt": "2026-11-10T18:16:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2120190496689758663",
+      "url": "https://x.com/Benzinga/status/2120190496689758663",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-10T16:23:00Z",
+      "forwardedAt": "2026-11-10T17:12:32Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2120170759121178704",
+      "url": "https://x.com/pelositracker/status/2120170759121178704",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-11-10T15:04:34Z",
+      "forwardedAt": "2026-11-10T17:02:06Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2120171310349488433",
       "url": "https://x.com/Benzinga/status/2120171310349488433",
@@ -1765,42 +1801,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者稱眾議員Cleo Fields自2025年6月起買進至多1,100萬美元的輝達與台積電股票，並指出他任職於協助監督股市的次級委員會。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2113260854145908914",
-      "url": "https://x.com/SmallCapSnipa/status/2113260854145908914",
-      "sourceHandle": "SmallCapSnipa",
-      "trackedHandles": [
-        "SmallCapSnipa"
-      ],
-      "publishedAt": "2026-10-22T13:27:04Z",
-      "forwardedAt": "2026-10-22T14:45:27Z",
-      "tier": "CRITICAL",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱Citadel申報持有CIFR 5.5%股份，但13G持倉主要是Citadel Securities做市庫存，並非基金的方向性押注。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2112544004470407456",
-      "url": "https://x.com/pelositracker/status/2112544004470407456",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-20T13:58:34Z",
-      "forwardedAt": "2026-10-20T15:13:17Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱眾議員Laurel Lee在8月24日賣出至多10萬美元BAC；七週後該行因洗錢防制失誤遭12億美元罰款，股票自她賣出後跌18%。",
       "summaryKind": "ai"
     }
   ]
