@@ -1,8 +1,26 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T00:15:57Z",
+  "generatedAt": "2026-11-10T04:16:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2119985898427212282",
+      "url": "https://x.com/Benzinga/status/2119985898427212282",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-10T02:50:00Z",
+      "forwardedAt": "2026-11-10T03:10:54Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2119926003514356069",
       "url": "https://x.com/Benzinga/status/2119926003514356069",
@@ -1793,24 +1811,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "2110932178645275075",
-      "url": "https://x.com/JEFETRADES/status/2110932178645275075",
-      "sourceHandle": "JEFETRADES",
-      "trackedHandles": [
-        "JEFETRADES"
-      ],
-      "publishedAt": "2026-10-16T03:13:45Z",
-      "forwardedAt": "2026-10-17T01:21:12Z",
-      "tier": "CRITICAL",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者認為美光及記憶體股看跌，理由包括中國公司預計2029年過量生產RAM、美國公司及對美銷售者不能使用中國產品；並稱美光未來在HBM而非傳統RAM。",
-      "summaryKind": "ai"
     }
   ]
 }
