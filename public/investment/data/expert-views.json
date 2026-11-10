@@ -1,8 +1,44 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T22:15:07Z",
+  "generatedAt": "2026-11-10T00:15:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2119926003514356069",
+      "url": "https://x.com/Benzinga/status/2119926003514356069",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-09T22:52:00Z",
+      "forwardedAt": "2026-11-09T23:09:02Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2119817574959435941",
+      "url": "https://x.com/Benzinga/status/2119817574959435941",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-09T15:41:08Z",
+      "forwardedAt": "2026-11-09T23:08:48Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2119889670599512189",
       "url": "https://x.com/Benzinga/status/2119889670599512189",
@@ -1774,42 +1810,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者認為美光及記憶體股看跌，理由包括中國公司預計2029年過量生產RAM、美國公司及對美銷售者不能使用中國產品；並稱美光未來在HBM而非傳統RAM。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2111124083211399417",
-      "url": "https://x.com/pelositracker/status/2111124083211399417",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-16T15:56:18Z",
-      "forwardedAt": "2026-10-16T16:36:55Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱美國政府透過現金、交換補助或認股權證持有35家公司股權，並開始列出晶片與量子企業及持股資訊；清單後文截斷。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2110817988077363208",
-      "url": "https://x.com/pelositracker/status/2110817988077363208",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-15T19:40:00Z",
-      "forwardedAt": "2026-10-15T20:33:40Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者表示看到大家詢問裴洛西持股，並請查看她持有哪些股票獲利或虧損。",
       "summaryKind": "ai"
     }
   ]
