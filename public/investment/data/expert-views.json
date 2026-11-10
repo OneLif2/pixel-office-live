@@ -1,8 +1,44 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T18:16:57Z",
+  "generatedAt": "2026-11-10T20:16:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2120222205434855475",
+      "url": "https://x.com/Benzinga/status/2120222205434855475",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-10T18:29:00Z",
+      "forwardedAt": "2026-11-10T19:12:54Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2120228496710508959",
+      "url": "https://x.com/Benzinga/status/2120228496710508959",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-10T18:54:00Z",
+      "forwardedAt": "2026-11-10T19:12:42Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2120190496689758663",
       "url": "https://x.com/Benzinga/status/2120190496689758663",
@@ -1765,42 +1801,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者稱新建「一切都完了」投資組合，挑選比AAOI beta更高的股票，條件包括暴跌、低於催化劑公布時價格、基本面改善、圖表形態及放空興趣上升；後文截斷。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2114753128302059756",
-      "url": "https://x.com/pelositracker/status/2114753128302059756",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-26T16:16:50Z",
-      "forwardedAt": "2026-10-26T17:30:40Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱裴洛西的Bloom Energy持倉今日漲7%，單日獲利約21.5萬美元，並估其淨值約2.655億美元。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2114719900241469893",
-      "url": "https://x.com/pelositracker/status/2114719900241469893",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-26T14:04:48Z",
-      "forwardedAt": "2026-10-26T15:30:03Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱眾議員Cleo Fields自2025年6月起買進至多1,100萬美元的輝達與台積電股票，並指出他任職於協助監督股市的次級委員會。",
       "summaryKind": "ai"
     }
   ]
