@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T00:15:57Z",
+  "generatedAt": "2026-11-11T02:15:57Z",
   "source": "x-post-tracker",
   "items": [
     {
@@ -18,8 +18,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，Coinbase、Kraken母公司Payward與Kalshi等公司支持美國監管機構，參與個股永續期貨能否上市的訴訟；原文截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120228496710508959",
@@ -36,8 +36,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者指出，投資人重新評估AI基建建設的速度與成本，令Corning、Caterpillar、Vertiv、Eaton和GE Vernova等相關股大幅回落。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120190496689758663",
@@ -54,8 +54,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，特斯拉已初步推進休士頓附近、投資逾100億美元的太陽能工廠計畫；馬斯克稱之為「Project Crystal Sun」，原文截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120170759121178704",
@@ -72,8 +72,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，四名共和黨政客今年買入且未賣出NVIDIA股票，並特別提及眾議員John McGuire及其眾院軍事委員會小組職務；原文截斷。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120171310349488433",
@@ -126,8 +126,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者轉述馬斯克估計，人形機器人若全天候工作，每週產能或可達人類五倍；理論上2,000萬至3,000萬台可匹敵美國商品與服務總產出。",
+      "summaryKind": "ai"
     },
     {
       "id": "2119926003514356069",
@@ -144,8 +144,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，麥當勞與Uber將在14個市場擴大合作，Uber成為麥當勞App訂單的首選外送夥伴，並擴大忠誠獎勵，包括Uber乘車折扣。",
+      "summaryKind": "ai"
     },
     {
       "id": "2119817574959435941",
@@ -162,8 +162,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者整理本週財報與經濟日程：多家公司將公布業績，另有週二核心CPI、週四失業救濟申請與成屋銷售，以及週五核心PPI。",
+      "summaryKind": "ai"
     },
     {
       "id": "2119889670599512189",
@@ -180,8 +180,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者以反諷指出，當日晶片股大漲，但NVIDIA下跌5.09%；AMD漲13.55%、AMAT漲12.10%、AVGO漲9.28%。",
+      "summaryKind": "ai"
     },
     {
       "id": "2119895804429140373",
@@ -198,8 +198,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，AMD將為Google的新TPU 8tx AI系統供應EPYC處理器，使AMD參與Google擴大對NVIDIA的挑戰。",
+      "summaryKind": "ai"
     },
     {
       "id": "2119855539094167684",
@@ -216,8 +216,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱，NVIDIA因有關黃仁勳與一名疑涉中國間諜活動女子婚外情的報導而跌近4%；其RSI降至2019年來最低，其他晶片股上漲。",
+      "summaryKind": "ai"
     },
     {
       "id": "2119858055823421505",
