@@ -1,8 +1,26 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T02:15:57Z",
+  "generatedAt": "2026-11-11T06:16:58Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2119868267938390403",
+      "url": "https://x.com/JEFETRADES/status/2119868267938390403",
+      "sourceHandle": "JEFETRADES",
+      "trackedHandles": [
+        "JEFETRADES"
+      ],
+      "publishedAt": "2026-11-09T19:02:34Z",
+      "forwardedAt": "2026-11-11T05:50:57Z",
+      "tier": "HIGH",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2120222205434855475",
       "url": "https://x.com/Benzinga/status/2120222205434855475",
@@ -1783,24 +1801,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者稱曾指出費特曼在3月底買入美光、接近低點；股價今日再漲4%，其持倉獲利約200%，並以引號標示其商務委員會席位為「巧合」。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2115094150626644115",
-      "url": "https://x.com/aleabitoreddit/status/2115094150626644115",
-      "sourceHandle": "aleabitoreddit",
-      "trackedHandles": [
-        "aleabitoreddit"
-      ],
-      "publishedAt": "2026-10-27T14:51:56Z",
-      "forwardedAt": "2026-10-28T13:25:55Z",
-      "tier": "HIGH",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱新建「一切都完了」投資組合，挑選比AAOI beta更高的股票，條件包括暴跌、低於催化劑公布時價格、基本面改善、圖表形態及放空興趣上升；後文截斷。",
       "summaryKind": "ai"
     }
   ]
