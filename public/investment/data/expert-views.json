@@ -1,8 +1,44 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T06:16:58Z",
+  "generatedAt": "2026-11-11T08:16:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2120381008985882875",
+      "url": "https://x.com/Benzinga/status/2120381008985882875",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-11T05:00:01Z",
+      "forwardedAt": "2026-11-11T06:57:41Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "作者稱Meta逆市抗跌，IMAX與Pixelworks交易提振投資者信心。",
+      "summaryKind": "ai"
+    },
+    {
+      "id": "2120396108581273683",
+      "url": "https://x.com/Benzinga/status/2120396108581273683",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-11T06:00:01Z",
+      "forwardedAt": "2026-11-11T06:57:25Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "作者稱Meta創辦人祖克柏身家超過2,250億美元，其股份不會留給家人。",
+      "summaryKind": "ai"
+    },
     {
       "id": "2119868267938390403",
       "url": "https://x.com/JEFETRADES/status/2119868267938390403",
@@ -18,8 +54,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者稱$NVDA是十年來最便宜，並認為這是多年難得的機會。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120222205434855475",
@@ -108,8 +144,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者預告《Ring The Bell》當日內容，涵蓋飆升股、Nvidia問題、財報贏家與輸家等。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120138654702297192",
@@ -126,8 +162,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者引述KKR稱AI熱潮將帶來大贏家與輸家；聯席執行長表示已出售認為可能受AI顛覆的業務，並重視下行保護。",
+      "summaryKind": "ai"
     },
     {
       "id": "2119985898427212282",
@@ -1765,42 +1801,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者轉述Jim Cramer稱不想買IREN或NBIS，並以「虧錢的人會買」形容這兩檔股票。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2115506784173785349",
-      "url": "https://x.com/pelositracker/status/2115506784173785349",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-28T18:11:36Z",
-      "forwardedAt": "2026-10-28T19:38:10Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者認為Fetterman擅長選股，也稱Pelosi如此，並建議查看她的持倉或跟著交易。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2115453810948833734",
-      "url": "https://x.com/pelositracker/status/2115453810948833734",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-10-28T14:41:06Z",
-      "forwardedAt": "2026-10-28T15:37:33Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱曾指出費特曼在3月底買入美光、接近低點；股價今日再漲4%，其持倉獲利約200%，並以引號標示其商務委員會席位為「巧合」。",
       "summaryKind": "ai"
     }
   ]
