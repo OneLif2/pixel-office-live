@@ -1,8 +1,44 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-11T22:17:07Z",
+  "generatedAt": "2026-11-12T00:16:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2120653875883761909",
+      "url": "https://x.com/Benzinga/status/2120653875883761909",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-11T23:04:18Z",
+      "forwardedAt": "2026-11-11T23:16:01Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2120639344222560575",
+      "url": "https://x.com/pelositracker/status/2120639344222560575",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-11-11T22:06:33Z",
+      "forwardedAt": "2026-11-11T23:03:15Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2120624355277258775",
       "url": "https://x.com/Benzinga/status/2120624355277258775",
@@ -1765,42 +1801,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者稱，Tom Sosnoff預期輝達、AMD與美光還會下跌，稱晶片股拋售「才剛開始」，並希望跌25%至35%後才考慮其是否超賣。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2117308506340786178",
-      "url": "https://x.com/Benzinga/status/2117308506340786178",
-      "sourceHandle": "Benzinga",
-      "trackedHandles": [
-        "benzinga"
-      ],
-      "publishedAt": "2026-11-02T17:31:00Z",
-      "forwardedAt": "2026-11-02T17:50:36Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者指出，特斯拉德州機器人計程車登記數9月30日至11月1日增128%至1,244輛，僅比Waymo少15輛；數字未顯示載客或無安全監控員營運的車輛數。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2117281964629905454",
-      "url": "https://x.com/pelositracker/status/2117281964629905454",
-      "sourceHandle": "pelositracker",
-      "trackedHandles": [
-        "pelositracker"
-      ],
-      "publishedAt": "2026-11-02T15:45:32Z",
-      "forwardedAt": "2026-11-02T17:40:21Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱眾議員John McGuire申報買入最多4.5萬美元的Micron，並指出他任職的軍事委員會監督晶片供應鏈；其均價1,087美元，MU當日881美元。",
       "summaryKind": "ai"
     }
   ]
