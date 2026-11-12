@@ -1,8 +1,62 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T12:16:57Z",
+  "generatedAt": "2026-11-12T16:15:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2120901819266142716",
+      "url": "https://x.com/Benzinga/status/2120901819266142716",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-12T15:29:32Z",
+      "forwardedAt": "2026-11-12T16:05:44Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2120902483018932621",
+      "url": "https://x.com/Benzinga/status/2120902483018932621",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-12T15:32:11Z",
+      "forwardedAt": "2026-11-12T16:05:31Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2120898763527004417",
+      "url": "https://x.com/pelositracker/status/2120898763527004417",
+      "sourceHandle": "pelositracker",
+      "trackedHandles": [
+        "pelositracker"
+      ],
+      "publishedAt": "2026-11-12T15:17:24Z",
+      "forwardedAt": "2026-11-12T15:53:51Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2120726780507988242",
       "url": "https://x.com/Benzinga/status/2120726780507988242",
@@ -1747,60 +1801,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者稱比爾蓋茲警告，若政府與企業未建立充分防護，日益強大的AI可能帶來嚴重風險；他曾把先進AI比作「外星人入侵」，原文截斷。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2117328890490499513",
-      "url": "https://x.com/Benzinga/status/2117328890490499513",
-      "sourceHandle": "Benzinga",
-      "trackedHandles": [
-        "benzinga"
-      ],
-      "publishedAt": "2026-11-02T18:52:00Z",
-      "forwardedAt": "2026-11-02T19:50:45Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者指出，必需消費品板塊10月上漲10.9%，創單月最佳；科技板塊跌8.3%，必需消費品對科技比率升21%，為2001年2月以來最大月增幅。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2117333168617599174",
-      "url": "https://x.com/Benzinga/status/2117333168617599174",
-      "sourceHandle": "Benzinga",
-      "trackedHandles": [
-        "benzinga"
-      ],
-      "publishedAt": "2026-11-02T19:09:00Z",
-      "forwardedAt": "2026-11-02T19:50:32Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者指出，科技板塊從標普500表現最佳轉為最差：9月2日至10月2日漲8.83%，其後至10月30日跌10.2%；能源板塊同期漲11.5%。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2117338956991713300",
-      "url": "https://x.com/Benzinga/status/2117338956991713300",
-      "sourceHandle": "Benzinga",
-      "trackedHandles": [
-        "benzinga"
-      ],
-      "publishedAt": "2026-11-02T19:32:00Z",
-      "forwardedAt": "2026-11-02T19:50:18Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱蘋果將於收盤後公布Q4業績，華爾街預期營收1,133.9億美元、每股盈餘1.99美元；Dan Ives看好需求，焦點在iPhone 18需求與假日展望。",
       "summaryKind": "ai"
     }
   ]
