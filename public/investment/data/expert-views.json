@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T16:15:57Z",
+  "generatedAt": "2026-11-12T18:15:57Z",
   "source": "x-post-tracker",
   "items": [
     {
-      "id": "2120901819266142716",
-      "url": "https://x.com/Benzinga/status/2120901819266142716",
+      "id": "2120934902233170291",
+      "url": "https://x.com/Benzinga/status/2120934902233170291",
       "sourceHandle": "Benzinga",
       "trackedHandles": [
         "benzinga"
       ],
-      "publishedAt": "2026-11-12T15:29:32Z",
-      "forwardedAt": "2026-11-12T16:05:44Z",
+      "publishedAt": "2026-11-12T17:41:00Z",
+      "forwardedAt": "2026-11-12T18:07:54Z",
       "tier": "FORWARD",
       "deliveryKinds": [
         "individual"
@@ -22,14 +22,32 @@
       "summaryKind": "link-only"
     },
     {
-      "id": "2120902483018932621",
-      "url": "https://x.com/Benzinga/status/2120902483018932621",
+      "id": "2120940690037154062",
+      "url": "https://x.com/Benzinga/status/2120940690037154062",
       "sourceHandle": "Benzinga",
       "trackedHandles": [
         "benzinga"
       ],
-      "publishedAt": "2026-11-12T15:32:11Z",
-      "forwardedAt": "2026-11-12T16:05:31Z",
+      "publishedAt": "2026-11-12T18:04:00Z",
+      "forwardedAt": "2026-11-12T18:07:41Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
+    {
+      "id": "2120901819266142716",
+      "url": "https://x.com/Benzinga/status/2120901819266142716",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-12T15:29:32Z",
+      "forwardedAt": "2026-11-12T16:05:44Z",
       "tier": "FORWARD",
       "deliveryKinds": [
         "individual"
@@ -1765,42 +1783,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者稱，Jeff Bezos警告，將複雜經濟問題歸咎於特定群體的政治言論，可能使選民忽略根本政策成因；原文未完。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2117360599277699574",
-      "url": "https://x.com/Benzinga/status/2117360599277699574",
-      "sourceHandle": "Benzinga",
-      "trackedHandles": [
-        "benzinga"
-      ],
-      "publishedAt": "2026-11-02T20:58:00Z",
-      "forwardedAt": "2026-11-02T21:50:57Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者指出，標普500半導體指數遠期本益比為14.7倍，低於標普500整體的18.9倍。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2117370414305362033",
-      "url": "https://x.com/Benzinga/status/2117370414305362033",
-      "sourceHandle": "Benzinga",
-      "trackedHandles": [
-        "benzinga"
-      ],
-      "publishedAt": "2026-11-02T21:37:00Z",
-      "forwardedAt": "2026-11-02T21:50:41Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱比爾蓋茲警告，若政府與企業未建立充分防護，日益強大的AI可能帶來嚴重風險；他曾把先進AI比作「外星人入侵」，原文截斷。",
       "summaryKind": "ai"
     }
   ]
