@@ -1,8 +1,26 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T04:15:57Z",
+  "generatedAt": "2026-11-12T06:15:58Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2120726780507988242",
+      "url": "https://x.com/Benzinga/status/2120726780507988242",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-12T03:54:00Z",
+      "forwardedAt": "2026-11-12T05:31:02Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2120704382857560526",
       "url": "https://x.com/Benzinga/status/2120704382857560526",
@@ -1783,24 +1801,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者稱蘋果將於收盤後公布Q4業績，華爾街預期營收1,133.9億美元、每股盈餘1.99美元；Dan Ives看好需求，焦點在iPhone 18需求與假日展望。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2116959055055028706",
-      "url": "https://x.com/wliang/status/2116959055055028706",
-      "sourceHandle": "wliang",
-      "trackedHandles": [
-        "wliang"
-      ],
-      "publishedAt": "2026-11-01T18:22:24Z",
-      "forwardedAt": "2026-11-02T18:45:17Z",
-      "tier": "HIGH",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱，BTC月度藍鑽訊號已確認，並認為從現在到2027年第一季持續定期定額買入ASST／MSTR應會有不錯表現。",
       "summaryKind": "ai"
     }
   ]
