@@ -1,8 +1,26 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T02:15:58Z",
+  "generatedAt": "2026-11-12T04:15:57Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2120704382857560526",
+      "url": "https://x.com/Benzinga/status/2120704382857560526",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-12T02:25:00Z",
+      "forwardedAt": "2026-11-12T03:18:20Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2120679260381917646",
       "url": "https://x.com/Benzinga/status/2120679260381917646",
@@ -1783,24 +1801,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者稱，BTC月度藍鑽訊號已確認，並認為從現在到2027年第一季持續定期定額買入ASST／MSTR應會有不錯表現。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2117288625251483956",
-      "url": "https://x.com/Benzinga/status/2117288625251483956",
-      "sourceHandle": "Benzinga",
-      "trackedHandles": [
-        "benzinga"
-      ],
-      "publishedAt": "2026-11-02T16:12:00Z",
-      "forwardedAt": "2026-11-02T17:51:05Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者列出11月2日至6日財報週安排：蘋果、Palantir週一，AMD週二，Arm與高通週三；另有Uber、Airbnb及週五就業報告。",
       "summaryKind": "ai"
     }
   ]
