@@ -1,8 +1,62 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T18:15:57Z",
+  "generatedAt": "2026-11-12T20:15:58Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2120948994591600664",
+      "url": "https://x.com/Benzinga/status/2120948994591600664",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-12T18:37:00Z",
+      "forwardedAt": "2026-11-12T19:52:24Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "作者：Beck認為，即使SpaceX的Starship完全可重複使用並以具競爭力價格對外發射，Neutron仍具戰略價值。",
+      "summaryKind": "ai"
+    },
+    {
+      "id": "2120961829065179496",
+      "url": "https://x.com/Benzinga/status/2120961829065179496",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-12T19:28:00Z",
+      "forwardedAt": "2026-11-12T19:52:08Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "作者：Arcos Dorados第三季業績優於預期，宣布2,500萬美元回購；執行長稱股價被低估，數位銷售增長22%。",
+      "summaryKind": "ai"
+    },
+    {
+      "id": "2120965100848709762",
+      "url": "https://x.com/Benzinga/status/2120965100848709762",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-12T19:41:00Z",
+      "forwardedAt": "2026-11-12T19:51:52Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "作者：Karp認為矽谷的發展深受美國軍方、政府、大學及私人資本奠定的科技基礎所助益。",
+      "summaryKind": "ai"
+    },
     {
       "id": "2120934902233170291",
       "url": "https://x.com/Benzinga/status/2120934902233170291",
@@ -36,8 +90,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：Alphabet第三季營收1,276億美元、淨利265億美元；搜尋營收634億美元，雲端營收增長103%至307億美元。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120901819266142716",
@@ -72,8 +126,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：貼文稱可查看Claude Portfolio持倉或Pelosi、Ro Khanna的交易，並叫人別想太多該買哪些股票。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120726780507988242",
@@ -90,8 +144,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：Unplugged Performance提議由投資者出資接手Cybertruck產線，讓生產延續；貼文稱Tesla正把資源轉向Cybercab。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120704382857560526",
@@ -108,8 +162,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：Redwire獲美國陸軍追加訂單，提供Stalker無人機維護設備，支援操作員在艱困及受威脅環境中的任務訓練。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120679260381917646",
@@ -126,8 +180,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：報導稱Nvidia董事會準備撤換黃仁勳後，Nvidia盤後跌逾8%，AMD與Broadcom盤後漲逾3%。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120653875883761909",
@@ -144,8 +198,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：貼文稱Nvidia董事會據報因得知黃仁勳兩段婚外情而準備撤換他，並稱NVDA盤後跌7%。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120639344222560575",
@@ -180,8 +234,8 @@
       ],
       "tickers": [],
       "sentiment": "UNKNOWN",
-      "summary": "",
-      "summaryKind": "link-only"
+      "summary": "作者：Riskified（$RSKD）第三季營收增長41%並上調指引後股價大漲；執行長稱部分情況下詐騙者比消費者更快採用AI購物工具。",
+      "summaryKind": "ai"
     },
     {
       "id": "2120556252807762069",
@@ -1729,60 +1783,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者稱，比爾蓋茲警告AI可能比許多勞工預期更早重塑就業市場，並表示他極度擔憂日益強大的AI系統對工作的影響；原文未完。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2117425023896199423",
-      "url": "https://x.com/Benzinga/status/2117425023896199423",
-      "sourceHandle": "Benzinga",
-      "trackedHandles": [
-        "benzinga"
-      ],
-      "publishedAt": "2026-11-03T01:14:00Z",
-      "forwardedAt": "2026-11-03T01:51:44Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者引述市場策略師稱，蘋果是唯一跑贏標普500的「七巨頭」股票，原因是避開AI支出潮。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2117428295465660891",
-      "url": "https://x.com/Benzinga/status/2117428295465660891",
-      "sourceHandle": "Benzinga",
-      "trackedHandles": [
-        "benzinga"
-      ],
-      "publishedAt": "2026-11-03T01:27:00Z",
-      "forwardedAt": "2026-11-03T01:51:29Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱，SpaceX總裁Gwynne Shotwell表示，與Elon Musk共事讓她不再輕易否定雄心勃勃的想法；她的工作是將其轉為可實現目標。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2117353555762069995",
-      "url": "https://x.com/Benzinga/status/2117353555762069995",
-      "sourceHandle": "Benzinga",
-      "trackedHandles": [
-        "benzinga"
-      ],
-      "publishedAt": "2026-11-02T20:30:00Z",
-      "forwardedAt": "2026-11-02T21:51:10Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱，Jeff Bezos警告，將複雜經濟問題歸咎於特定群體的政治言論，可能使選民忽略根本政策成因；原文未完。",
       "summaryKind": "ai"
     }
   ]
