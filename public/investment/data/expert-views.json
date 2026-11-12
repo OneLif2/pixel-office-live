@@ -1,8 +1,26 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T00:16:57Z",
+  "generatedAt": "2026-11-12T02:15:58Z",
   "source": "x-post-tracker",
   "items": [
+    {
+      "id": "2120679260381917646",
+      "url": "https://x.com/Benzinga/status/2120679260381917646",
+      "sourceHandle": "Benzinga",
+      "trackedHandles": [
+        "benzinga"
+      ],
+      "publishedAt": "2026-11-12T00:45:10Z",
+      "forwardedAt": "2026-11-12T01:16:53Z",
+      "tier": "FORWARD",
+      "deliveryKinds": [
+        "individual"
+      ],
+      "tickers": [],
+      "sentiment": "UNKNOWN",
+      "summary": "",
+      "summaryKind": "link-only"
+    },
     {
       "id": "2120653875883761909",
       "url": "https://x.com/Benzinga/status/2120653875883761909",
@@ -1783,24 +1801,6 @@
       "tickers": [],
       "sentiment": "UNKNOWN",
       "summary": "作者列出11月2日至6日財報週安排：蘋果、Palantir週一，AMD週二，Arm與高通週三；另有Uber、Airbnb及週五就業報告。",
-      "summaryKind": "ai"
-    },
-    {
-      "id": "2117295420103594185",
-      "url": "https://x.com/Benzinga/status/2117295420103594185",
-      "sourceHandle": "Benzinga",
-      "trackedHandles": [
-        "benzinga"
-      ],
-      "publishedAt": "2026-11-02T16:39:00Z",
-      "forwardedAt": "2026-11-02T17:50:50Z",
-      "tier": "FORWARD",
-      "deliveryKinds": [
-        "individual"
-      ],
-      "tickers": [],
-      "sentiment": "UNKNOWN",
-      "summary": "作者稱，Tom Sosnoff預期輝達、AMD與美光還會下跌，稱晶片股拋售「才剛開始」，並希望跌25%至35%後才考慮其是否超賣。",
       "summaryKind": "ai"
     }
   ]
