@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="以雙狀態 HMM 研究 SPY 每週市場狀態；選取自己的週線 CSV，在瀏覽器內計算，不會上傳。">
+<meta name="theme-color" content="#ebefe4">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<title>SPY 市況模型 · Market Desk</title>
+<link rel="stylesheet" href="./regime.css">
+<script src="./regime-model.js" defer></script>
+<script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳至主要內容</a>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="../"><span class="brandmark" aria-hidden="true"></span>投資觀測室<small>MARKET DESK</small></a>
+    <nav aria-label="主要導覽">
+      <a href="../">市場總覽</a>
+      <a href="../market-monitor/">Market Monitor</a>
+      <a class="current" href="./" aria-current="page">SPY 市況模型</a>
+      <a href="#method">方法與來源</a>
+    </nav>
+    <p class="side-note">用每週收市資料<br>研究市場狀態。</p>
+  </aside>
+  <main id="main">
+    <header class="topbar"><span>投資觀測室 <span aria-hidden="true">/</span> 研究</span><span id="status-badge" class="badge" data-mode="empty">尚未載入資料</span></header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow"><span aria-hidden="true"></span> SPY · WEEKLY REGIME RESEARCH</p>
+      <h1 id="hero-title">牛熊狀態，<br class="hero-break">每週重新估計。</h1>
+      <p>用 SPY 週線回報估計兩種市場狀態，並比較兩週後落在相反狀態的機率。這是研究工具，不是即時行情或交易訊號。</p>
+    </section>
+
+    <section class="panel source" aria-labelledby="source-title">
+      <div>
+        <p class="eyebrow">資料輸入</p>
+        <h2 id="source-title">載入週線資料</h2>
+        <p class="muted">使用你有權使用的 SPY 週線 CSV。檔案只在此瀏覽器處理，<strong>不會上傳或儲存</strong>。沒有 CSV 時，可以先看合成示範。</p>
+      </div>
+      <form id="data-form" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="csv-file">選取 CSV 檔案</label>
+            <input id="csv-file" type="file" accept=".csv,text/csv,text/plain" aria-describedby="csv-format">
+          </div>
+          <div class="field date-field">
+            <label for="cutoff">資料截止日（紐約日期）</label>
+            <input id="cutoff" type="date" required aria-describedby="cutoff-help">
+          </div>
+        </div>
+        <p id="csv-format" class="form-help">至少 158 筆連續週線，格式示例：<code>Date,Adj Close</code>。日期用 <code>YYYY-MM-DD</code>，以該週最後一個美股交易日為準；只匯入完整週，並使用一致的復權口徑。</p>
+        <p id="cutoff-help" class="form-help">預設取紐約上個日曆週的星期五。假期提早收市的週也以星期五標籤比較截止日；本頁不會驗證交易日曆。</p>
+        <div class="actions">
+          <button class="button primary" type="submit">讀取 CSV 並計算</button>
+          <button class="button" id="demo-button" type="button">看合成示範</button>
+          <button class="button quiet" id="clear-button" type="button" disabled>清除資料</button>
+        </div>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel chart-panel" aria-labelledby="chart-title">
+      <div class="chart-head">
+        <div>
+          <p class="eyebrow">兩週轉換機率</p>
+          <h2 id="chart-title">SPY 與牛熊機率</h2>
+          <p id="data-as-of" class="muted">來源：尚未選取。資料截至：—</p>
+        </div>
+        <div class="chart-options" id="chart-options" hidden>
+          <label>範圍<select id="range-mode"><option value="52" selected>最近 52 週</option><option value="156">最近 156 週</option><option value="all">全部</option></select></label>
+        </div>
+      </div>
+      <div id="empty" class="empty">
+        <span class="empty-icon" aria-hidden="true">≈</span>
+        <h3>目前沒有可展示的資料</h3>
+        <p>選取週線 CSV 開始計算，或用合成示範了解圖表。正式行情未接通。</p>
+      </div>
+      <div id="results" hidden>
+        <div class="metrics" aria-label="所選週概覽">
+          <div><span>牛轉熊 · 兩週</span><strong id="metric-btb" class="down">—</strong></div>
+          <div><span>熊轉牛 · 兩週</span><strong id="metric-btbull" class="up">—</strong></div>
+          <div><span>模型估計狀態</span><strong id="metric-regime">—</strong></div>
+          <div><span>SPY 週復權收市</span><strong id="metric-price">—</strong></div>
+        </div>
+        <ul class="legend" aria-label="圖例">
+          <li><i class="sample down" aria-hidden="true"></i>牛轉熊</li>
+          <li><i class="sample up" aria-hidden="true"></i>熊轉牛</li>
+          <li><i class="sample price" aria-hidden="true"></i>SPY（右軸，美元）</li>
+          <li><i class="sample band-bull" aria-hidden="true"></i>偏牛背景</li>
+          <li><i class="sample band-bear" aria-hidden="true"></i>偏熊背景</li>
+        </ul>
+        <div class="chart-frame" id="chart-frame">
+          <svg id="chart-svg" role="img" viewBox="0 0 880 340" aria-labelledby="svg-title svg-description"></svg>
+        </div>
+        <div class="scrub">
+          <label for="week-slider">選看週次</label>
+          <input id="week-slider" type="range" step="1" min="0" max="0" value="0" aria-describedby="detail">
+          <output id="week-caption" for="week-slider">—</output>
+        </div>
+        <p id="detail" class="detail">—</p>
+        <label class="annotation-switch"><input type="checkbox" id="annotations">顯示未驗證的背馳與交叉標記</label>
+        <p class="form-help" id="annotation-help" hidden>○：按下方定義標記四週背馳。◇：兩條機率線相對高低互換。灰色價線使用獨立右軸，與機率線的交點沒有分析意義。</p>
+        <details class="weekly-details">
+          <summary>查看最近 12 週數值</summary>
+          <div class="table-wrap"><table>
+            <caption class="sr-only">最近 12 週機率、模型狀態及 SPY 週復權收市</caption>
+            <thead><tr><th scope="col">週收市日</th><th scope="col">牛轉熊</th><th scope="col">熊轉牛</th><th scope="col">狀態</th><th scope="col">SPY（美元）</th></tr></thead>
+            <tbody id="week-table"></tbody>
+          </table></div>
+        </details>
+      </div>
+    </section>
+
+    <section id="method" class="panel method" aria-labelledby="method-title">
+      <p class="eyebrow">模型說明與限制</p>
+      <h2 id="method-title">這些線代表甚麼？</h2>
+      <div class="method-grid">
+        <article>
+          <h3>兩週後的條件機率</h3>
+          <p>用雙狀態高斯 HMM 擬合週對數回報，以模型平均回報較高的狀態稱為「牛」，另一個稱為「熊」；兩者不一定分別等於正、負回報。兩條線是當週估計的轉移矩陣 <var>A</var> 平方的非對角項：<code>(A²)[牛,熊]</code> 和 <code>(A²)[熊,牛]</code>。</p>
+          <p>它們假設從指定狀態出發，不是整體市場兩週後轉熊或轉牛的機率，也不表示中途必定只轉換一次。</p>
+        </article>
+        <article>
+          <h3>背景只用當週已知資料</h3>
+          <p>每四週用截至上週的 156 個週回報重新擬合；再用本週收市回報更新狀態。模型估計偏牛機率達 60% 為偏牛，降至 40% 或以下為偏熊，其他不着色。這不是事後平滑結果。歷史不足、估計無效或介乎兩門檻時，不填背景。</p>
+          <p>這個時序保證針對模型輸入；若上傳資料用事後修訂或按後來公司行動復權，仍未必是歷史當天可取得的價格。</p>
+        </article>
+        <article>
+          <h3>背馳和交叉只供觀察</h3>
+          <p>綠線背馳：與四週前比較，SPY 升、熊轉牛機率跌，或 SPY 跌、熊轉牛機率升。紅線另標記 SPY 升而牛轉熊機率亦升。交叉指兩條機率線互換相對高低。這些是未回測的觀察規則，不會發出買賣訊號。</p>
+          <p>機率與 SPY 分別使用左右軸；灰色 SPY 線與彩色機率線的交點不作解讀。</p>
+        </article>
+        <article>
+          <h3>資料、來源與歸屬</h3>
+          <p>本頁為 Market Desk／Qlib 研究的獨立實作，並非 CashMate 警號，亦沒有重現第三方專有模型或內嵌其歷史數據。方法參考 <a href="https://doi.org/10.2307/1912559" rel="noopener noreferrer">Hamilton（1989）</a> 的市場狀態轉換框架。正式行情未接通；真實資料只來自你自己選取的檔案，本站不核實或分發。</p>
+          <p>示範使用有明確標示的合成週線，不是 SPY 真實價格。以市場狀態或預測做實際決策前，應獨立核實來源和測試結果。</p>
+        </article>
+      </div>
+    </section>
+    <noscript><p class="notice">這個研究工具需要 JavaScript 才能在瀏覽器內計算。</p></noscript>
+    <footer><span>投資觀測室 / MARKET DESK</span><span>獨立研究 · 非即時行情</span></footer>
+  </main>
+</div>
+</body>
+</html>
